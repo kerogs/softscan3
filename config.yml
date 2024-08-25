@@ -4,8 +4,8 @@
 
 # SEO Configuration
 seo:
-  title: "SoftScan2"
-  title_short: "SoftScan2"
+  title: "SoftScan3"
+  title_short: "SoftScan3"
   description: "v2 de SoftScan, SoftScan est un scanneur d'image, vidéo et gif pour un dossier spécifique. Il permet de gérer facilement une galerie d'images sans configuration nécessaire. "
   keywords: "Galerie, Image, Scan, Video, GIF, Dossier, Clef usb, disque dur, image"
   author: "Kerogs"
