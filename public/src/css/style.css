@@ -6,14 +6,13 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
   background-color: #eff0f7;
   color: #000;
   display: flex;
   flex-wrap: nowrap;
   overflow: hidden;
   height: 100vh;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Space Grotesk", Arial sans-serif;
 }
 
 nav {

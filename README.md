@@ -26,6 +26,7 @@
 - [ ] faire le responsive
 - [ ] faire une page soutien (redirection vers KerogsPHP Framework ou encore l'url du github de SoftScan3)
 - [ ] Créer une mascotte (future icone du site et pour les boutons ect).
+- [ ] faire les détourages dela mascotte
 - [ ] faire une page login
 - [ ] choisir entre un login admin ou membre
 - [ ] faire un système de logs du site
