@@ -1,9 +1,13 @@
 # softscan2
 
 <div align="center">
-    <img alt="Logo" src="public/src/img/logo_c.png" height="100">
+    <img alt="Logo" src=".ksinf/icon_prev.png" height="100">
     <h3>SoftScan3</h3>
     <p><em>v3 de SoftScan, SoftScan est un scanneur d'image, vidéo et gif pour un dossier spécifique. Il permet de gérer facilement une galerie d'images sans configuration nécessaire.</em></p>
+</div>
+
+<div align="center">
+<img alt="" src=".ksinf/banner_low.png">
 </div>
 
 ## Features
