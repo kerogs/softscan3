@@ -8,3 +8,6 @@ public/public_data/*
 public/temp/thumbnail/*
 !public/temp/thumbnail/.gitkeep
 server.log
+dist/ffmpeg/bin/*
+!dist/ffmpeg/bin/.gitkeep
+!dist/last_ffmpeg.ksc

@@ -32,8 +32,45 @@
 
 ## Installation
 1. Installer tout le repository
+```sh
+git clone https://github.com/kerogs/softscan3.git
+```
 2. Le mettre sur un serveur local
-3. Déposer les images dans /public/public_data ou les importer directement depuis le site
+
+3. Installer les packages composer
+```sh
+composer i
+```
+
+4. Installer les packages NPM
+```sh
+cd public; npm i
+```
+
+5. Installer le programme **FFMPEG** pour les thumbnails
+    1. Installer le ``.7z`` sur le site officiel ([cliquer ici](https://www.ffmpeg.org/download.html))
+
+    2. Décompresser le dossier
+
+    3. Dans le dossier décompresser récupérer les 3 fichiers suivant et les déposer dans ``/dist/ffmpeg/bin/``
+        - ``chemin/vers/dossier/ffmpeg/bin/ffmpeg.exe``
+        - ``chemin/vers/dossier/ffmpeg/bin/ffprobe.exe``
+        - ``chemin/vers/dossier/ffmpeg/bin/ffplay.exe``
+
+    4. Vous avez donc normalement sur le site l'arborescence suivante pour le dossier ``dist`` :
+
+    ```sh
+    📦dist
+     ┣ 📂ffmpeg
+     ┃ ┗ 📂bin
+     ┃ ┃ ┣ 📜.gitkeep
+     ┃ ┃ ┣ 📜ffmpeg.exe
+     ┃ ┃ ┣ 📜ffplay.exe
+     ┃ ┃ ┗ 📜ffprobe.exe
+     ┗ 📜last_ffmpeg.ksc
+    ```
+
+. Déposer les images dans /public/public_data ou les importer directement depuis le site
 
 ## A ajouter
 - [ ] Paramètre
