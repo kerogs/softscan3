@@ -12,7 +12,7 @@ $returnDirPath = true;
 $authorise = ['jpg', 'gif', 'png', 'jpeg', 'webp', 'svg', 'mp4', 'webm', 'mov', 'avi'];
 $ignore = [];
 
-if($_GET['desrec'] == "true") {
+if ($_GET['desrec'] == "true") {
     $recursive = false;
 } else {
     $recursive = true;
@@ -49,8 +49,8 @@ scanDirRecursive($directoryToScan, $returnNameType, $returnDirPath, $authorise, 
 
         <?php
 
-            if(count($directories) > 0 && $_GET['dir'] == true && $_GET['desrec'] != "true" ){
-                echo '
+        if (count($directories) > 0 && $_GET['dir'] == true && $_GET['desrec'] != "true") {
+            echo '
                 <div class="collectionShow">
                 <div class="titlee">
                     <h2 class="title">
@@ -61,17 +61,16 @@ scanDirRecursive($directoryToScan, $returnNameType, $returnDirPath, $authorise, 
 
                 <ul>';
 
-                for ($i = 0; $i < count($directories); $i++) {
-                    $val = $directories[$i];
-                    echo '<a href="all?dir='.$_GET[('dir')].'/'. $val  . '"><li><p>' . basename($val) . '</p></li></a>';
-                }
+            for ($i = 0; $i < count($directories); $i++) {
+                $val = $directories[$i];
+                echo '<a href="all?dir=' . $_GET[('dir')] . '/' . $val  . '"><li><p>' . basename($val) . '</p></li></a>';
+            }
 
-                echo '
+            echo '
                     </ul>
                 </div>
                 ';
-
-            }
+        }
         ?>
 
         <div class="galerie allgal">
@@ -80,17 +79,17 @@ scanDirRecursive($directoryToScan, $returnNameType, $returnDirPath, $authorise, 
                     <i class='bx bx-image-alt'></i> Galerie
                 </h2>
                 <?php
-                
-                    if(count($directories) > 0){
-                        if($_GET['desrec'] == "true"){
-                            echo '<a href="all?dir=' . $_GET['dir'] . '&desrec=false"><button>Activer Récursive</button></a>';
-                        } else {
-                            echo '<a href="all?dir=' . $_GET['dir'] . '&desrec=true"><button>Désactiver Récursive</button></a>';
-                        }
+
+                if (count($directories) > 0) {
+                    if ($_GET['desrec'] == "true") {
+                        echo '<a href="all?dir=' . $_GET['dir'] . '&desrec=false"><button>Activer Récursive</button></a>';
+                    } else {
+                        echo '<a href="all?dir=' . $_GET['dir'] . '&desrec=true"><button>Désactiver Récursive</button></a>';
                     }
-                
+                }
+
                 ?>
-                <!-- <a href="all?dir=<?=$_GET['dir']?>&recursive=false"><button>Désactiver Récursive</button></a> -->
+                <!-- <a href="all?dir=<?= $_GET['dir'] ?>&recursive=false"><button>Désactiver Récursive</button></a> -->
             </div>
             <div id="seeMore" class="content">
                 <?php
@@ -98,7 +97,11 @@ scanDirRecursive($directoryToScan, $returnNameType, $returnDirPath, $authorise, 
                 $resultsGalerie = array_slice($results, 0, 40);
 
                 foreach ($resultsGalerie as $image) {
-                    echo '<div><a href="view?url=' . htmlspecialchars($image) . '"><img src="' . htmlspecialchars($image) . '" alt=""></a></div>';
+                    if (in_array(pathinfo($image, PATHINFO_EXTENSION), $videoExtensions)) {
+                        echo '<div><a href="view?url=' . htmlspecialchars($image) . '"><img src="' . htmlspecialchars(videoToThumbnailURL($image)) . '" alt=""></a></div>';
+                    } else {
+                        echo '<div><a href="view?url=' . htmlspecialchars($image) . '"><img src="' . htmlspecialchars($image) . '" alt=""></a></div>';
+                    }
                 }
                 ?>
             </div>
@@ -118,28 +121,24 @@ scanDirRecursive($directoryToScan, $returnNameType, $returnDirPath, $authorise, 
             xhr.open('GET', 'src/php/load_more.php?<?= isset($_GET['dir']) ? 'dir=' . $_GET['dir'] . '&' : '' ?>offset=' + offset, true);
             xhr.onload = function() {
                 if (xhr.status === 200) {
-                    const images = JSON.parse(xhr.responseText);
+                    // Directly append the server's response to the #seeMore container
+                    const container = document.getElementById('seeMore');
+                    container.innerHTML += xhr.responseText;
 
-                    // If there are images returned from the server
-                    if (images.length > 0) {
-                        const container = document.getElementById('seeMore');
-                        images.forEach(function(image) {
-                            const div = document.createElement('div');
-                            div.innerHTML = '<a href="view?url=' + image + '"><img src="' + image + '" alt=""></a>';
-                            container.appendChild(div);
-                        });
-
-                        // Increase the offset by the number of images loaded
-                        offset += images.length;
-                    } else {
-                        // If no more images, hide the button
+                    // If no more images are returned (empty response), hide the button
+                    if (!xhr.responseText.trim()) {
                         document.querySelector('.seeMoreAll').style.display = 'none';
+                    } else {
+                        // Update the offset by counting the number of newly added images
+                        const newImagesCount = container.querySelectorAll('img').length;
+                        offset = newImagesCount;
                     }
                 }
             };
             xhr.send();
         }
     </script>
+
 </body>
 
 </html>

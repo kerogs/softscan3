@@ -30,6 +30,9 @@
     <img alt="" src=".ksinf/prevph3.jpg" width="33%">
 </div>
 
+## A savoir
+- Le renouvellement des thumbnails s'effectue toutes les 6 minutes
+
 ## Installation
 1. Installer tout le repository
 ```sh

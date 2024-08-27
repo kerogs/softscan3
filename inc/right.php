@@ -52,7 +52,7 @@
                     <a href="view?url=' . $file . '">
                         <li>
                             <div class="img">
-                                <video src="' . $file . '#t=0.1" muted></video>
+                                <img src="' . videoToThumbnailURL($file) . '" alt="">
                             </div>
                             <div class="info">
                                 <div class="type">' . $icon . ' ' . $extension . '</div>

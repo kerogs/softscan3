@@ -139,6 +139,7 @@ if (isset($_GET['url'])) {
                         foreach ($resultsGalerie as $image) {
                             $extension = pathinfo($image, PATHINFO_EXTENSION);
                             if(in_array($extension, $videoExtensions)){
+                                echo '<div><a href="view?url=' . htmlspecialchars($image) . '"><img src="' . htmlspecialchars(videoToThumbnailURL($image)) . '" alt=""></a></div>';
                             } else{
                                 echo '<div><a href="view?url=' . htmlspecialchars($image) . '"><img src="' . htmlspecialchars($image) . '" alt=""></a></div>';
                             }

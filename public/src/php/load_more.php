@@ -28,6 +28,11 @@ $limit = 40;
 // Get the next set of images
 $resultsGalerie = array_slice($results, $offset, $limit);
 
-// Output the images in JSON format
-echo json_encode($resultsGalerie);
+foreach ($resultsGalerie as $image) {
+    if(in_array(pathinfo($image, PATHINFO_EXTENSION), $videoExtensions)){
+        echo '<div><a href="view?url=' . htmlspecialchars($image) . '"><img src="' . htmlspecialchars(videoToThumbnailURL($image)) . '" alt=""></a></div>';
+    } else{
+        echo '<div><a href="view?url=' . htmlspecialchars($image) . '"><img src="' . htmlspecialchars($image) . '" alt=""></a></div>';
+    }
+}
 ?>

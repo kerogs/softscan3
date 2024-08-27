@@ -204,7 +204,7 @@ shuffle($directories);
                         <h2 class="title">
                             <i class='bx bx-image-alt'></i> Galerie
                         </h2>
-                        <a href="all"><button>Voir tout</button></a>
+                        <a href="photos-gifs"><button>Voir tout</button></a>
                     </div>
                     <div id="galerieShow" class="content">
                         <?php
@@ -224,7 +224,7 @@ shuffle($directories);
                     </div>
                 </div>
 
-                <div class="videolist">
+                <div class="galerie galsplit">
                     <div class="titlee">
                         <h2 class="title">
                             <i class='bx bx-video'></i> Vidéos
@@ -234,7 +234,7 @@ shuffle($directories);
                     <div id="videoShow" class="content">
                         <?php
                         // Limiter les résultats pour la galerie
-                        $resultsVideo = array_slice($results, 0, 20);
+                        $resultsVideo = array_slice($results, 0, 40);
 
                         foreach ($resultsVideo as $image) {
 
@@ -242,7 +242,7 @@ shuffle($directories);
 
                             if (in_array($extension, $videoExtensions)) {
                                 // add video
-                                echo '<div><a href="view?url=' . htmlspecialchars(videoToThumbnailURL($image)) . '"><video preload="metadata" src="' . htmlspecialchars($image) . '#t=0.1" style="object-fit: cover; width: 100%; height: 100%;" muted></video></a></div>';
+                                echo '<div><a href="view?url=' . htmlspecialchars($image) . '"><img src="' . htmlspecialchars(videoToThumbnailURL($image)) . '" alt=""></a></div>';
                             }
                         }
                         ?>
