@@ -70,19 +70,35 @@ shuffle($directories);
                                 $search = "search?s=&c=&t=all";
                             }
 
-                            echo '
-                        <li class="splide__slide">
-                            <div class="card">
-                                <a href="view?url=' . htmlspecialchars($result) . '"></a>
-                                <div class="filter"></div>
-                                <img src="' . htmlspecialchars($result) . '" alt="">
-                                <div class="type">
-                                    <a href="' . htmlspecialchars($search) . '"><span>' . $icon . ' ' . htmlspecialchars($extension) . '</span></a>
-                                    <a href="all?dir=' . urlencode(pathinfo($result, PATHINFO_DIRNAME)) . '"><span><i class="bx bxs-collection"></i> ' . htmlspecialchars($lastDirName) . '</span></a>
-                                </div>
-                            </div>
-                        </li>
-                    ';
+                            if (in_array($extension, $videoExtensions)) {
+                                echo '
+                                <li class="splide__slide">
+                                    <div class="card">
+                                        <a href="view?url=' . htmlspecialchars($result) . '"></a>
+                                        <div class="filter"></div>
+                                        <video preload="metadata" src="' . htmlspecialchars($result) . '#t=0.1" style="object-fit: cover; width: 100%; height: 100%;" muted></video>
+                                        <div class="type">
+                                            <a href="' . htmlspecialchars($search) . '"><span>' . $icon . ' ' . htmlspecialchars($extension) . '</span></a>
+                                            <a href="all?dir=' . urlencode(pathinfo($result, PATHINFO_DIRNAME)) . '"><span><i class="bx bxs-collection"></i> ' . htmlspecialchars($lastDirName) . '</span></a>
+                                        </div>
+                                    </div>
+                                </li>
+                            ';
+                            } else {
+                                echo '
+                                <li class="splide__slide">
+                                    <div class="card">
+                                        <a href="view?url=' . htmlspecialchars($result) . '"></a>
+                                        <div class="filter"></div>
+                                        <img src="' . htmlspecialchars($result) . '" alt="">
+                                        <div class="type">
+                                            <a href="' . htmlspecialchars($search) . '"><span>' . $icon . ' ' . htmlspecialchars($extension) . '</span></a>
+                                            <a href="all?dir=' . urlencode(pathinfo($result, PATHINFO_DIRNAME)) . '"><span><i class="bx bxs-collection"></i> ' . htmlspecialchars($lastDirName) . '</span></a>
+                                        </div>
+                                    </div>
+                                </li>
+                            ';
+                            }
                         }
                         ?>
                     </ul>
@@ -104,10 +120,10 @@ shuffle($directories);
                     gap: 16,
 
                     breakpoints: {
-                        800:{
+                        800: {
                             perPage: 3
                         },
-                        600:{
+                        600: {
                             perPage: 2
                         }
                     }
@@ -127,15 +143,31 @@ shuffle($directories);
 
                             // Parcourir chaque URL stockée dans la session (jusqu'à 4 éléments)
                             foreach ($_SESSION['recent_urls'] as $url) {
-                                echo '<div class="card">
-                                    <a href="view?url=' . $url . '"></a>
-                                    <img src="' . $url . '" alt="">
-                                    <div class="type">
-                                        <a href="all?dir=' . pathinfo($url, PATHINFO_DIRNAME) . '">
-                                            <span><i class="bx bxs-collection"></i> ' . basename(pathinfo($url, PATHINFO_DIRNAME)) . '</span>
-                                        </a>
-                                    </div>
-                                </div>';
+                                $extension = pathinfo($url, PATHINFO_EXTENSION);
+
+                                if (in_array($extension, $videoExtensions)) {
+                                    echo '
+                                    <div class="card">
+                                        <a href="view?url=' . $url . '"></a>
+                                        <video preload="metadata" src="' . htmlspecialchars($url) . '#t=0.1" style="object-fit: cover; width: 100%; height: 100%;" muted></video>
+                                        <div class="type">
+                                            <a href="all?dir=' . pathinfo($url, PATHINFO_DIRNAME) . '">
+                                                <span><i class="bx bxs-collection"></i> ' . basename(pathinfo($url, PATHINFO_DIRNAME)) . '</span>
+                                            </a>
+                                        </div>
+                                    </div>';
+                                } else {
+                                    echo '
+                                    <div class="card">
+                                        <a href="view?url=' . $url . '"></a>
+                                        <img src="' . $url . '" alt="">
+                                        <div class="type">
+                                            <a href="all?dir=' . pathinfo($url, PATHINFO_DIRNAME) . '">
+                                                <span><i class="bx bxs-collection"></i> ' . basename(pathinfo($url, PATHINFO_DIRNAME)) . '</span>
+                                            </a>
+                                        </div>
+                                    </div>';
+                                }
                             }
                         } else {
                             echo "<p>Aucun contenu récent trouvé.</p>";
@@ -159,7 +191,7 @@ shuffle($directories);
                         for ($i = 0; $i < 18; $i++) {
                             $randVal = $directories[$i];
                             if ($i < count($directories) - 1) {
-                                echo '<a href="search?s=&c=public_data/' . $randVal  . '&t="><li><p>' . basename($randVal) . '</p></li></a>';
+                                echo '<a href="all?dir=public_data/' . $randVal  . '"><li><p>' . basename($randVal) . '</p></li></a>';
                             }
                         }
 
@@ -180,7 +212,38 @@ shuffle($directories);
                         $resultsGalerie = array_slice($results, 0, 40);
 
                         foreach ($resultsGalerie as $image) {
-                            echo '<div><a href="view?url=' . htmlspecialchars($image) . '"><img src="' . htmlspecialchars($image) . '" alt=""></a></div>';
+
+                            $extension = pathinfo($image, PATHINFO_EXTENSION);
+
+                            if (in_array($extension, $videoExtensions)) {
+                            } else {
+                                echo '<div><a href="view?url=' . htmlspecialchars($image) . '"><img src="' . htmlspecialchars($image) . '" alt=""></a></div>';
+                            }
+                        }
+                        ?>
+                    </div>
+                </div>
+
+                <div class="videolist">
+                    <div class="titlee">
+                        <h2 class="title">
+                            <i class='bx bx-video'></i> Vidéos
+                        </h2>
+                        <a href="videos"><button>Voir tout</button></a>
+                    </div>
+                    <div id="videoShow" class="content">
+                        <?php
+                        // Limiter les résultats pour la galerie
+                        $resultsVideo = array_slice($results, 0, 20);
+
+                        foreach ($resultsVideo as $image) {
+
+                            $extension = pathinfo($image, PATHINFO_EXTENSION);
+
+                            if (in_array($extension, $videoExtensions)) {
+                                // add video
+                                echo '<div><a href="view?url=' . htmlspecialchars($image) . '"><video preload="metadata" src="' . htmlspecialchars($image) . '#t=0.1" style="object-fit: cover; width: 100%; height: 100%;" muted></video></a></div>';
+                            }
                         }
                         ?>
                     </div>

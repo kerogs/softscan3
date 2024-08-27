@@ -47,19 +47,35 @@
                     $search = "search?s=&c=&t=all";
                 }
 
-                echo '
-                                <a href="view?url=' . $file . '">
-                                    <li>
-                                        <div class="img">
-                                            <img src="' . $file . '" alt="">
-                                        </div>
-                                        <div class="info">
-                                            <div class="type">' . $icon . ' ' . $extension . '</div>
-                                            <div class="category">' . $lastDirName . '</div>
-                                        </div>
-                                    </li>
-                                </a>
-                                ';
+                if(in_array($extension, $videoExtensions)){
+                    echo '
+                    <a href="view?url=' . $file . '">
+                        <li>
+                            <div class="img">
+                                <video src="' . $file . '#t=0.1" muted></video>
+                            </div>
+                            <div class="info">
+                                <div class="type">' . $icon . ' ' . $extension . '</div>
+                                <div class="category">' . $lastDirName . '</div>
+                            </div>
+                        </li>
+                    </a>
+                    ';
+                } else{
+                    echo '
+                    <a href="view?url=' . $file . '">
+                        <li>
+                            <div class="img">
+                                <img src="' . $file . '" alt="">
+                            </div>
+                            <div class="info">
+                                <div class="type">' . $icon . ' ' . $extension . '</div>
+                                <div class="category">' . $lastDirName . '</div>
+                            </div>
+                        </li>
+                    </a>
+                    ';
+                }
             }
             ?>
         </ul>

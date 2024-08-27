@@ -137,7 +137,11 @@ if (isset($_GET['url'])) {
                         $resultsGalerie = array_slice($results, 0, 40);
 
                         foreach ($resultsGalerie as $image) {
-                            echo '<div><a href="view?url=' . htmlspecialchars($image) . '"><img src="' . htmlspecialchars($image) . '" alt=""></a></div>';
+                            $extension = pathinfo($image, PATHINFO_EXTENSION);
+                            if(in_array($extension, $videoExtensions)){
+                            } else{
+                                echo '<div><a href="view?url=' . htmlspecialchars($image) . '"><img src="' . htmlspecialchars($image) . '" alt=""></a></div>';
+                            }
                         }
                         ?>
                     </div>

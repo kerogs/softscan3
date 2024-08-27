@@ -348,6 +348,12 @@ footer {
                 object-fit: cover;
             }
 
+            > video{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
             >a {
                 position: absolute;
                 top: 0;
@@ -570,6 +576,12 @@ h3.title {
                         height: 100%;
                         object-fit: cover;
                     }
+
+                    video{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
                 }
 
                 .type{
@@ -650,6 +662,10 @@ h3.title {
 
             a {
                 img {
+                    width: 100%;
+                }
+
+                video{
                     width: 100%;
                 }
             }
@@ -788,6 +804,12 @@ h3.title {
         height: 100%;
     }
 
+    video{
+        filter: blur(210px);
+        width: calc(100% - 210px);
+        height: 100%;
+    }
+
     .filter{
         position: absolute;
         top: 0;
@@ -796,6 +818,22 @@ h3.title {
         height: 130vh;
         // background: radial-gradient(at bottom right, $background, transparent);
         background: radial-gradient(at top right, $background, transparent);
+    }
+}
+
+.videolist{
+
+    .content{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+
+        > div{
+            video{
+                width: 100%;
+            }
+        }
     }
 }
 

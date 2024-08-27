@@ -268,6 +268,11 @@ footer a {
   height: 100%;
   object-fit: cover;
 }
+.categoryRecoSplide .splide__slide .card > video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .categoryRecoSplide .splide__slide .card > a {
   position: absolute;
   top: 0;
@@ -459,6 +464,11 @@ h3.title {
   height: 100%;
   object-fit: cover;
 }
+.lastadd ul a li .img video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .lastadd ul a li .type {
   text-transform: uppercase;
 }
@@ -521,6 +531,9 @@ h3.title {
   margin-bottom: 15px;
 }
 .galerie .content div a img {
+  width: 100%;
+}
+.galerie .content div a video {
   width: 100%;
 }
 
@@ -622,6 +635,11 @@ h3.title {
   width: calc(100% - 210px);
   height: 100%;
 }
+.ambiantBackground video {
+  filter: blur(210px);
+  width: calc(100% - 210px);
+  height: 100%;
+}
 .ambiantBackground .filter {
   position: absolute;
   top: 0;
@@ -629,6 +647,16 @@ h3.title {
   width: 100%;
   height: 130vh;
   background: radial-gradient(at top right, hsl(222, 25%, 8%), transparent);
+}
+
+.videolist .content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+.videolist .content > div video {
+  width: 100%;
 }
 
 @media screen and (max-width: 1501px) {
@@ -717,7 +745,10 @@ h3.title {
     height: 90vh;
   }
   .urlPath {
-    display: none;
+    width: 100vw;
+    overflow: hidden;
+    overflow-x: scroll;
+    white-space: nowrap;
   }
   h2.title span.titlespan {
     display: none;

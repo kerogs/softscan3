@@ -109,7 +109,10 @@
     }
 
     .urlPath{
-        display: none;
+        width: 100vw;
+        overflow: hidden;
+        overflow-x: scroll;
+        white-space: nowrap;
     }
 
     h2.title{
