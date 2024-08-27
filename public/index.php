@@ -76,7 +76,7 @@ shuffle($directories);
                                     <div class="card">
                                         <a href="view?url=' . htmlspecialchars($result) . '"></a>
                                         <div class="filter"></div>
-                                        <video preload="metadata" src="' . htmlspecialchars($result) . '#t=0.1" style="object-fit: cover; width: 100%; height: 100%;" muted></video>
+                                        <img src="' . htmlspecialchars(videoToThumbnailURL($result)) . '" alt="">
                                         <div class="type">
                                             <a href="' . htmlspecialchars($search) . '"><span>' . $icon . ' ' . htmlspecialchars($extension) . '</span></a>
                                             <a href="all?dir=' . urlencode(pathinfo($result, PATHINFO_DIRNAME)) . '"><span><i class="bx bxs-collection"></i> ' . htmlspecialchars($lastDirName) . '</span></a>
@@ -149,7 +149,7 @@ shuffle($directories);
                                     echo '
                                     <div class="card">
                                         <a href="view?url=' . $url . '"></a>
-                                        <video preload="metadata" src="' . htmlspecialchars($url) . '#t=0.1" style="object-fit: cover; width: 100%; height: 100%;" muted></video>
+                                        <img src="' . videoToThumbnailURL($url) . '" alt="">
                                         <div class="type">
                                             <a href="all?dir=' . pathinfo($url, PATHINFO_DIRNAME) . '">
                                                 <span><i class="bx bxs-collection"></i> ' . basename(pathinfo($url, PATHINFO_DIRNAME)) . '</span>
@@ -242,7 +242,7 @@ shuffle($directories);
 
                             if (in_array($extension, $videoExtensions)) {
                                 // add video
-                                echo '<div><a href="view?url=' . htmlspecialchars($image) . '"><video preload="metadata" src="' . htmlspecialchars($image) . '#t=0.1" style="object-fit: cover; width: 100%; height: 100%;" muted></video></a></div>';
+                                echo '<div><a href="view?url=' . htmlspecialchars(videoToThumbnailURL($image)) . '"><video preload="metadata" src="' . htmlspecialchars($image) . '#t=0.1" style="object-fit: cover; width: 100%; height: 100%;" muted></video></a></div>';
                             }
                         }
                         ?>
