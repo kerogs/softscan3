@@ -75,7 +75,8 @@ function generateThumbnails($sourceDir, $destDir, $ffmpeg)
                     $video = $ffmpeg->open($file);
 
                     // Extraire une frame à la 10ème seconde et la sauvegarder
-                    $video->frame(TimeCode::fromSeconds(10))->save($thumbnailFile);
+                    // ! $video->frame(TimeCode::fromSeconds(10))->save($thumbnailFile);
+                    $video->frame(TimeCode::fromSeconds(2))->save($thumbnailFile);
 
                     logs(__DIR__ . '/server.log', "Thumbnail created for: $file", 200, "INFO");
                     $successCount++;

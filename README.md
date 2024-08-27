@@ -31,7 +31,7 @@
 </div>
 
 ## A savoir
-- Le renouvellement des thumbnails s'effectue toutes les 6 minutes
+- Le renouvellement des thumbnails s'effectue toutes les 6 minutes (+ page d'accueil)
 
 ## Installation
 1. Installer tout le repository

@@ -97,13 +97,13 @@ function logs($pathLogs, $message = "-", $statusCode = 200, $logType = "INFO")
             break;
     }
 
-    if($data != "-"){
+    if ($data != "-") {
         $response = [
             'data' => $data
         ];
-    
+
         $responseOutput = json_encode($response);
-    } else{
+    } else {
         $responseOutput = "-";
     }
 
@@ -164,7 +164,10 @@ $lastFfmpegFile = $path . '/dist/last_ffmpeg.ksc';
 $logFile = $path . '/server.log'; // Chemin vers le fichier de logs
 
 // Vérifier si le fichier last_ffmpeg.ksc existe
-if (file_exists($lastFfmpegFile)) {
+if (
+    file_exists($lastFfmpegFile) && "index.php" == basename($_SERVER['PHP_SELF'])
+) {
+
     $fileModificationTime = filemtime($lastFfmpegFile);
     $currentTime = time();
     $sixMinutes = 6 * 60; // 6 minutes en secondes
@@ -186,7 +189,10 @@ if (file_exists($lastFfmpegFile)) {
     }
 } else {
     // Fichier last_ffmpeg.ksc n'existe pas
-    logs($logFile, "The file last_ffmpeg.ksc does not exist.", 500, "ERROR");
+    if(!file_exists($lastFfmpegFile)) {
+        // Creer le fichier last_ffmpeg.ksc
+        logs($logFile, "The file last_ffmpeg.ksc does not exist.", 500, "ERROR");
+    }
 }
 
 

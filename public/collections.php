@@ -47,7 +47,6 @@ shuffle($results);
                 <h2 class="title">
                     <i class='bx bxs-collection'></i> Collections
                 </h2>
-                <a href="collections"><button>Voir tout</button></a>
             </div>
 
             <ul>
