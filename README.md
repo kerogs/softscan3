@@ -1,5 +1,3 @@
-# softscan2
-
 <div align="center">
     <img alt="Logo" src=".ksinf/icon_prev.png" height="100">
     <h3>SoftScan3</h3>
