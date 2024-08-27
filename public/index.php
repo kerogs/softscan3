@@ -2,6 +2,21 @@
 
 require_once('../config.php');
 
+$directoryToScan = 'public_data';
+$returnNameType = 2;
+$returnDirPath = true;
+$authorise = ['jpg', 'gif', 'png', 'jpeg', 'webp', 'svg', 'mp4', 'webm', 'mov', 'avi'];
+$ignore = [];
+$recursive = true;
+
+$results = [];
+$directories = [];
+
+scanDirRecursive($directoryToScan, $returnNameType, $returnDirPath, $authorise, $ignore, $recursive, $results, $directories);
+
+shuffle($results);
+shuffle($directories);
+
 ?>
 
 <!DOCTYPE html>
@@ -16,36 +31,167 @@ require_once('../config.php');
 
     <!-- src -->
     <link rel="stylesheet" href="./node_modules/boxicons/css/boxicons.min.css">
+    <link rel="stylesheet" href="./node_modules/@splidejs/splide/dist/css/splide-core.min.css">
+    <script src="./node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
 </head>
 
 <body>
 
-    <header>
-        <div class="title"><a href="/">Soft<span>Scan</span><span>3</span></a></div>
-        <div class="search">
-            <form action="search.php" method="post">
-                <label for="search">
-                    <input type="text" id="search" name="search" placeholder="Search...">
-                    <select name="" id="">
-                        <option value="all">All</option>
-                        <option value="image">Image</option>
-                        <option value="video">Video</option>
-                        <option value="gif">GIF</option>
-                        <option value="other">Image/GIF</option>
-                    </select>
-                    <button type="submit"><i class='bx bx-search'></i></button>
-                </label>
-            </form>
-        </div>
-        <div class="lastupdate"></div>
-        <div class="githubad">
-            <div class="card">
-                <h2>SS3 Github</h2>
-                <a href="https://github.com/kerogs/softscan3" target="_blank"></a>
-                <img src="./src/img/ssg/bannergithub.png" alt="">
+    <?php require_once '../inc/header.php' ?>
+
+    <?php require_once '../inc/nav.php' ?>
+
+    <main>
+
+        <div class="categoryRecoSplide">
+            <div class="gradientLeft"></div>
+            <div id="splide" class="splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <?php
+                        // Limiter les résultats pour le carrousel
+                        $resultForSplideImg = array_slice($results, 0, 8);
+
+                        foreach ($resultForSplideImg as $result) {
+                            // Obtenir l'extension du fichier
+                            $extension = pathinfo($result, PATHINFO_EXTENSION);
+
+                            // Obtenir le dernier nom de répertoire
+                            $lastDirName = basename(pathinfo($result, PATHINFO_DIRNAME));
+
+                            if (in_array($extension, ["jpg", "jpeg", "png", "gif", "webp"])) {
+                                $icon = "<i class='bx bxs-image-alt'></i>";
+                                $search = "search?s=&c=&t=image";
+                            } elseif (in_array($extension, ["mp4", "webm", "mov", "avi"])) {
+                                $icon = "<i class='bx bxs-video'></i>";
+                                $search = "search?s=&c=&t=video";
+                            } else {
+                                $icon = "<i class='bx bxs-file'></i>";
+                                $search = "search?s=&c=&t=all";
+                            }
+
+                            echo '
+                        <li class="splide__slide">
+                            <div class="card">
+                                <a href="view?url=' . htmlspecialchars($result) . '"></a>
+                                <div class="filter"></div>
+                                <img src="' . htmlspecialchars($result) . '" alt="">
+                                <div class="type">
+                                    <a href="' . htmlspecialchars($search) . '"><span>' . $icon . ' ' . htmlspecialchars($extension) . '</span></a>
+                                    <a href="all?dir=' . urlencode(pathinfo($result, PATHINFO_DIRNAME)) . '"><span><i class="bx bxs-collection"></i> ' . htmlspecialchars($lastDirName) . '</span></a>
+                                </div>
+                            </div>
+                        </li>
+                    ';
+                        }
+                        ?>
+                    </ul>
+                </div>
             </div>
+
+            <script>
+                // Initialiser Splide
+                new Splide('#splide', {
+                    type: 'loop',
+                    perPage: 4,
+                    perMove: 1,
+                    autoplay: true,
+                    interval: 5500,
+                    pauseOnHover: true,
+                    pauseOnFocus: false,
+                    arrows: true,
+                    pagination: false,
+                    gap: 16,
+
+                    breakpoints: {
+                        800:{
+                            perPage: 3
+                        },
+                        600:{
+                            perPage: 2
+                        }
+                    }
+                }).mount();
+            </script>
         </div>
-    </header>
+
+        <div class="splitArea">
+            <!-- left -->
+            <div class="left">
+                <div class="lastcontent">
+                    <h2 class="title"><i class='bx bx-history'></i> Contenu vu</h2>
+
+                    <div class="cards">
+                        <?php
+                        if (isset($_SESSION['recent_urls']) && !empty($_SESSION['recent_urls'])) {
+
+                            // Parcourir chaque URL stockée dans la session (jusqu'à 4 éléments)
+                            foreach ($_SESSION['recent_urls'] as $url) {
+                                echo '<div class="card">
+                                    <a href="view?url=' . $url . '"></a>
+                                    <img src="' . $url . '" alt="">
+                                    <div class="type">
+                                        <a href="all?dir=' . pathinfo($url, PATHINFO_DIRNAME) . '">
+                                            <span><i class="bx bxs-collection"></i> ' . basename(pathinfo($url, PATHINFO_DIRNAME)) . '</span>
+                                        </a>
+                                    </div>
+                                </div>';
+                            }
+                        } else {
+                            echo "<p>Aucun contenu récent trouvé.</p>";
+                        }
+
+                        ?>
+                    </div>
+                </div>
+
+                <div class="collectionShow">
+                    <div class="titlee">
+                        <h2 class="title">
+                            <i class='bx bxs-collection'></i> Collections
+                        </h2>
+                        <a href="collections"><button>Voir tout</button></a>
+                    </div>
+
+                    <ul>
+                        <?php
+
+                        for ($i = 0; $i < 18; $i++) {
+                            $randVal = $directories[$i];
+                            if ($i < count($directories) - 1) {
+                                echo '<a href="search?s=&c=public_data/' . $randVal  . '&t="><li><p>' . basename($randVal) . '</p></li></a>';
+                            }
+                        }
+
+                        ?>
+                    </ul>
+                </div>
+
+                <div class="galerie galsplit">
+                    <div class="titlee">
+                        <h2 class="title">
+                            <i class='bx bx-image-alt'></i> Galerie
+                        </h2>
+                        <a href="all"><button>Voir tout</button></a>
+                    </div>
+                    <div id="galerieShow" class="content">
+                        <?php
+                        // Limiter les résultats pour la galerie
+                        $resultsGalerie = array_slice($results, 0, 40);
+
+                        foreach ($resultsGalerie as $image) {
+                            echo '<div><a href="view?url=' . htmlspecialchars($image) . '"><img src="' . htmlspecialchars($image) . '" alt=""></a></div>';
+                        }
+                        ?>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- right -->
+            <?php require_once '../inc/right.php' ?>
+        </div>
+    </main>
 
     <?php require_once '../inc/script.php' ?>
 </body>

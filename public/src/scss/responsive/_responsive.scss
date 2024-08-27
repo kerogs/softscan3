@@ -1,0 +1,154 @@
+@media screen and (max-width: 1501px) {
+    .galerie.galsplit .content{
+        columns: 5;
+    }
+}
+
+@media screen and (max-width: 1343px) {
+    .galerie.galsplit .content{
+        columns: 4;
+    }
+}
+
+@media screen and (max-width: 1229px) {
+    header > div{
+        flex: unset;
+    }
+
+    .splitArea .right{
+        width: 320px;
+    }
+
+    .galerie.allgal .content{
+        columns: 5;
+    }
+
+    .lastcontent .cards .card:nth-child(4){
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1077px) {
+    .galerie.galsplit .content{
+        columns: 3;
+    }
+
+    .galerie.allgal .content{
+        columns: 4;
+    }
+
+    .lastcontent .cards .card:nth-child(3){
+        display: none;
+    }
+}
+
+@media screen and (max-width: 940px) {
+    .splitArea .right{
+        width: 220px;
+    }
+
+    .lastCollectionrandom ul{
+        grid-template-columns: 1fr;
+    }
+
+    header > div.githubad{
+        display: none;
+    }
+
+    .categoryRecoSplide .splide__slide .card .type{
+        display: none;
+    }
+
+    .lastcontent .cards .card .type span{
+        display: none;
+    }
+
+
+}
+
+@media screen and (max-width: 700px) {
+    .splitArea{
+        flex-direction: column;
+    }
+
+    .splitArea .right{
+        flex: 1;
+        width: 100%;
+    }
+
+    .galerie.allgal .content{
+        columns: 3;
+    }
+
+    header > div.btnplus a button span{
+        display: none;
+    }
+
+    nav ul{
+        width: 100vw;
+        overflow: hidden;
+        overflow-x: scroll;
+        white-space: nowrap;
+    }
+
+    .galerie.galsplit .content{
+        columns: 3;
+    }
+
+    .galerie.allgal .content{
+        columns: 3;
+    }
+
+    .ambiantBackground .filter{
+        display: none;
+    }
+
+    .ambiantBackground img{
+        width: 100%;
+        height: 90vh;
+    }
+
+    .urlPath{
+        display: none;
+    }
+
+    h2.title{
+        span.titlespan{
+            display: none;
+        }
+        span{
+            color: $text;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .galerie.galsplit .content{
+        columns: 2;
+    }
+
+    .galerie.allgal .content{
+        columns: 2;
+    }
+}
+
+@media screen and (max-width: 520px) {
+
+    header > div.search form label select{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    header > div.search form label input{
+        display: none;
+    }
+
+    header > div.search form label{
+        background: none;
+    }
+
+    header > div.search{
+        flex: unset;
+    }
+}
