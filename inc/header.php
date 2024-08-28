@@ -16,7 +16,7 @@
         </form>
     </div>
     <div class="btnplus">
-        <a href=""><button><i class='bx bx-cog'></i> <span>Configuration</span></button></a>
+        <button onclick="configurationPopup.classList.toggle('active')"><i class='bx bx-cog'></i> <span>Configuration</span></button>
         <a href=""><button><i class='bx bx-info-circle'></i> <span>Information</span></button></a>
     </div>
     <div class="githubad">
@@ -27,3 +27,36 @@
         </div>
     </div>
 </header>
+
+<div id="configurationPopup" class="popup">
+    <div class="content">
+        <div class="titlee">
+            <h2>Configuration</h2>
+            <i class='bx bx-x' onclick="configurationPopup.classList.toggle('active')"></i>
+        </div>
+        <div class="titlee">
+            <h3>Zone dangeureuse</h3>
+            <i class='bx bxs-error'></i>
+        </div>
+        <div class="dangerzone">
+            <button onclick="stopServer()">Eteindre le serveur</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function stopServer() {
+
+        // ? add popup message
+        const askConfirmation = confirm("Êtes-vous sur de vouloir éteindre le serveur ?");
+
+        if (askConfirmation) {
+            const bodyArea = document.querySelector("body");
+            bodyArea.innerHTML += '<div class="littlePopup notif"><p>Le serveur est entrain de s\'arrêter.</p></div>';
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "action/stopServer.php", true);
+            xhr.send();
+        }
+    }
+</script>

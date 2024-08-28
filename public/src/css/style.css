@@ -89,16 +89,14 @@ header > div.btnplus {
   justify-content: center;
   align-items: center;
   gap: 5px;
-}
-header > div.btnplus a {
   flex: 1;
 }
-header > div.btnplus a button {
+header > div.btnplus button {
   width: 100%;
   font-size: 15px;
   padding: 13px 10px;
   cursor: pointer;
-  background-color: hsl(222, 25%, 8%);
+  background-color: hsl(290, 80%, 53%);
   border: none;
   color: #fff;
   display: flex;
@@ -107,19 +105,19 @@ header > div.btnplus a button {
   justify-content: center;
   gap: 5px;
 }
-header > div.btnplus a:first-child button {
+header > div.btnplus button:first-child button {
   background: linear-gradient(50deg, hsl(290, 80%, 53%) 0%, hsl(290, 100%, 40%) 100%);
 }
-header > div.btnplus a:first-child button:hover {
+header > div.btnplus button:first-child button:hover {
   background: linear-gradient(50deg, hsl(290, 100%, 40%) 0%, hsl(290, 80%, 53%) 100%);
 }
-header > div.btnplus a:last-child button {
+header > div.btnplus button:last-child button {
   background: linear-gradient(50deg, hsl(290, 100%, 40%) 0%, hsl(290, 80%, 53%) 100%);
 }
-header > div.btnplus a:last-child button:hover {
+header > div.btnplus button:last-child button:hover {
   background: linear-gradient(50deg, hsl(290, 80%, 53%) 0%, hsl(290, 100%, 40%) 100%);
 }
-header > div.btnplus a:hover {
+header > div.btnplus button:hover {
   opacity: 0.7;
 }
 header > div.githubad {
@@ -657,6 +655,80 @@ h3.title {
 }
 .videolist .content > div video {
   width: 100%;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 80vh;
+  background-color: hsl(222, 25%, 8%);
+  z-index: 9999;
+  display: none;
+  box-shadow: 0 0 30px 0 rgb(0, 0, 0);
+  border-radius: 10px;
+  border: 2px solid hsl(290, 80%, 53%);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overflow: hidden;
+}
+.popup.active {
+  display: block;
+}
+.popup .content {
+  padding: 20px;
+}
+.popup .content .titlee i {
+  font-size: 30px;
+}
+.popup .content .titlee i.bx-x {
+  cursor: pointer;
+  color: hsl(290, 80%, 53%);
+}
+.popup .content .titlee i.bx-x:hover {
+  color: #a816c5;
+}
+.popup .content .dangerzone {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.popup .content .dangerzone button {
+  width: 100%;
+  font-size: 16px;
+  padding: 13px 10px;
+  cursor: pointer;
+  background-color: hsl(290, 80%, 53%);
+  border: none;
+  color: #fff;
+}
+.popup .content .dangerzone button:hover {
+  background-color: #a816c5;
+}
+
+.littlePopup {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 200px;
+  height: auto;
+  padding: 15px;
+  box-shadow: 0 0 10px 0 rgb(0, 0, 0);
+  background-color: hsl(222, 25%, 16%);
+}
+.littlePopup.notif {
+  background-color: hsl(244, 80%, 53%);
+}
+.littlePopup.alert {
+  background-color: hsl(0, 80%, 53%);
+}
+.littlePopup.warning {
+  background-color: hsl(17, 80%, 57%);
+}
+.littlePopup.ok {
+  background-color: hsl(115, 80%, 53%);
 }
 
 @media screen and (max-width: 1501px) {

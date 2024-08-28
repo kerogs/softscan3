@@ -109,7 +109,11 @@ function logs($pathLogs, $message = "-", $statusCode = 200, $logType = "INFO")
 
     $contentToAdd = "[$statusCode] [$uniqid] $timestamp $ipv4 [$logType] $message [$httpMethod] [$pathShow] ($pathReal) $requestMethod $responseOutput";
 
-    prependToFile($pathLogs, $contentToAdd);
+    if(prependToFile($pathLogs, $contentToAdd)){
+        return true;
+    } else{
+        return false;
+    }
 }
 
 /**
