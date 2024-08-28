@@ -174,7 +174,7 @@ if (
 
     $fileModificationTime = filemtime($lastFfmpegFile);
     $currentTime = time();
-    $sixMinutes = 6 * 60; // 6 minutes en secondes
+    $sixMinutes = 12 * 60; // 6 minutes en secondes (update à 12)
 
     if (($currentTime - $fileModificationTime) > $sixMinutes) {
         // Appeler le script ffmpeg_start.php en arrière-plan
