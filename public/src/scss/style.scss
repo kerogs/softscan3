@@ -874,6 +874,21 @@ h3.title {
             }
         }
 
+        button{
+            width: 100%;
+            font-size: 16px;
+            padding: 13px 10px;
+            cursor: pointer;
+            background-color: $background3;
+            border: none;
+            color: $text;
+            margin: 10px 0;
+
+            &:hover{
+                background-color: lighten($background3, 10%);
+            }
+        }
+
         .dangerzone{
             display: flex;
             flex-direction: column;

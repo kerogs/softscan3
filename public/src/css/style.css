@@ -690,6 +690,19 @@ h3.title {
 .popup .content .titlee i.bx-x:hover {
   color: #a816c5;
 }
+.popup .content button {
+  width: 100%;
+  font-size: 16px;
+  padding: 13px 10px;
+  cursor: pointer;
+  background-color: hsl(222, 25%, 16%);
+  border: none;
+  color: #fff;
+  margin: 10px 0;
+}
+.popup .content button:hover {
+  background-color: #323c53;
+}
 .popup .content .dangerzone {
   display: flex;
   flex-direction: column;

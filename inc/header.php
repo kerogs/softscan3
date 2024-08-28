@@ -67,7 +67,7 @@
 
     function ffmpegReload() {
         const bodyArea = document.querySelector("body");
-        bodyArea.innerHTML += '<div class="littlePopup notif"><p>Rechargement FFMPEG</p></div>';
+        bodyArea.innerHTML += '<div class="littlePopup notif"><p>Rechargement FFMPEG en cours. Le serveur risque de lagger un certain temps.</p></div>';
 
         var xhr = new XMLHttpRequest();
         xhr.open("GET", "action/ffmpegReload.php", true);

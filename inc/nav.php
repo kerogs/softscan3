@@ -9,10 +9,10 @@ $url = basename($_SERVER['PHP_SELF']);
         <a href="/">
             <li <?= $url == 'index.php' || $url == '' ? 'class="active"' : '' ?>><i class='bx bxs-home-heart'></i> Home</li>
         </a>
-        <a href="">
+        <a href="/photos-gifs">
             <li><i class='bx bxs-image-alt'></i> Photos & GIFs</li>
         </a>
-        <a href="">
+        <a href="/videos">
             <li><i class='bx bxs-video-recording'></i> Videos</li>
         </a>
         <a href="/all">

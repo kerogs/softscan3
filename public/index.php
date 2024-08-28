@@ -17,8 +17,6 @@ scanDirRecursive($directoryToScan, $returnNameType, $returnDirPath, $authorise, 
 shuffle($results);
 shuffle($directories);
 
-logs('../server.log', "CONNECTE", 200, "INFO");
-
 ?>
 
 <!DOCTYPE html>
@@ -236,7 +234,7 @@ logs('../server.log', "CONNECTE", 200, "INFO");
                     <div id="videoShow" class="content">
                         <?php
                         // Limiter les résultats pour la galerie
-                        $resultsVideo = array_slice($results, 0, 40);
+                        $resultsVideo = array_slice($results, 0, 100);
 
                         foreach ($resultsVideo as $image) {
 

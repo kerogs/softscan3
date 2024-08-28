@@ -3,3 +3,5 @@ ErrorDocument 404 /error/404.php
 RewriteRule ^all$ all.php
 RewriteRule ^view$ view.php
 RewriteRule ^collections$ collections.php
+RewriteRule ^videos$ videos.php
+RewriteRule ^photos-gifs$ photos-gifs.php

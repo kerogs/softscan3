@@ -178,7 +178,8 @@ if (
 
     if (($currentTime - $fileModificationTime) > $sixMinutes) {
         // Appeler le script ffmpeg_start.php en arrière-plan
-        exec('php ' . escapeshellarg($path . '/ffmpeg_start.php') . ' > /dev/null 2>&1 &');
+        // exec('php ' . escapeshellarg($path . '/ffmpeg_start.php') . ' > /dev/null 2>&1 &');
+        require 'ffmpeg_start.php';
 
         // Mise à jour de la date de modification du fichier last_ffmpeg.ksc
         $oldDate = date("Y-m-d H:i:s", $fileModificationTime);
