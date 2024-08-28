@@ -878,6 +878,9 @@ h3.title {
             display: flex;
             flex-direction: column;
             gap: 16px;
+            background-color: hsla(290, 100%, 40%, 0.2);
+            padding: 10px;
+            border-radius: 6px;
 
             button{
                 width: 100%;
@@ -910,6 +913,8 @@ h3.title {
 
     background-color: $background3;
 
+    cursor: pointer;
+
     &.notif{
         background-color: hsl(244, 80%, 53%);
     }
@@ -924,6 +929,10 @@ h3.title {
 
     &.ok{
         background-color: hsl(115, 80%, 53%);
+    }
+
+    &:hover{
+        opacity: .5;
     }
 
 }

@@ -35,10 +35,15 @@
             <i class='bx bx-x' onclick="configurationPopup.classList.toggle('active')"></i>
         </div>
         <div class="titlee">
-            <h3>Zone dangeureuse</h3>
-            <i class='bx bxs-error'></i>
+            <h3>Configuration du serveur</h3>
+            <i class='bx bxs-cog'></i>
         </div>
+        <button onclick="ffmpegReload()">Forcer le rechargement FFMPEG</button>
         <div class="dangerzone">
+            <div class="titlee">
+                <h3>Zone de danger</h3>
+                <i class='bx bxs-error'></i>
+            </div>
             <button onclick="stopServer()">Eteindre le serveur</button>
         </div>
     </div>
@@ -58,5 +63,14 @@
             xhr.open("GET", "action/stopServer.php", true);
             xhr.send();
         }
+    }
+
+    function ffmpegReload() {
+        const bodyArea = document.querySelector("body");
+        bodyArea.innerHTML += '<div class="littlePopup notif"><p>Rechargement FFMPEG</p></div>';
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "action/ffmpegReload.php", true);
+        xhr.send();
     }
 </script>

@@ -110,35 +110,35 @@ scanDirRecursive($directoryToScan, $returnNameType, $returnDirPath, $authorise, 
 
     </main>
 
-    <?php require_once '../inc/script.php' ?>
-
-    <script>
-        let offset = 40; // Initial offset is 40 because we already loaded 40 images
-
-        function seeMoreGalerie() {
-            // Perform an Ajax request to get more images
-            const xhr = new XMLHttpRequest();
-            xhr.open('GET', 'src/php/load_more.php?<?= isset($_GET['dir']) ? 'dir=' . $_GET['dir'] . '&' : '' ?>offset=' + offset, true);
-            xhr.onload = function() {
-                if (xhr.status === 200) {
-                    // Directly append the server's response to the #seeMore container
-                    const container = document.getElementById('seeMore');
-                    container.innerHTML += xhr.responseText;
-
-                    // If no more images are returned (empty response), hide the button
-                    if (!xhr.responseText.trim()) {
-                        document.querySelector('.seeMoreAll').style.display = 'none';
-                    } else {
-                        // Update the offset by counting the number of newly added images
-                        const newImagesCount = container.querySelectorAll('img').length;
-                        offset = newImagesCount;
-                    }
-                }
-            };
-            xhr.send();
-        }
-    </script>
-
 </body>
+
+<?php require_once '../inc/script.php' ?>
+
+<script>
+    let offset = 40; // Initial offset is 40 because we already loaded 40 images
+
+    function seeMoreGalerie() {
+        // Perform an Ajax request to get more images
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'src/php/load_more.php?<?= isset($_GET['dir']) ? 'dir=' . $_GET['dir'] . '&' : '' ?>offset=' + offset, true);
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                // Directly append the server's response to the #seeMore container
+                const container = document.getElementById('seeMore');
+                container.innerHTML += xhr.responseText;
+
+                // If no more images are returned (empty response), hide the button
+                if (!xhr.responseText.trim()) {
+                    document.querySelector('.seeMoreAll').style.display = 'none';
+                } else {
+                    // Update the offset by counting the number of newly added images
+                    const newImagesCount = container.querySelectorAll('img').length;
+                    offset = newImagesCount;
+                }
+            }
+        };
+        xhr.send();
+    }
+</script>
 
 </html>

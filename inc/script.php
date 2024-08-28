@@ -1,1 +1,1 @@
-<script src="src/js/main.js"></script>
+<script src="public/src/js/main.js"></script>

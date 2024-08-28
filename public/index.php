@@ -17,6 +17,8 @@ scanDirRecursive($directoryToScan, $returnNameType, $returnDirPath, $authorise, 
 shuffle($results);
 shuffle($directories);
 
+logs('../server.log', "CONNECTE", 200, "INFO");
+
 ?>
 
 <!DOCTYPE html>
