@@ -144,20 +144,20 @@ header {
 
                 &:first-child button {
                     background: $secondaryGradient;
-    
+
                     &:hover {
                         background: $secondaryGradient2;
                     }
                 }
-    
+
                 &:last-child button {
                     background: $secondaryGradient2;
-    
+
                     &:hover {
                         background: $secondaryGradient;
                     }
                 }
-    
+
                 &:hover {
                     opacity: .7;
                 }
@@ -656,6 +656,7 @@ h3.title {
 
         div {
             margin-bottom: 15px;
+            position: relative;
 
             a {
                 img {
@@ -665,6 +666,23 @@ h3.title {
                 video {
                     width: 100%;
                 }
+
+                color: $text;
+            }
+
+            .type {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                padding: 5px;
+                text-transform: uppercase;
+
+                display: flex;
+                align-items: center;
+                flex-wrap: nowrap;
+                gap: 6px;
+
+                background-color: $background;
             }
         }
     }
@@ -851,30 +869,31 @@ h3.title {
     overflow-y: auto;
 
     overflow: hidden;
-    
+
     &.active {
         display: block;
     }
 
-    .content{
+    .content {
         padding: 20px;
 
-        .titlee{
-            i{
+        .titlee {
+            i {
                 font-size: 30px;
             }
-            i.bx-x{
+
+            i.bx-x {
                 cursor: pointer;
                 color: $secondary;
 
-                &:hover{
-                   color: darken($secondary, 10%);
+                &:hover {
+                    color: darken($secondary, 10%);
                 }
 
             }
         }
 
-        button{
+        button {
             width: 100%;
             font-size: 16px;
             padding: 13px 10px;
@@ -884,12 +903,12 @@ h3.title {
             color: $text;
             margin: 10px 0;
 
-            &:hover{
+            &:hover {
                 background-color: lighten($background3, 10%);
             }
         }
 
-        .dangerzone{
+        .dangerzone {
             display: flex;
             flex-direction: column;
             gap: 16px;
@@ -897,7 +916,7 @@ h3.title {
             padding: 10px;
             border-radius: 6px;
 
-            button{
+            button {
                 width: 100%;
                 font-size: 16px;
                 padding: 13px 10px;
@@ -906,7 +925,7 @@ h3.title {
                 border: none;
                 color: $text;
 
-                &:hover{
+                &:hover {
                     background-color: darken($secondary, 10%);
                 }
             }
@@ -914,14 +933,14 @@ h3.title {
     }
 }
 
-.littlePopup{
+.littlePopup {
     position: fixed;
     bottom: 15px;
     right: 15px;
 
     width: 200px;
     height: auto;
-    
+
     padding: 15px;
 
     box-shadow: 0 0 10px 0 rgb(0, 0, 0);
@@ -930,26 +949,173 @@ h3.title {
 
     cursor: pointer;
 
-    &.notif{
+    &.notif {
         background-color: hsl(244, 80%, 53%);
     }
 
-    &.alert{
+    &.alert {
         background-color: hsl(0, 80%, 53%);
     }
 
-    &.warning{
+    &.warning {
         background-color: hsl(17, 80%, 57%);
     }
 
-    &.ok{
+    &.ok {
         background-color: hsl(115, 80%, 53%);
     }
 
-    &:hover{
+    &:hover {
         opacity: .5;
     }
 
 }
+
+.infopopup {
+    padding-left: 0;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    li {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+
+        padding: 10px;
+        background-color: $background3
+    }
+}
+
+.infobox {
+    margin: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+
+    a {
+        text-decoration: none;
+        color: $text;
+    }
+
+    div {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        padding: 15px;
+        background-color: hsla(222, 25%, 16%, 0.5);
+        border-radius: 6px;
+
+        &.like {
+            color: green;
+        }
+
+        &.dislike {
+            color: red;
+        }
+    }
+}
+
+.surprendsmoi {
+    margin: 30px 0 0 0;
+
+    a{
+        text-decoration: none;
+    }
+
+    button{
+        width: 100%;
+        font-size: 16px;
+        padding: 13px 10px;
+        cursor: pointer;
+        background-color: $background;
+        border: 2px solid $secondary;
+        color: $text;
+        margin: 10px 0;
+        border-radius: 10px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &:hover{
+            background:$secondary;
+        }
+
+        img{
+            width: 28px;
+        }
+    }
+}
+
+.topStats{
+    margin: 15px 0;
+    ul{
+        padding-left: 0;
+        list-style: none;
+
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        a{
+            color: $text;
+            text-decoration: none;
+        }
+
+        li{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            background-color: $background2;
+
+            .img{
+                margin: 0;
+                border: 0;
+                img{
+                    width: 60px;
+                    height: 80px;
+                    object-fit: cover;
+                    vertical-align: middle;
+                }
+            }
+
+            .information{
+
+                .name{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    text-transform: uppercase;
+                }
+
+                .info{
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 5px;
+                    color:$text2;
+                }
+            }
+
+            &:hover{
+                background-color: $background3
+            }
+        }
+    }
+}
+
+.noData {
+    color: $text2;
+    padding: 6px 12px;
+    background-color: hsla(222, 25%, 16%, 0.5);
+}
+
 
 @import './responsive/responsive';

@@ -97,10 +97,25 @@ scanDirRecursive($directoryToScan, $returnNameType, $returnDirPath, $authorise, 
                 $resultsGalerie = array_slice($results, 0, 40);
 
                 foreach ($resultsGalerie as $image) {
-                    if (in_array(pathinfo($image, PATHINFO_EXTENSION), $videoExtensions)) {
-                        echo '<div><a href="view?url=' . htmlspecialchars($image) . '"><img src="' . htmlspecialchars(videoToThumbnailURL($image)) . '" alt=""></a></div>';
+
+                    $extension = pathinfo($image, PATHINFO_EXTENSION);
+
+                    switch ($extension) {
+                        case in_array($extension, $videoExtensions):
+                            $icon = '<i class="bx bxs-video-recording"></i> '.$extension;
+                            break;
+                        case in_array($extension, $imageExtensions):
+                            $icon = '<i class="bx bxs-image"></i> '.$extension;
+                            break;
+                        default:
+                            $icon = '<i class="bx bxs-file"></i> '.$extension;
+                            break;
+                    }
+
+                    if (in_array($extension, $videoExtensions)) {
+                        echo '<div><a href="view?url=' . htmlspecialchars($image) . '"><div class="type">' . $icon . ' </div><img src="' . htmlspecialchars(videoToThumbnailURL($image)) . '" alt=""></a></div>';
                     } else {
-                        echo '<div><a href="view?url=' . htmlspecialchars($image) . '"><img src="' . htmlspecialchars($image) . '" alt=""></a></div>';
+                        echo '<div><a href="view?url=' . htmlspecialchars($image) . '"><div class="type">' . $icon . ' </div><img src="' . htmlspecialchars($image) . '" alt=""></a></div>';
                     }
                 }
                 ?>

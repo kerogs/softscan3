@@ -14,6 +14,14 @@
 - tous les formats possible
 - responsive tout format
 - design agréable
+- afficher les derniers contenu vu
+- afficher les derniers contenu ajouté
+- afficher les dernières collections modifié
+- Galerie complète pour vidéo
+- Galerie complète pour image/gif
+- Galerie complète de tout
+- système de vues, like, dislike
+- bouton "Surprends moi"
 
 ### Preview
 #### Ordinateur
@@ -32,6 +40,7 @@
 
 ## A savoir
 - Le renouvellement des thumbnails s'effectue toutes les 6 minutes (+ page d'accueil)
+- le stockage des stats se fait dans ``/public/temp/stats.json``
 
 ## Installation
 1. Installer tout le repository

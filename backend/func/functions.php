@@ -176,3 +176,179 @@ function getRecentDirectories($directory, $limit = 5) {
         return str_replace('\\', '/', $path);
     }, array_keys($recentDirs)); // Retourne uniquement les chemins des dossiers
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function genFakeType()
+{
+    $fakeCategory = array(
+        array(
+            "name" => "Video",
+            "icon" => "<i class='bx bxs-video-recording'></i>"
+        ),
+        array(
+            "name" => "GIF",
+            "icon" => "<i class='bx bxs-image-alt'></i>"
+        ),
+        array(
+            "name" => "Photo",
+            "icon" => "<i class='bx bxs-image-alt'></i>"
+        ),
+    );
+
+    $randomKey = array_rand($fakeCategory);
+    $randomCategory = $fakeCategory[$randomKey];
+
+    return $randomCategory;
+}
+
+function genFakeCategory()
+{
+    $fakeCategory = array("Anime", "Animation", "Reddit", "Tendance", "jstn", "alsn", "supervideo", "fun", "manga", "manhwa", "manhua");
+    return $fakeCategory[array_rand($fakeCategory)];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// url change for thumbnail
+function videoToThumbnailURL($url)
+{
+    // Obtenir l'extension du fichier
+    $extension = pathinfo($url, PATHINFO_EXTENSION);
+
+    // Obtenir le dernier nom de répertoire
+    $lastDirName = basename(pathinfo($url, PATHINFO_DIRNAME));
+
+    $url = str_replace($extension, 'jpg', $url);
+    $url = str_replace("public_data", "temp/thumbnail", $url);
+
+    return $url;
+}
+
+
+
+
+
+
+function getUrlStats($jsonFilePath, $url) {
+    // Si le fichier JSON n'existe pas, le créer avec un tableau vide
+    if (!file_exists($jsonFilePath)) {
+        file_put_contents($jsonFilePath, json_encode([]));
+    }
+
+    // Lire le fichier JSON et le convertir en tableau PHP
+    $json_data = json_decode(file_get_contents($jsonFilePath), true);
+
+    // Chercher l'URL dans le fichier JSON
+    foreach ($json_data as &$entry) {
+        if ($entry['url'] === $url) {
+            // Si l'URL existe, on retourne le nombre de like, dislike, et vue
+            return [
+                'like' => $entry['like'],
+                'dislike' => $entry['dislike'],
+                'vue' => $entry['vue']
+            ];
+        }
+    }
+
+    // Si l'URL n'existe pas, on crée une nouvelle entrée
+    $new_entry = [
+        'url' => $url,
+        'like' => 0,
+        'dislike' => 0,
+        'vue' => 1
+    ];
+
+    // Ajouter la nouvelle entrée au tableau
+    $json_data[] = $new_entry;
+
+    // Sauvegarder les nouvelles données dans le fichier JSON
+    file_put_contents($jsonFilePath, json_encode($json_data, JSON_PRETTY_PRINT));
+
+    // Retourner les valeurs par défaut
+    return [
+        'like' => 0,
+        'dislike' => 0,
+        'vue' => 1
+    ];
+}
+
+
+
+
+function getTopStats($statsFile, $topVues = 1, $topLikes = 1, $topDislikes = 1) {
+    // Vérifier si le fichier existe et le charger
+    if (!file_exists($statsFile)) {
+        return "Le fichier n'existe pas.";
+    }
+
+    $stats = json_decode(file_get_contents($statsFile), true);
+
+    if (!$stats || !is_array($stats)) {
+        return "Erreur lors du chargement des données JSON.";
+    }
+
+    // Trier les données selon les critères
+    $topVuesUrls = [];
+    $topLikesUrls = [];
+    $topDislikesUrls = [];
+
+    // Tri par vues (du plus élevé au plus bas)
+    usort($stats, function ($a, $b) {
+        return $b['vue'] - $a['vue'];
+    });
+    $topVuesUrls = array_slice($stats, 0, $topVues);
+
+    // Tri par likes (du plus élevé au plus bas)
+    usort($stats, function ($a, $b) {
+        return $b['like'] - $a['like'];
+    });
+    $topLikesUrls = array_slice($stats, 0, $topLikes);
+
+    // Tri par dislikes (du plus élevé au plus bas)
+    usort($stats, function ($a, $b) {
+        return $b['dislike'] - $a['dislike'];
+    });
+    $topDislikesUrls = array_slice($stats, 0, $topDislikes);
+
+    // Retourner les résultats dans un tableau
+    return [
+        'top_vues' => $topVuesUrls,
+        'top_likes' => $topLikesUrls,
+        'top_dislikes' => $topDislikesUrls
+    ];
+}
+
+
+
+
+
+
+
+
+
+
+
+

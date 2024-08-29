@@ -527,12 +527,28 @@ h3.title {
 }
 .galerie .content div {
   margin-bottom: 15px;
+  position: relative;
+}
+.galerie .content div a {
+  color: #fff;
 }
 .galerie .content div a img {
   width: 100%;
 }
 .galerie .content div a video {
   width: 100%;
+}
+.galerie .content div .type {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 6px;
+  background-color: hsl(222, 25%, 8%);
 }
 
 .seeMoreAll {
@@ -751,6 +767,128 @@ h3.title {
   opacity: 0.5;
 }
 
+.infopopup {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.infopopup li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: hsl(222, 25%, 16%);
+}
+
+.infobox {
+  margin: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.infobox a {
+  text-decoration: none;
+  color: #fff;
+}
+.infobox div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 15px;
+  background-color: hsla(222, 25%, 16%, 0.5);
+  border-radius: 6px;
+}
+.infobox div.like {
+  color: green;
+}
+.infobox div.dislike {
+  color: red;
+}
+
+.surprendsmoi {
+  margin: 30px 0 0 0;
+}
+.surprendsmoi a {
+  text-decoration: none;
+}
+.surprendsmoi button {
+  width: 100%;
+  font-size: 16px;
+  padding: 13px 10px;
+  cursor: pointer;
+  background-color: hsl(222, 25%, 8%);
+  border: 2px solid hsl(290, 80%, 53%);
+  color: #fff;
+  margin: 10px 0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.surprendsmoi button:hover {
+  background: hsl(290, 80%, 53%);
+}
+.surprendsmoi button img {
+  width: 28px;
+}
+
+.topStats {
+  margin: 15px 0;
+}
+.topStats ul {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.topStats ul a {
+  color: #fff;
+  text-decoration: none;
+}
+.topStats ul li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: hsl(222, 25%, 12%);
+}
+.topStats ul li .img {
+  margin: 0;
+  border: 0;
+}
+.topStats ul li .img img {
+  width: 60px;
+  height: 80px;
+  object-fit: cover;
+  vertical-align: middle;
+}
+.topStats ul li .information .name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+}
+.topStats ul li .information .info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  color: #ccc;
+}
+.topStats ul li:hover {
+  background-color: hsl(222, 25%, 16%);
+}
+
+.noData {
+  color: #ccc;
+  padding: 6px 12px;
+  background-color: hsla(222, 25%, 16%, 0.5);
+}
+
 @media screen and (max-width: 1501px) {
   .galerie.galsplit .content {
     columns: 5;
@@ -800,6 +938,10 @@ h3.title {
     display: none;
   }
   .lastcontent .cards .card .type span {
+    display: none;
+  }
+  .topStats ul li .information .name span:nth-child(2),
+  .topStats ul li .information .name span:nth-child(3) {
     display: none;
   }
 }

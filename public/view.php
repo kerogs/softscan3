@@ -6,7 +6,6 @@ $urlGet = $_GET['url'];
 $urlExtension = pathinfo($urlGet, PATHINFO_EXTENSION);
 $urlLastDirName = basename(pathinfo($urlGet, PATHINFO_DIRNAME));
 
-
 $directoryToScan = pathinfo($urlGet, PATHINFO_DIRNAME);
 $returnNameType = 2;
 $returnDirPath = true;
@@ -42,6 +41,51 @@ if (isset($_GET['url'])) {
     }
 }
 
+
+
+$json_file = './temp/stats.json';
+// save view number by $url into ./temp/stats.json
+if (!file_exists($json_file)) {
+    file_put_contents($json_file, '[]');
+}
+
+$url = isset($_GET['url']) ? $_GET['url'] : null;
+
+if ($url && $_GET['viewCounter'] !== 'noCount') {
+    // Lire le fichier JSON et le convertir en tableau PHP
+    $json_data = json_decode(file_get_contents($json_file), true);
+
+    // Vérifier si l'URL existe déjà dans le tableau
+    $url_exists = false;
+    foreach ($json_data as &$entry) {
+        if ($entry['url'] === $url) {
+            // L'URL existe, on incrémente le nombre de vues
+            $entry['vue'] += 1;
+            $url_exists = true;
+            break;
+        }
+    }
+
+    // Si l'URL n'existe pas, on crée une nouvelle entrée
+    if (!$url_exists) {
+        $new_entry = [
+            'url' => $url,
+            'like' => 0,
+            'dislike' => 0,
+            'vue' => 1
+        ];
+        $json_data[] = $new_entry;
+    }
+
+    // Écrire les données mises à jour dans le fichier JSON
+    file_put_contents($json_file, json_encode($json_data, JSON_PRETTY_PRINT));
+}
+
+
+
+$stats = getUrlStats($json_file, $url);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -73,9 +117,9 @@ if (isset($_GET['url'])) {
         $totalPath = "";
 
         foreach ($urlExplodeDir as $key => $value) {
-            if($value != 'public_data'){
-                $totalPath .= '/'.$value;
-            } else{
+            if ($value != 'public_data') {
+                $totalPath .= '/' . $value;
+            } else {
                 $totalPath .= $value;
             }
 
@@ -120,9 +164,32 @@ if (isset($_GET['url'])) {
                 </div>
 
 
-                <div class="infobox">
+                <?php
 
+                $cookieUrlKey = str_replace('.', '_', urlencode($urlGet));
+
+                ?>
+
+                <div class="infobox">
+                    <div>
+                        <i class='bx bx-show'></i> <?= $stats['vue'] ?> vues
+                    </div>
+
+                    <!-- Like Button -->
+                    <a href="action/likedislike.php?url=<?= urlencode($urlGet) ?>&like=1&dislike=0">
+                        <div <?php echo ($_COOKIE[$cookieUrlKey] === 'like') ? 'class="like"' : '' ?>>
+                            <i class='bx bx-like'></i> <?= $stats['like'] ?>
+                        </div>
+                    </a>
+
+                    <!-- Dislike Button -->
+                    <a href="action/likedislike.php?url=<?= urlencode($urlGet) ?>&dislike=1&like=0">
+                        <div <?php echo ($_COOKIE[$cookieUrlKey] === 'dislike') ? 'class="dislike"' : '' ?>>
+                            <i class='bx bx-dislike'></i> <?= $stats['dislike'] ?>
+                        </div>
+                    </a>
                 </div>
+
 
                 <div class="galerie galsplit">
                     <div class="titlee">
@@ -137,11 +204,25 @@ if (isset($_GET['url'])) {
                         $resultsGalerie = array_slice($results, 0, 40);
 
                         foreach ($resultsGalerie as $image) {
+
                             $extension = pathinfo($image, PATHINFO_EXTENSION);
-                            if(in_array($extension, $videoExtensions)){
-                                echo '<div><a href="view?url=' . htmlspecialchars($image) . '"><img src="' . htmlspecialchars(videoToThumbnailURL($image)) . '" alt=""></a></div>';
-                            } else{
-                                echo '<div><a href="view?url=' . htmlspecialchars($image) . '"><img src="' . htmlspecialchars($image) . '" alt=""></a></div>';
+        
+                            switch ($extension) {
+                                case in_array($extension, $videoExtensions):
+                                    $icon = '<i class="bx bxs-video-recording"></i> '.$extension;
+                                    break;
+                                case in_array($extension, $imageExtensions):
+                                    $icon = '<i class="bx bxs-image"></i> '.$extension;
+                                    break;
+                                default:
+                                    $icon = '<i class="bx bxs-file"></i> '.$extension;
+                                    break;
+                            }
+        
+                            if (in_array($extension, $videoExtensions)) {
+                                echo '<div><a href="view?url=' . htmlspecialchars($image) . '"><div class="type">' . $icon . ' </div><img src="' . htmlspecialchars(videoToThumbnailURL($image)) . '" alt=""></a></div>';
+                            } else {
+                                echo '<div><a href="view?url=' . htmlspecialchars($image) . '"><div class="type">' . $icon . ' </div><img src="' . htmlspecialchars($image) . '" alt=""></a></div>';
                             }
                         }
                         ?>

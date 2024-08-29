@@ -17,7 +17,7 @@
     </div>
     <div class="btnplus">
         <button onclick="configurationPopup.classList.toggle('active')"><i class='bx bx-cog'></i> <span>Configuration</span></button>
-        <a href=""><button><i class='bx bx-info-circle'></i> <span>Information</span></button></a>
+        <button onclick="informationPopup.classList.toggle('active')"><i class='bx bx-info-circle'></i> <span>Information</span></button>
     </div>
     <div class="githubad">
         <div class="card">
@@ -74,3 +74,16 @@
         xhr.send();
     }
 </script>
+
+<div id="informationPopup" class="popup">
+    <div class="content">
+        <div class="titlee">
+            <h2>Information</h2>
+            <i class='bx bx-x' onclick="informationPopup.classList.toggle('active')"></i>
+        </div>
+        <ul class="infopopup">
+            <li><i class='bx bxs-window-alt'></i> Site version - <?= $kpf_config["other"]["website_version"] ?></li>
+            <li><i class='bx bxs-extension' ></i> Framework version - <?= $kpf_config["framework"]["framework_version"]?> (<?= $kpf_config["framework"]["title_short"] ?>)</li>
+        </ul>
+    </div>
+</div>
