@@ -103,7 +103,7 @@
     // print_r(getTopStats('temp/stats.json', 3, 2, 1));
     // echo '</pre>';
 
-    $topStats = getTopStats('temp/stats.json', 3, 3, 1);
+    $topStats = getTopStats('temp/stats.json', 1, 1, 1);
     ?>
 
     <!-- top vues -->

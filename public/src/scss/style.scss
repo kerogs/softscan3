@@ -1024,11 +1024,11 @@ h3.title {
 .surprendsmoi {
     margin: 30px 0 0 0;
 
-    a{
+    a {
         text-decoration: none;
     }
 
-    button{
+    button {
         width: 100%;
         font-size: 16px;
         padding: 13px 10px;
@@ -1043,19 +1043,20 @@ h3.title {
         align-items: center;
         justify-content: space-between;
 
-        &:hover{
-            background:$secondary;
+        &:hover {
+            background: $secondary;
         }
 
-        img{
+        img {
             width: 28px;
         }
     }
 }
 
-.topStats{
+.topStats {
     margin: 15px 0;
-    ul{
+
+    ul {
         padding-left: 0;
         list-style: none;
 
@@ -1063,22 +1064,23 @@ h3.title {
         flex-direction: column;
         gap: 10px;
 
-        a{
+        a {
             color: $text;
             text-decoration: none;
         }
 
-        li{
+        li {
             display: flex;
             align-items: center;
             gap: 10px;
 
             background-color: $background2;
 
-            .img{
+            .img {
                 margin: 0;
                 border: 0;
-                img{
+
+                img {
                     width: 60px;
                     height: 80px;
                     object-fit: cover;
@@ -1086,25 +1088,25 @@ h3.title {
                 }
             }
 
-            .information{
+            .information {
 
-                .name{
+                .name {
                     display: flex;
                     align-items: center;
                     gap: 10px;
                     text-transform: uppercase;
                 }
 
-                .info{
+                .info {
                     display: flex;
                     flex-wrap: wrap;
                     align-items: center;
                     gap: 5px;
-                    color:$text2;
+                    color: $text2;
                 }
             }
 
-            &:hover{
+            &:hover {
                 background-color: $background3
             }
         }
@@ -1115,6 +1117,42 @@ h3.title {
     color: $text2;
     padding: 6px 12px;
     background-color: hsla(222, 25%, 16%, 0.5);
+}
+
+.btnlist {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+
+    a {
+        text-decoration: none;
+        flex: 1;
+
+        button {
+            width: 100%;
+            font-size: 16px;
+            padding: 13px 10px;
+            cursor: pointer;
+            background-color: $background;
+            border: 2px solid $secondary;
+            color: $text;
+            margin: 10px 0;
+            border-radius: 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &:hover {
+                background: $secondary;
+            }
+
+            &.active{
+                background-color: $secondary
+            }
+        }
+    }
 }
 
 

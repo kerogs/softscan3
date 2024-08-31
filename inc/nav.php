@@ -21,5 +21,8 @@ $url = basename($_SERVER['PHP_SELF']);
         <a href="/collections">
             <li <li <?= $url == 'collections.php' ? 'class="active"' : '' ?> ><i class='bx bxs-collection'></i> Collections</li>
         </a>
+        <a href="/top100?by=top_vues">
+            <li <?= $url == 'top100.php' ? 'class="active"' : '' ?>><i class='bx bxs-trophy'></i> Top 100</li>
+        </a>
     </ul>
 </nav>

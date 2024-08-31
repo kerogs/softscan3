@@ -11,3 +11,5 @@ server.log
 dist/ffmpeg/bin/*
 !dist/ffmpeg/bin/.gitkeep
 !dist/last_ffmpeg.ksc
+
+public/temp/stats.json

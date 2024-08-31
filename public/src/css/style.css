@@ -889,6 +889,37 @@ h3.title {
   background-color: hsla(222, 25%, 16%, 0.5);
 }
 
+.btnlist {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.btnlist a {
+  text-decoration: none;
+  flex: 1;
+}
+.btnlist a button {
+  width: 100%;
+  font-size: 16px;
+  padding: 13px 10px;
+  cursor: pointer;
+  background-color: hsl(222, 25%, 8%);
+  border: 2px solid hsl(290, 80%, 53%);
+  color: #fff;
+  margin: 10px 0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.btnlist a button:hover {
+  background: hsl(290, 80%, 53%);
+}
+.btnlist a button.active {
+  background-color: hsl(290, 80%, 53%);
+}
+
 @media screen and (max-width: 1501px) {
   .galerie.galsplit .content {
     columns: 5;
