@@ -11,7 +11,7 @@ $videoExtensions = ['mp4', 'webm', 'mov', 'avi'];
 $imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp', "svg"];
 
 if(!$_SESSION['keyaccess']) {
-    // header('Location: login.php');
+    header('Location: login.php');
     exit();
 }
 
