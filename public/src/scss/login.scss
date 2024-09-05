@@ -1,0 +1,60 @@
+$background: hsl(222, 25%, 8%);
+$background2: hsl(222, 25%, 12%);
+$background3: hsl(222, 25%, 16%);
+
+$primary: hsl(43, 80%, 73%);
+// $secondary:#c175d6;
+$secondary: hsl(290, 80%, 53%);
+
+$secondaryGradient: linear-gradient(50deg, $secondary 0%, hsl(290, 100%, 40%) 100%);
+$secondaryGradient2: linear-gradient(50deg, hsl(290, 100%, 40%) 0%, $secondary 100%);
+
+$text: #fff;
+$text2: #ccc;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $background;
+    color: $text;
+
+    font-family: 'Space Grotesk', Arial sans-serif;
+}
+
+.ccenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    h1{
+        margin: 0 0 10px 0;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    input {
+        padding: 10px;
+        border: none;
+        border-radius: 6px;
+        background-color: $background2;
+        color: $text;
+        font-family: 'Space Grotesk', Arial sans-serif;
+        outline: none;
+
+        &[type="submit"] {
+            cursor: pointer;
+            background-color: $secondary;
+        }
+    }
+}
