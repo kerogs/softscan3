@@ -44,6 +44,8 @@
                 <h3>Zone de danger</h3>
                 <i class='bx bxs-error'></i>
             </div>
+            <button onclick="logsreset()">Logs reset</button>
+            <button onclick="nukeData()">Nuke data</button>
             <button onclick="stopServer()">Eteindre le serveur</button>
         </div>
     </div>
@@ -61,6 +63,34 @@
 
             var xhr = new XMLHttpRequest();
             xhr.open("GET", "action/stopServer.php", true);
+            xhr.send();
+        }
+    }
+
+    function nukeData() {
+        // ? add popup message
+        const askConfirmationNuke = confirm("Êtes-vous sur de vouloir nuke les datas (image comprise) ?");
+
+        if (askConfirmationNuke) {
+            const bodyArea = document.querySelector("body");
+            bodyArea.innerHTML += '<div class="littlePopup notif"><p>Les données sont entrain d\'etre supprimées.</p></div>';
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "action/nukedata.php", true);
+            xhr.send();
+        }
+    }
+
+    function logsreset() {
+        // ? add popup message
+        const askConfirmationLogsreset = confirm("Êtes-vous sur de vouloir reset les logs ?");
+
+        if (askConfirmationLogsreset) {
+            const bodyArea = document.querySelector("body");
+            bodyArea.innerHTML += '<div class="littlePopup notif"><p>Les logs sont entrain d\'etre reset.</p></div>';
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "action/logsreset.php", true);
             xhr.send();
         }
     }
@@ -83,7 +113,7 @@
         </div>
         <ul class="infopopup">
             <li><i class='bx bxs-window-alt'></i> Site version - <?= $kpf_config["other"]["website_version"] ?></li>
-            <li><i class='bx bxs-extension' ></i> Framework version - <?= $kpf_config["framework"]["framework_version"]?> (<?= $kpf_config["framework"]["title_short"] ?>)</li>
+            <li><i class='bx bxs-extension'></i> Framework version - <?= $kpf_config["framework"]["framework_version"] ?> (<?= $kpf_config["framework"]["title_short"] ?>)</li>
         </ul>
     </div>
 </div>
