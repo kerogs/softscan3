@@ -911,7 +911,7 @@ h3.title {
         .dangerzone {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 0px;
             background-color: hsla(290, 100%, 40%, 0.2);
             padding: 10px;
             border-radius: 6px;
@@ -1155,5 +1155,57 @@ h3.title {
     }
 }
 
+.formAdd{
+    padding: 20px;
+    background-color: $background2;
+    margin: 0 0 20px 0;
+
+    h1{
+        margin: 10px 0 20px 0;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        flex: 1;
+        input{
+            padding: 10px;
+            border: 1px solid $text2;
+            border-radius: 6px;
+
+            font-size: large;
+        }
+
+        input[type="file"]{
+            cursor: pointer;
+
+            &:hover{
+                background-color: $background3;
+            }
+        }
+
+        input[type="submit"]{
+            background-color: $secondary;
+            border: 2px solid $secondary;
+            color: $text;
+            cursor: pointer;
+        }
+
+        input[type="text"]{
+            background-color: $background2;
+            color: #fff;
+        }
+
+        select{
+            padding: 10px;
+            border: 1px solid $text2;
+            border-radius: 6px;
+            font-size: large;
+
+            background-color: $background;
+            color: #fff
+        }
+    }
+}
 
 @import './responsive/responsive';

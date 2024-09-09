@@ -722,7 +722,7 @@ h3.title {
 .popup .content .dangerzone {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 0px;
   background-color: hsla(290, 100%, 40%, 0.2);
   padding: 10px;
   border-radius: 6px;
@@ -918,6 +918,51 @@ h3.title {
 }
 .btnlist a button.active {
   background-color: hsl(290, 80%, 53%);
+}
+
+.formAdd {
+  padding: 20px;
+  background-color: hsl(222, 25%, 12%);
+  margin: 0 0 20px 0;
+}
+.formAdd h1 {
+  margin: 10px 0 20px 0;
+}
+.formAdd form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+.formAdd form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: large;
+}
+.formAdd form input[type=file] {
+  cursor: pointer;
+}
+.formAdd form input[type=file]:hover {
+  background-color: hsl(222, 25%, 16%);
+}
+.formAdd form input[type=submit] {
+  background-color: hsl(290, 80%, 53%);
+  border: 2px solid hsl(290, 80%, 53%);
+  color: #fff;
+  cursor: pointer;
+}
+.formAdd form input[type=text] {
+  background-color: hsl(222, 25%, 12%);
+  color: #fff;
+}
+.formAdd form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: large;
+  background-color: hsl(222, 25%, 8%);
+  color: #fff;
 }
 
 @media screen and (max-width: 1501px) {

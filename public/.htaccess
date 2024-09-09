@@ -6,3 +6,4 @@ RewriteRule ^collections$ collections.php
 RewriteRule ^videos$ videos.php
 RewriteRule ^photos-gifs$ photos-gifs.php
 RewriteRule ^top100$ top100.php
+RewriteRule ^add/(.*)(.*)$ add.php?r=$1

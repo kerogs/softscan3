@@ -24,5 +24,8 @@ $url = basename($_SERVER['PHP_SELF']);
         <a href="/top100?by=top_vues">
             <li <?= $url == 'top100.php' ? 'class="active"' : '' ?>><i class='bx bxs-trophy'></i> Top 100</li>
         </a>
+        <a href="/add/image">
+            <li <?= $url == 'add.php' ? 'class="active"' : '' ?>><i class='bx bxs-add-to-queue'></i> Add</li>
+        </a>
     </ul>
 </nav>

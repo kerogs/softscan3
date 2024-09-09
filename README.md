@@ -22,6 +22,13 @@
 - Galerie complète de tout
 - système de vues, like, dislike
 - bouton "Surprends moi"
+- Création automatique de thumbnails pour les vidéos via FFMPEG
+- Possibilité d'ajout de dossier complet directement sur le site (dossier non zippé)
+- Possibilité d'ajouter et supprimer des dossiers ET/OU de créer des dossiers depuis la page web.
+- Possibilité de nuke les data depuis le site
+- Possibilité de clear les logs depuis le site
+- Possibilité de forcer le chargement FFMPEG depuis le site
+- Possibilité de d'éteindre le serveur à distance
 
 ### Preview
 #### Ordinateur
@@ -82,7 +89,26 @@ cd public; npm i
      ┗ 📜last_ffmpeg.ksc
     ```
 
-. Déposer les images dans /public/public_data ou les importer directement depuis le site
+6. Déposer les images dans ``/public/public_data/`` ou les importer directement depuis le site
+
+
+## php.ini
+> [!IMPORTANT]
+> Si vous souhaitez autoriser l'envoi de fichier depuis le site, il est vivement recommendé de changer la configuration du fichier php.ini
+1. Aller dans le fichier php.ini correspondant à votre version de PHP. Avec MAMP et la version PHP 8.3.1 alors ce sera : ``C:\MAMP\conf\php8.3.1\php.ini``
+1. Configurer les valeurs suivante (cette configuration est un example mais fonctionne très bien pour du local):
+```ini
+upload_max_filesize = 9999999G
+post_max_size = 99999999G
+max_file_uploads = 500000
+memory_limit = 999999G
+max_input_time = 360000
+max_execution_time = 360000
+``` 
+1. Redémarrer votre serveur web.
+1. C'est fait.
+
+
 
 ## A ajouter
 - [ ] Paramètre
