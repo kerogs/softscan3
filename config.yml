@@ -27,6 +27,6 @@ other:
   website_version: 3.0.1
 
 framework:
-  framework_version: 2.2.1
+  framework_version: 2.2.1-beta
   title: "KerogsPHP Framework"
   title_short: "KsPHP Framework"
