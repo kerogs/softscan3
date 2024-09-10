@@ -60,17 +60,19 @@ function scanDossiers($dossier)
 
         ?>
         <div class="btnlist">
-            <a href="add/file"><button>Import files</button></a>
-            <a href="add/directory"><button>Import directory</button></a>
-            <a href="add/create"><button>Create directory</button></a>
+            <a href="add/files"><button <?= isset($_GET['r']) && $_GET['r'] == "files" ? 'class="active"' : '' ?>>Import files</button></a>
+            <a href="add/create"><button <?= isset($_GET['r']) && $_GET['r'] == "create" ? 'class="active"' : '' ?>>Create directory</button></a>
         </div>
 
-        <?php
 
-        if ($_GET['r'] == "create") {
-            echo '
+
+
+
+
+        <!-- CREATE -->
+        <?php if ($_GET['r'] == "create") : ?>
             <div class="formAdd">
-            <h1>Importer un Dossier</h1>
+                <h1>Importer un Dossier</h1>
                 <form id="uploadForm" action="action/import-directory.php" method="POST" enctype="multipart/form-data">
                     <input type="file" id="filesInput" name="files[]" multiple webkitdirectory>
                     <input type="hidden" id="filePaths" name="filePaths">
@@ -79,12 +81,10 @@ function scanDossiers($dossier)
                 </form>
             </div>
 
-
-
             <script>
-                document.getElementById(\'uploadForm\').onsubmit = function(event) {
+                document.getElementById('uploadForm').onsubmit = function(event) {
                     // Récupérer les fichiers sélectionnés
-                    var files = document.getElementById(\'filesInput\').files;
+                    var files = document.getElementById('filesInput').files;
                     var filePaths = [];
 
                     // Parcourir les fichiers et obtenir leurs chemins relatifs
@@ -93,45 +93,100 @@ function scanDossiers($dossier)
                     }
 
                     // Injecter les chemins relatifs dans un champ caché
-                    document.getElementById(\'filePaths\').value = JSON.stringify(filePaths);
+                    document.getElementById('filePaths').value = JSON.stringify(filePaths);
                 };
-            </script>';
-        }
+            </script>
 
-        ?>
+            <div class="formAdd">
+                <h1>Créer un dossier</h1>
+                <form action="action/create-directory.php" method="POST">
+                    <select name="dir" id="">
+                        <option value="public_data">public_data (racine)</option>
+                        <?php
+                        $dossierScan = scanDossiers('public_data\\');
 
-        <div class="formAdd">
-            <h1>Créer un dossier</h1>
-            <form action="action/create-directory.php" method="POST">
-                <select name="dir" id="">
-                    <option value="public_data">public_data (racine)</option>
-                    <?php
-                    $dossierScan = scanDossiers('public_data\\');
+                        foreach ($dossierScan as $dossier) {
+                            echo '<option value="' . $dossier . '">' . $dossier . '</option>';
+                        }
+                        ?>
+                    </select>
+                    <input type="text" name="name" placeholder="Nom du dossier" id="">
+                    <input type="submit" value="Créer le dossiers">
+                </form>
+            </div>
 
-                    foreach ($dossierScan as $dossier) {
-                        echo '<option value="' . $dossier . '">' . $dossier . '</option>';
-                    }
-                    ?>
-                </select>
-                <input type="text" name="name" placeholder="Nom du dossier" id="">
-                <input type="submit" value="Créer le dossiers">
-            </form>
-        </div>
+            <div class="formAdd">
+                <h1>Supprimer un dossier</h1>
+                <form action="action/delete-directory.php" method="POST">
+                    <select name="dir" id="">
+                        <?php
+                        $dossierScan = scanDossiers('public_data\\');
 
-        <div class="formAdd">
-            <h1>Supprimer un dossier</h1>
-            <form action="action/delete-directory.php" method="POST">
-                <select name="dir" id="">                    <?php
-                    $dossierScan = scanDossiers('public_data\\');
+                        foreach ($dossierScan as $dossier) {
+                            echo '<option value="' . $dossier . '">' . $dossier . '</option>';
+                        }
+                        ?>
+                    </select>
+                    <input type="submit" value="Supprimer dossier (et contenu)">
+                </form>
+            </div>
 
-                    foreach ($dossierScan as $dossier) {
-                        echo '<option value="' . $dossier . '">' . $dossier . '</option>';
-                    }
-                    ?>
-                </select>
-                <input type="submit" value="Supprimer dossier (et contenu)">
-            </form>
-        </div>
+        <?php endif; ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- ! FILES -->
+        <?php if ($_GET['r'] == "files") : ?>
+
+            <div class="formAdd">
+                <h1>Ajouter des fichiers</h1>
+                <form action="action/upload-files.php" method="POST" enctype="multipart/form-data">
+                    <select name="dir" id="">
+                        <option value="public_data">public_data (racine)</option>
+                        <?php
+                        $dossierScan = scanDossiers('public_data\\');
+
+                        foreach ($dossierScan as $dossier) {
+                            echo '<option value="' . $dossier . '">' . $dossier . '</option>';
+                        }
+                        ?>
+                    </select>
+                    <input type="file" name="files[]" id="" multiple>
+                    <input type="submit" value="Ajouter fichiers">
+                </form>
+            </div>
+
+        <?php endif; ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     </main>
