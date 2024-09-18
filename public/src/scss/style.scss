@@ -31,6 +31,8 @@ button {
     font-family: 'Space Grotesk', Arial sans-serif;
 }
 
+img{display: block;}
+
 header {
     background-color: $background2;
 
@@ -938,7 +940,7 @@ h3.title {
     bottom: 15px;
     right: 15px;
 
-    width: 200px;
+    width: 250px;
     height: auto;
 
     padding: 15px;

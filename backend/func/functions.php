@@ -18,7 +18,8 @@
  *               'directories' is an array of directory names or full directory paths based on $returnDirPath.
  */
 if (!function_exists('scanDirRecursive')) {
-    function scanDirRecursive($dir, $returnNameType, $returnDirPath, $authorise, $ignore, $recursive, &$results, &$directories, $baseDir = "") {
+    function scanDirRecursive($dir, $returnNameType, $returnDirPath, $authorise, $ignore, $recursive, &$results, &$directories, $baseDir = "")
+    {
         if (!is_dir($dir)) {
             return;
         }
@@ -53,7 +54,8 @@ if (!function_exists('scanDirRecursive')) {
                 $extension = strtolower(pathinfo($file, PATHINFO_EXTENSION));
 
                 if ((!empty($allowedExtensions) && !in_array($extension, $allowedExtensions)) ||
-                    (!empty($ignoreExtensions) && in_array($extension, $ignoreExtensions))) {
+                    (!empty($ignoreExtensions) && in_array($extension, $ignoreExtensions))
+                ) {
                     continue;
                 }
 
@@ -75,7 +77,8 @@ if (!function_exists('scanDirRecursive')) {
     }
 }
 
-function ss2_dirScanner($dir, $returnNameType = 0, $returnDirPath = false, $authorise = "*", $ignore = [], $recursive = false) {
+function ss2_dirScanner($dir, $returnNameType = 0, $returnDirPath = false, $authorise = "*", $ignore = [], $recursive = false)
+{
     $results = [];
     $directories = [];
 
@@ -88,7 +91,8 @@ function ss2_dirScanner($dir, $returnNameType = 0, $returnDirPath = false, $auth
 }
 
 
-function ss2_sizeIMG($url, $returnRatioHeight = false) {
+function ss2_sizeIMG($url, $returnRatioHeight = false)
+{
     // Initialiser les dimensions à null
     $width = null;
     $height = null;
@@ -123,7 +127,8 @@ function ss2_sizeIMG($url, $returnRatioHeight = false) {
 }
 
 
-function getRecentFiles($directory, $limit = 5) {
+function getRecentFiles($directory, $limit = 5)
+{
     $files = [];
 
     // Fonction récursive pour parcourir les sous-dossiers
@@ -143,12 +148,13 @@ function getRecentFiles($directory, $limit = 5) {
     $recentFiles = array_slice($files, 0, $limit, true);
 
     // Remplacer les "\" par des "/" dans les chemins
-    return array_map(function($path) {
+    return array_map(function ($path) {
         return str_replace('\\', '/', $path);
     }, array_keys($recentFiles)); // Retourne uniquement les chemins des fichiers
 }
 
-function getRecentDirectories($directory, $limit = 5) {
+function getRecentDirectories($directory, $limit = 5)
+{
     $dirs = [];
 
     // Fonction récursive pour parcourir les sous-dossiers
@@ -172,7 +178,7 @@ function getRecentDirectories($directory, $limit = 5) {
     $recentDirs = array_slice($dirs, 0, $limit, true);
 
     // Remplacer les "\" par des "/" dans les chemins
-    return array_map(function($path) {
+    return array_map(function ($path) {
         return str_replace('\\', '/', $path);
     }, array_keys($recentDirs)); // Retourne uniquement les chemins des dossiers
 }
@@ -252,7 +258,8 @@ function videoToThumbnailURL($url)
 
 
 
-function getUrlStats($jsonFilePath, $url) {
+function getUrlStats($jsonFilePath, $url)
+{
     // Si le fichier JSON n'existe pas, le créer avec un tableau vide
     if (!file_exists($jsonFilePath)) {
         file_put_contents($jsonFilePath, json_encode([]));
@@ -298,7 +305,8 @@ function getUrlStats($jsonFilePath, $url) {
 
 
 
-function getTopStats($statsFile, $topVues = 1, $topLikes = 1, $topDislikes = 1) {
+function getTopStats($statsFile, $topVues = 1, $topLikes = 1, $topDislikes = 1)
+{
     // Vérifier si le fichier existe et le charger
     if (!file_exists($statsFile)) {
         return "Le fichier n'existe pas.";
@@ -349,6 +357,32 @@ function getTopStats($statsFile, $topVues = 1, $topLikes = 1, $topDislikes = 1) 
 
 
 
+// Fonction pour calculer le pourcentage de ressemblance
+function similarityPercentage($str1, $str2)
+{
+    $levenshteinDistance = levenshtein($str1, $str2);
+    $maxLen = max(strlen($str1), strlen($str2));
 
+    if ($maxLen == 0) {
+        return 100; // Cas où les deux chaînes sont vides.
+    }
 
+    // Calcul du pourcentage de similarité
+    return (1 - $levenshteinDistance / $maxLen) * 100;
+}
 
+function searchEngine($values, $query)
+{
+    $result = [];
+
+    // Calculer la similarité pour chaque valeur et l'ajouter au tableau de résultats
+    foreach ($values as $value) {
+        $similarity = similarityPercentage(strtolower($value), strtolower($query));
+        $result[$value] = round($similarity, 2); // Arrondir à deux décimales pour plus de lisibilité
+    }
+
+    // Trier les résultats par ordre décroissant de similarité
+    arsort($result);
+
+    return $result;
+}

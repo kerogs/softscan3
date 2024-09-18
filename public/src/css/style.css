@@ -15,6 +15,10 @@ button {
   font-family: "Space Grotesk", Arial sans-serif;
 }
 
+img {
+  display: block;
+}
+
 header {
   background-color: hsl(222, 25%, 12%);
   display: flex;
@@ -744,7 +748,7 @@ h3.title {
   position: fixed;
   bottom: 15px;
   right: 15px;
-  width: 200px;
+  width: 250px;
   height: auto;
   padding: 15px;
   box-shadow: 0 0 10px 0 rgb(0, 0, 0);

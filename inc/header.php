@@ -1,15 +1,15 @@
 <header>
     <div class="title"><a href="/">Soft<span>Scan</span><span>3</span></a></div>
     <div class="search">
-        <form action="search.php" method="post">
+        <form action="/search" method="get">
             <label for="search">
-                <input type="text" id="search" name="search" placeholder="Search...">
-                <select name="" id="">
-                    <option value="all">All</option>
-                    <option value="image">Image</option>
-                    <option value="video">Video</option>
-                    <option value="gif">GIF</option>
-                    <option value="other">Image/GIF</option>
+                <input value="<?= basename($_SERVER['PHP_SELF']) == 'search.php' && $_GET['type'] ? $_GET['search'] : '' ; ?>" type="text" id="search" name="search" placeholder="Search...">
+                <select name="type" id="">
+                    <option <?= $_GET['type'] == 'all' && basename($_SERVER['PHP_SELF']) == 'search.php' ? 'selected' : '' ; ?> value="all">All</option>
+                    <option <?= $_GET['type'] == 'image' && basename($_SERVER['PHP_SELF']) == 'search.php' ? 'selected' : '' ; ?> value="image">Image</option>
+                    <option <?= $_GET['type'] == 'video' && basename($_SERVER['PHP_SELF']) == 'search.php' ? 'selected' : '' ; ?> value="video">Video</option>
+                    <option <?= $_GET['type'] == 'gif' && basename($_SERVER['PHP_SELF']) == 'search.php' ? 'selected' : '' ; ?> value="gif">GIF</option>
+                    <option <?= $_GET['type'] == 'other' && basename($_SERVER['PHP_SELF']) == 'search.php' ? 'selected' : '' ; ?> value="other">Image/GIF</option>
                 </select>
                 <button type="submit"><i class='bx bx-search'></i></button>
             </label>

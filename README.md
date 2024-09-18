@@ -11,7 +11,7 @@
 ## Features
 - afficher les images de chaque dossier et sous-dossier
 - proposer des images en rapport avec celle sélectionné
-- tous les formats possible
+- tous les formats possible [jpg/jpeg, png, svg, gif, webp, webm, mov, avi, mp4, ...]
 - responsive tout format
 - design agréable
 - afficher les derniers contenu vu
@@ -29,6 +29,9 @@
 - Possibilité de clear les logs depuis le site
 - Possibilité de forcer le chargement FFMPEG depuis le site
 - Possibilité de d'éteindre le serveur à distance
+
+- fonctionnalité de recherche avancé (fonctionne avec des url de dossiers, des extensions différentes, ect...)
+
 
 ### Preview
 #### Ordinateur
@@ -111,19 +114,19 @@ max_execution_time = 360000
 
 
 ## A ajouter
-- [ ] Paramètre
-- [ ] Infobox
-- [ ] Pouvoir ajouter des images/video/gif en plusieurs fois
+- [x] Paramètre
+- [x] Infobox
+- [x] Pouvoir ajouter des images/video/gif en plusieurs fois
 - [x] capable de faire un tris dans le contenu
-- [ ] possibilité d'éteindre le serveur à distance
-- [ ] faire un nuke du site
+- [x] possibilité d'éteindre le serveur à distance
+- [x] faire un nuke du site
 - [x] faire le design
 - [x] faire le responsive
 - [ ] faire une page soutien (redirection vers KerogsPHP Framework ou encore l'url du github de SoftScan3)
 - [x] Créer une mascotte (future icone du site et pour les boutons ect).
 - [x] faire les détourages dela mascotte
-- [ ] faire une page login
-- [ ] choisir entre un login admin ou membre
-- [ ] faire un système de logs du site
-- [ ] supprimer des dossiers/sous_dossier
+- [x] faire une page login
+- [x] faire un système de logs du site
+- [x] supprimer des dossiers/sous_dossier
 - [x] proposer les différents dossier
+- [ ] cacher les images dislike
