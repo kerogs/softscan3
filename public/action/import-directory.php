@@ -61,7 +61,7 @@ if (!empty($files) && !empty($filePaths)) {
     $totalSizeGB = $totalSizeMB / 1024; // Go
 
     // Afficher les résultats
-    header('Location: ../add/create?success=ok');
+    header('Location: ../add/create/ok');
 } else {
-    header('Location: ../add/create?success=ko');
+    header('Location: ../add/create/ok');
 }

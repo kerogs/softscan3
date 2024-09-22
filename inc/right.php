@@ -328,5 +328,13 @@
         </ul>
     </div>
 
+    <div class="lastCatView">
+        <h3 class="title">
+            <i class="bx bx-category"></i> Catégorie Vu
+        </h3>
+
+        <a href=""><button><?= $_SESSION['lastContentView_Cat']?></button></a>
+    </div>
+
 
 </div>

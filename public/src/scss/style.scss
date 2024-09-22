@@ -951,6 +951,8 @@ h3.title {
 
     cursor: pointer;
 
+    animation: spawnNotif .8s forwards;
+
     &.notif {
         background-color: hsl(244, 80%, 53%);
     }
@@ -961,16 +963,32 @@ h3.title {
 
     &.warning {
         background-color: hsl(17, 80%, 57%);
+        color: #000;
     }
 
     &.ok {
         background-color: hsl(115, 80%, 53%);
+        color: #000;
     }
 
     &:hover {
         opacity: .5;
     }
 
+}
+
+@keyframes spawnNotif{
+    0%{
+        transform: translate(100%, 0%);
+        opacity: 0;
+    }
+    50%{
+        transform: translate(-10%, 0);
+        opacity: 1;
+    }
+    100%{
+        transform: translate(0, 0);
+    }
 }
 
 .infopopup {
@@ -1207,6 +1225,22 @@ h3.title {
             background-color: $background;
             color: #fff
         }
+    }
+}
+
+.lastCatView button{
+    width: 100%;
+    font-size: 16px;
+    padding: 13px 10px;
+    cursor: pointer;
+    background-color: $background2;
+    border: none;
+    color: $text;
+    margin: 10px 0;
+    border-radius: 10px;
+    
+    &:hover{
+        background-color: $background3;
     }
 }
 

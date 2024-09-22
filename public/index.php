@@ -112,7 +112,7 @@ shuffle($directories);
                     perPage: 4,
                     perMove: 1,
                     autoplay: true,
-                    interval: 5500,
+                    interval: 3500,
                     pauseOnHover: true,
                     pauseOnFocus: false,
                     arrows: true,
@@ -255,6 +255,44 @@ shuffle($directories);
             <?php require_once '../inc/right.php' ?>
         </div>
     </main>
+
+    <!-- recommendation -->
+    <!-- <div class="recoFromView">
+        <div class="titlee">
+            <h2 class="title">
+                <i class='bx bx-repost'></i> Recommandation
+            </h2>
+        </div>
+
+        <div id="recoFromViewContentSplide" class="splide">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide"><img src="https://placehold.it/500" alt="Image 1"></li>
+                    <li class="splide__slide"><img src="https://placehold.it/500" alt="Image 2"></li>
+                    <li class="splide__slide"><img src="https://placehold.it/500" alt="Image 3"></li>
+                    <li class="splide__slide"><img src="https://placehold.it/500" alt="Image 4"></li>
+                </ul>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var splide = new Splide('#recoFromViewContentSplide', {
+                    type: 'loop',
+                    perPage: 3,
+                    autoplay: true,
+                    interval: 3000,
+                    pagination: true,
+                    arrows: true,
+                    gap: '1rem',
+                });
+
+                splide.mount();
+            });
+        </script>
+
+
+    </div> -->
 
     <?php require_once '../inc/script.php' ?>
 </body>

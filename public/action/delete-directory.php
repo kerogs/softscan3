@@ -26,7 +26,7 @@ $name = $_POST['name'];
 
 if(deleteFolderContents("../" . $path . "/" . $name)){
     rmdir("../" . $path . "/" . $name);
-    header('Location: ../add/create?success=ok');
+    header('Location: ../add/create/ok');
 } else{
-    header('Location: ../add/create?success=ko');
+    header('Location: ../add/create/ko');
 }

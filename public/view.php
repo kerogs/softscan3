@@ -85,7 +85,6 @@ if ($url && $_GET['viewCounter'] !== 'noCount') {
 
 $stats = getUrlStats($json_file, $url);
 
-
 ?>
 
 <!DOCTYPE html>
@@ -110,6 +109,18 @@ $stats = getUrlStats($json_file, $url);
 
     <?php require_once '../inc/nav.php' ?>
 
+
+    <?php
+
+    if (isset($_GET['viewCounter']) == "noCount") {
+        echo '<div class="littlePopup ok"><p>Avis envoyé avec succès.</p></div>';
+    }
+
+    ?>
+
+
+
+
     <div class="urlPath">
         <?php
 
@@ -125,11 +136,12 @@ $stats = getUrlStats($json_file, $url);
 
             if ($key < count($urlExplodeDir) - 1) {
                 echo '<a href="all?dir=' . $totalPath . '">' . $value . '</a> <i class="bx bx-chevron-right"></i> ';
+                // ? save 
+                $_SESSION['lastContentView_Name'] = $value;
             } else {
                 echo $value;
             }
         }
-
         ?>
     </div>
 
@@ -167,6 +179,8 @@ $stats = getUrlStats($json_file, $url);
                 <?php
 
                 $cookieUrlKey = str_replace('.', '_', urlencode($urlGet));
+
+                $_SESSION['lastContentView_Cat'] = $urlLastDirName;
 
                 ?>
 
@@ -206,19 +220,19 @@ $stats = getUrlStats($json_file, $url);
                         foreach ($resultsGalerie as $image) {
 
                             $extension = pathinfo($image, PATHINFO_EXTENSION);
-        
+
                             switch ($extension) {
                                 case in_array($extension, $videoExtensions):
-                                    $icon = '<i class="bx bxs-video-recording"></i> '.$extension;
+                                    $icon = '<i class="bx bxs-video-recording"></i> ' . $extension;
                                     break;
                                 case in_array($extension, $imageExtensions):
-                                    $icon = '<i class="bx bxs-image"></i> '.$extension;
+                                    $icon = '<i class="bx bxs-image"></i> ' . $extension;
                                     break;
                                 default:
-                                    $icon = '<i class="bx bxs-file"></i> '.$extension;
+                                    $icon = '<i class="bx bxs-file"></i> ' . $extension;
                                     break;
                             }
-        
+
                             if (in_array($extension, $videoExtensions)) {
                                 echo '<div><a href="view?url=' . htmlspecialchars($image) . '"><div class="type">' . $icon . ' </div><img src="' . htmlspecialchars(videoToThumbnailURL($image)) . '" alt=""></a></div>';
                             } else {

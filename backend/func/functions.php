@@ -360,25 +360,28 @@ function getTopStats($statsFile, $topVues = 1, $topLikes = 1, $topDislikes = 1)
 // Fonction pour calculer le pourcentage de ressemblance
 function similarityPercentage($str1, $str2)
 {
-    $levenshteinDistance = levenshtein($str1, $str2);
-    $maxLen = max(strlen($str1), strlen($str2));
-
-    if ($maxLen == 0) {
-        return 100; // Cas où les deux chaînes sont vides.
-    }
-
-    // Calcul du pourcentage de similarité
-    return (1 - $levenshteinDistance / $maxLen) * 100;
+    $str1 = basename($str1, PATHINFO_DIRNAME);
+    similar_text($str1, $str2, $percent);
+    return $percent; // Retourne directement le pourcentage de similarité
 }
 
 function searchEngine($values, $query)
 {
     $result = [];
 
-    // Calculer la similarité pour chaque valeur et l'ajouter au tableau de résultats
+    // Convertir la requête en minuscule pour éviter la différenciation entre majuscules et minuscules
+    $lowercaseQuery = strtolower($query);
+
+    // Parcourir chaque valeur, calculer la similarité avec la requête, et l'ajouter aux résultats
     foreach ($values as $value) {
-        $similarity = similarityPercentage(strtolower($value), strtolower($query));
-        $result[$value] = round($similarity, 2); // Arrondir à deux décimales pour plus de lisibilité
+        // Convertir chaque valeur en minuscule pour éviter la différenciation entre majuscules et minuscules
+        $lowercaseValue = strtolower($value);
+
+        // Calculer la similarité entre la valeur et la requête
+        $similarity = similarityPercentage($lowercaseValue, $lowercaseQuery);
+
+        // Ajouter le résultat avec la similarité
+        $result[$value] = round($similarity, 2);
     }
 
     // Trier les résultats par ordre décroissant de similarité

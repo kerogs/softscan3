@@ -754,6 +754,7 @@ h3.title {
   box-shadow: 0 0 10px 0 rgb(0, 0, 0);
   background-color: hsl(222, 25%, 16%);
   cursor: pointer;
+  animation: spawnNotif 0.8s forwards;
 }
 .littlePopup.notif {
   background-color: hsl(244, 80%, 53%);
@@ -763,14 +764,29 @@ h3.title {
 }
 .littlePopup.warning {
   background-color: hsl(17, 80%, 57%);
+  color: #000;
 }
 .littlePopup.ok {
   background-color: hsl(115, 80%, 53%);
+  color: #000;
 }
 .littlePopup:hover {
   opacity: 0.5;
 }
 
+@keyframes spawnNotif {
+  0% {
+    transform: translate(100%, 0%);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-10%, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
 .infopopup {
   padding-left: 0;
   list-style: none;
@@ -969,6 +985,21 @@ h3.title {
   color: #fff;
 }
 
+.lastCatView button {
+  width: 100%;
+  font-size: 16px;
+  padding: 13px 10px;
+  cursor: pointer;
+  background-color: hsl(222, 25%, 12%);
+  border: none;
+  color: #fff;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+.lastCatView button:hover {
+  background-color: hsl(222, 25%, 16%);
+}
+
 @media screen and (max-width: 1501px) {
   .galerie.galsplit .content {
     columns: 5;
@@ -1071,7 +1102,6 @@ h3.title {
     color: #fff;
   }
   .popup {
-    position: absolute;
     top: 0;
     left: 0;
     transform: unset;

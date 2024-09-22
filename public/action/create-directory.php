@@ -4,9 +4,9 @@
     $name = $_POST['name'];
 
     if(mkdir("../".$path."/".$name)){
-        header('Location: ../add/create?success=ok');
+        header('Location: ../add/create/ok');
     } else{
-        header('Location: ../add/create?success=ko');
+        header('Location: ../add/create/ko');
     }
 
     // echo "../".$path.'/'.$name;

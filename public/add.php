@@ -51,12 +51,13 @@ function scanDossiers($dossier)
 
         <?php
 
-        if ($_GET['success'] == "ok") {
+
+        if (isset($_GET['s']) && $_GET['s'] == "ok") {
             echo '<div class="littlePopup ok"><p>Action réussit !</p></div>';
-            echo 'oui';
-        } elseif ($_GET['success'] == "ko") {
+        } elseif (isset($_GET['s']) && $_GET['s'] == "ko") {
             echo '<div class="littlePopup warning"><p>Action echouée !</p></div>';
         }
+
 
         ?>
         <div class="btnlist">
