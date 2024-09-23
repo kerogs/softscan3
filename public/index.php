@@ -17,6 +17,113 @@ scanDirRecursive($directoryToScan, $returnNameType, $returnDirPath, $authorise, 
 shuffle($results);
 shuffle($directories);
 
+
+
+
+// ? check for counting
+// ? count
+// ? All files in var $results
+
+$filepath = __DIR__ . "/../public/temp/fileStats.json";
+
+if (!file_exists($filepath)) {
+    logs(__DIR__ . '/../server.log', "File not found (fileStats.json)", 404, "ERROR");
+
+    logs(__DIR__ . '/../server.log', "Trying to create (fileStats.json)", 202, "TRY");
+
+    // Mettre à jour le fichier
+    $fileTotal = 0; // Remplacez par le calcul réel
+    $imageTotal = 0; // Remplacez par le calcul réel
+    $svgjpgpngwebpTotal = 0; // Remplacez par le calcul réel
+    $gifTotal = 0; // Remplacez par le calcul réel
+    $videoTotal = 0; // Remplacez par le calcul réel
+
+    foreach ($result as $file) {
+        $fileTotal++;
+        if (in_array(pathinfo($file, PATHINFO_EXTENSION), $authorise)) {
+            $imageTotal++;
+        }
+        if (in_array(pathinfo($file, PATHINFO_EXTENSION), ['svg', 'jpg', 'png', 'webp'])) {
+            $svgjpgpngwebpTotal++;
+        }
+        if (in_array(pathinfo($file, PATHINFO_EXTENSION), ['gif'])) {
+            $gifTotal++;
+        }
+        if (in_array(pathinfo($file, PATHINFO_EXTENSION), ['mp4', 'webm', 'mov', 'avi'])) {
+            $videoTotal++;
+        }
+    }
+
+    // Tentative de création du fichier avec un contenu par défaut
+    $defaultContent = [
+        "total" => 0,
+        "imageTotal" => 0,
+        "svgjpgpngwebpTotal" => 0,
+        "gifTotal" => 0,
+        "videoTotal" => 0,
+        "lastUpdate" => date('Y-m-d H:i:s') // Met à jour avec l'heure actuelle
+    ];
+
+    file_put_contents($filepath, json_encode($defaultContent, JSON_PRETTY_PRINT));
+
+    if (file_exists($filepath)) {
+        logs(__DIR__ . '/../server.log', "File created (fileStats.json)", 201, "SUCCESS");
+    }
+}
+
+// ? check if lastUpdate is older than 10 minutes
+if (file_exists($filepath)) {
+    $fileData = json_decode(file_get_contents($filepath), true);
+    $lastUpdate = isset($fileData['lastUpdate']) ? $fileData['lastUpdate'] : null;
+
+    // Vérifiez si la dernière mise à jour est plus ancienne que 10 minutes
+    if ($lastUpdate && (time() - strtotime($lastUpdate) > 600)) {
+        // Mettre à jour le fichier
+        $fileTotal = 0; // Remplacez par le calcul réel
+        $imageTotal = 0; // Remplacez par le calcul réel
+        $svgjpgpngwebpTotal = 0; // Remplacez par le calcul réel
+        $gifTotal = 0; // Remplacez par le calcul réel
+        $videoTotal = 0; // Remplacez par le calcul réel
+
+        foreach ($result as $file) {
+            if (!in_array(pathinfo($file, PATHINFO_EXTENSION), $ignore)) {
+                $fileTotal++;
+                if (in_array(pathinfo($file, PATHINFO_EXTENSION), $authorise)) {
+                    $imageTotal++;
+                }
+                if (in_array(pathinfo($file, PATHINFO_EXTENSION), ['svg', 'jpg', 'png', 'webp'])) {
+                    $svgjpgpngwebpTotal++;
+                }
+                if (in_array(pathinfo($file, PATHINFO_EXTENSION), ['gif'])) {
+                    $gifTotal++;
+                }
+                if (in_array(pathinfo($file, PATHINFO_EXTENSION), ['mp4', 'webm', 'mov', 'avi'])) {
+                    $videoTotal++;
+                }
+            }
+        }
+
+        $content = [
+            "total" => $fileTotal,
+            "imageTotal" => $imageTotal,
+            "svgjpgpngwebpTotal" => $svgjpgpngwebpTotal,
+            "gifTotal" => $gifTotal,
+            "videoTotal" => $videoTotal,
+            "lastUpdate" => date('Y-m-d H:i:s') // Met à jour avec l'heure actuelle
+        ];
+
+        file_put_contents($filepath, json_encode($content, JSON_PRETTY_PRINT));
+        logs(__DIR__ . '/../server.log', "File updated (fileStats.json)", 200, "SUCCESS");
+    } else {
+        logs(__DIR__ . '/../server.log', "No need to update Stats (fileStats.json)", 200, "INFO");
+    }
+}
+
+
+
+
+
+
 ?>
 
 <!DOCTYPE html>

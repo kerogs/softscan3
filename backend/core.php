@@ -7,6 +7,8 @@ require_once __DIR__ . "/func/functions.php";
 // ? import class
 require_once __DIR__ . "/class/class.php";
 
+// ? Check lastest version framework KPF
+
 // ? Debug mode (1 = on, 0 = off)
 const KPF_DEBUG_MODE = 0;
 if (KPF_DEBUG_MODE) {
@@ -22,3 +24,4 @@ if (!$_SESSION['keyaccess']) {
     header('Location: login.php');
     exit();
 }
+

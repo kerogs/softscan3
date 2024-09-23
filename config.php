@@ -213,3 +213,9 @@ use Symfony\Component\Yaml\Yaml;
 
 $kpf_configFilePath = $path . '/config.yml';
 $kpf_config = Yaml::parseFile($kpf_configFilePath);
+
+
+// ! check version framework KPF
+use Kerogs\KerogsPhp\Github;
+$kp_github = new Github();
+$kp_github_lastversion = $kp_github->getLatestRelease('KSLaboratories', 'KerogsPHP-Framework');

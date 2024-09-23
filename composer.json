@@ -5,6 +5,7 @@
         "symfony/yaml": "^7.1",
         "simple-icons/simple-icons": "^13.1",
         "fakerphp/faker": "^1.23",
-        "php-ffmpeg/php-ffmpeg": "^1.2"
+        "php-ffmpeg/php-ffmpeg": "^1.2",
+        "kerogs/kerogs-php": "^1.4"
     }
 }
