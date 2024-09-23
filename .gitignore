@@ -13,3 +13,4 @@ dist/ffmpeg/bin/*
 !dist/last_ffmpeg.ksc
 
 public/temp/stats.json
+public/temp/fileStats.json

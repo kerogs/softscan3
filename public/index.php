@@ -32,22 +32,21 @@ if (!file_exists($filepath)) {
     logs(__DIR__ . '/../server.log', "Trying to create (fileStats.json)", 202, "TRY");
 
     // Mettre à jour le fichier
-    $fileTotal = 0; // Remplacez par le calcul réel
+    $fileTotal = 1; // Remplacez par le calcul réel
     $imageTotal = 0; // Remplacez par le calcul réel
     $svgjpgpngwebpTotal = 0; // Remplacez par le calcul réel
     $gifTotal = 0; // Remplacez par le calcul réel
     $videoTotal = 0; // Remplacez par le calcul réel
 
-    foreach ($result as $file) {
+    foreach ($results as $file) {
         $fileTotal++;
-        if (in_array(pathinfo($file, PATHINFO_EXTENSION), $authorise)) {
-            $imageTotal++;
-        }
         if (in_array(pathinfo($file, PATHINFO_EXTENSION), ['svg', 'jpg', 'png', 'webp'])) {
             $svgjpgpngwebpTotal++;
+            $imageTotal++;
         }
         if (in_array(pathinfo($file, PATHINFO_EXTENSION), ['gif'])) {
             $gifTotal++;
+            $imageTotal++;
         }
         if (in_array(pathinfo($file, PATHINFO_EXTENSION), ['mp4', 'webm', 'mov', 'avi'])) {
             $videoTotal++;

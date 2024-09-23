@@ -1,58 +1,20 @@
-[200] [66f1f3db70df4] 2024-09-23 23:03:55.000000 127.0.0.1 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[201] [66f1f3db6fa80] 2024-09-23 23:03:55.000000 127.0.0.1 [SUCCESS] File created (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[202] [66f1f3db6f618] 2024-09-23 23:03:55.000000 127.0.0.1 [TRY] Trying to create (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[404] [66f1f3db6e632] 2024-09-23 23:03:55.000000 127.0.0.1 [ERROR] File not found (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f3db596e9] 2024-09-23 23:03:55.000000 127.0.0.1 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f3d4cc62c] 2024-09-23 23:03:48.000000 127.0.0.1 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f3d49e303] 2024-09-23 23:03:48.000000 127.0.0.1 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f39fe4f50] 2024-09-23 23:02:55.000000 127.0.0.1 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f39fd620b] 2024-09-23 23:02:55.000000 127.0.0.1 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f39f320e7] 2024-09-23 23:02:55.000000 127.0.0.1 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f39f22fd1] 2024-09-23 23:02:55.000000 127.0.0.1 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f39e16efb] 2024-09-23 23:02:54.000000 127.0.0.1 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f39e0063b] 2024-09-23 23:02:54.000000 127.0.0.1 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f39b77124] 2024-09-23 23:02:51.000000 127.0.0.1 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[201] [66f1f39b75470] 2024-09-23 23:02:51.000000 127.0.0.1 [SUCCESS] File created (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[202] [66f1f39b75002] 2024-09-23 23:02:51.000000 127.0.0.1 [TRY] Trying to create (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[404] [66f1f39b74d45] 2024-09-23 23:02:51.000000 127.0.0.1 [ERROR] File not found (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f39b5f821] 2024-09-23 23:02:51.000000 127.0.0.1 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f38f742b7] 2024-09-23 23:02:39.000000 127.0.0.1 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f38f6582d] 2024-09-23 23:02:39.000000 127.0.0.1 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f38b4a244] 2024-09-23 23:02:35.000000 127.0.0.1 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[201] [66f1f38b48ddc] 2024-09-23 23:02:35.000000 127.0.0.1 [SUCCESS] File created (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[202] [66f1f38b488db] 2024-09-23 23:02:35.000000 127.0.0.1 [TRY] Trying to create (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[404] [66f1f38b48755] 2024-09-23 23:02:35.000000 127.0.0.1 [ERROR] File not found (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f38b152d9] 2024-09-23 23:02:35.000000 127.0.0.1 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f37014f62] 2024-09-23 23:02:08.000000 127.0.0.1 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[201] [66f1f370134b7] 2024-09-23 23:02:08.000000 127.0.0.1 [SUCCESS] File created (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[202] [66f1f37012df5] 2024-09-23 23:02:08.000000 127.0.0.1 [TRY] Trying to create (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[404] [66f1f37012943] 2024-09-23 23:02:08.000000 127.0.0.1 [ERROR] File not found (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f36ff0210] 2024-09-23 23:02:07.000000 127.0.0.1 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f368a8d05] 2024-09-23 23:02:00.000000 127.0.0.1 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f3689272d] 2024-09-23 23:02:00.000000 127.0.0.1 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f3663caa5] 2024-09-23 23:01:58.000000 127.0.0.1 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f366018a1] 2024-09-23 23:01:58.000000 127.0.0.1 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f32678a22] 2024-09-23 23:00:54.000000 127.0.0.1 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f32669b38] 2024-09-23 23:00:54.000000 127.0.0.1 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f32625535] 2024-09-23 23:00:54.000000 127.0.0.1 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f325e5ab7] 2024-09-23 23:00:53.000000 127.0.0.1 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f2fd673da] 2024-09-23 23:00:13.000000 127.0.0.1 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f2fd55efb] 2024-09-23 23:00:13.000000 127.0.0.1 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f2f5b637c] 2024-09-23 23:00:05.000000 127.0.0.1 [INFO] No need to update Stats>) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f2f5a4dd2] 2024-09-23 23:00:05.000000 127.0.0.1 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f2e93dcc1] 2024-09-23 22:59:53.000000 127.0.0.1 [INFO] no need to update (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f2e920c76] 2024-09-23 22:59:53.000000 127.0.0.1 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f2e209fcc] 2024-09-23 22:59:46.000000 127.0.0.1 [SUCCESS] no need to update (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f2e1cf4bf] 2024-09-23 22:59:45.000000 127.0.0.1 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f2c82c5b0] 2024-09-23 22:59:20.000000 127.0.0.1 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[201] [66f1f2b5f06ea] 2024-09-23 22:59:01.000000 127.0.0.1 [SUCCESS] File created (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[202] [66f1f2b5f033f] 2024-09-23 22:59:01.000000 127.0.0.1 [TRY] Trying to create (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[404] [66f1f2b5f01a8] 2024-09-23 22:59:01.000000 127.0.0.1 [ERROR] File not found (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f2b5b30a4] 2024-09-23 22:59:01.000000 127.0.0.1 [INFO] FFMPEG start script called. File modified date was 2024-09-23 22:39:55 and updated to 2024-09-23 22:59:01. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1f2b5b2e5c] 2024-09-23 22:59:01.000000 127.0.0.1 [INFO] Thumbnail generation completed. Successes: 0, Failures: 0 [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1eed7d7342] 2024-09-23 22:42:31.000000 127.0.0.1 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1eebd3e93d] 2024-09-23 22:42:05.000000 127.0.0.1 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1ee402f0ec] 2024-09-23 22:40:00.000000 127.0.0.1 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1ee3b2febf] 2024-09-23 22:39:55.000000 127.0.0.1 [INFO] FFMPEG start script called. File modified date was 2024-09-23 10:28:16 and updated to 2024-09-23 22:39:55. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f1ee3b2fc6e] 2024-09-23 22:39:55.000000 127.0.0.1 [INFO] Thumbnail generation completed. Successes: 0, Failures: 0 [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f142d1a12b1] 2024-09-23 10:28:33.000000 127.0.0.1 [NUKE] LOGS NUKE (action from user) [HTTP] [http://localhost/action/logsreset.php] (http://localhost/public/action/logsreset.php) GET -
+[200] [66f1f4b30b4ef] 2024-09-23 23:07:31.000000 127.0.0.1 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
+[201] [66f1f4b30a186] 2024-09-23 23:07:31.000000 127.0.0.1 [SUCCESS] File created (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
+[202] [66f1f4b309944] 2024-09-23 23:07:31.000000 127.0.0.1 [TRY] Trying to create (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
+[404] [66f1f4b3097bf] 2024-09-23 23:07:31.000000 127.0.0.1 [ERROR] File not found (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
+[200] [66f1f4b2c7e73] 2024-09-23 23:07:30.000000 127.0.0.1 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
+[200] [66f1f4975452b] 2024-09-23 23:07:03.000000 127.0.0.1 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
+[201] [66f1f4975330c] 2024-09-23 23:07:03.000000 127.0.0.1 [SUCCESS] File created (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
+[202] [66f1f49752b95] 2024-09-23 23:07:03.000000 127.0.0.1 [TRY] Trying to create (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
+[404] [66f1f497529e9] 2024-09-23 23:07:03.000000 127.0.0.1 [ERROR] File not found (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
+[200] [66f1f49719714] 2024-09-23 23:07:03.000000 127.0.0.1 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
+[200] [66f1f4543ee1e] 2024-09-23 23:05:56.000000 127.0.0.1 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
+[201] [66f1f4543cf1b] 2024-09-23 23:05:56.000000 127.0.0.1 [SUCCESS] File created (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
+[202] [66f1f4543c64a] 2024-09-23 23:05:56.000000 127.0.0.1 [TRY] Trying to create (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
+[404] [66f1f4543c481] 2024-09-23 23:05:56.000000 127.0.0.1 [ERROR] File not found (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
+[200] [66f1f45425a38] 2024-09-23 23:05:56.000000 127.0.0.1 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
+[200] [66f1f445ab770] 2024-09-23 23:05:41.000000 127.0.0.1 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
+[201] [66f1f445aa529] 2024-09-23 23:05:41.000000 127.0.0.1 [SUCCESS] File created (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
+[202] [66f1f445a9c67] 2024-09-23 23:05:41.000000 127.0.0.1 [TRY] Trying to create (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
+[404] [66f1f445a9ae0] 2024-09-23 23:05:41.000000 127.0.0.1 [ERROR] File not found (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
+[200] [66f1f44569b76] 2024-09-23 23:05:41.000000 127.0.0.1 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
