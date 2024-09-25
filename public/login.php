@@ -74,9 +74,9 @@ function logs($pathLogs, $message = "-", $statusCode = 200, $logType = "INFO")
 
     $contentToAdd = "[$statusCode] [$uniqid] $timestamp $ipv4 [$logType] $message [$httpMethod] [$pathShow] ($pathReal) $requestMethod $responseOutput";
 
-    if(prependToFile($pathLogs, $contentToAdd)){
+    if (prependToFile($pathLogs, $contentToAdd)) {
         return true;
-    } else{
+    } else {
         return false;
     }
 }
@@ -140,10 +140,10 @@ if (isset($_POST['password'])) {
         logs("../../server.log", "Connecté", 200, "ACCEPT");
         header("location: ./");
         exit();
-    } else{
+    } else {
         logs("../../server.log", "Mot de passe incorrect", 401, "REJECT");
     }
-} else{
+} else {
     logs("../server.log", "Nouvelle connexion détecté", 200, "INFO");
 }
 
@@ -159,16 +159,50 @@ if (isset($_POST['password'])) {
     <link rel="stylesheet" href="./src/css/login.css">
 </head>
 
+<style>
+    .topAnimationLoad {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+
+        /* background-color: #fff; */
+    }
+
+    .topAnimationLoad #headertohundred {
+        width: 0%;
+        height: 3px;
+        background-color: #a038ec;
+    }
+</style>
+
 <body>
+
+    <div class="topAnimationLoad">
+        <div id="headertohundred"></div>
+    </div>
 
     <div class="ccenter">
         <h1>Login</h1>
         <form action="" method="post">
             <label for="password">Clé de connexion</label>
             <input type="password" name="password" placeholder="Password">
-            <input type="submit" value="Login">
+            <input type="submit" id="buttonlogin" onclick="loginAnimation();             document.getElementById('buttonlogin').value = 'Connexion en cours...';" value="Login">
         </form>
     </div>
+
+    <script>
+        loginAnimation = () => {
+            headertohundred = document.getElementById('headertohundred');
+
+            for (let i = 0; i <= 100; i++) {
+                setTimeout(() => {
+                    headertohundred.style.width = i + '%';
+                }, i * 10);
+            }
+        }
+    </script>
 
 </body>
 
