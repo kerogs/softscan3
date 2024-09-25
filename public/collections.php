@@ -40,6 +40,15 @@ shuffle($results);
 
     <?php require_once '../inc/nav.php' ?>
 
+    <div class="searchRealtime">
+        <div class="input-container">
+            <input placeholder="Search..." class="input-field" type="text">
+            <label for="input-field" class="input-label"></label>
+            <span class="input-highlight"></span>
+        </div>
+    </div>
+
+
     <main>
 
         <div class="collectionShow">
@@ -62,6 +71,28 @@ shuffle($results);
         </div>
 
     </main>
+
+    <script>
+        const allCollections = document.querySelectorAll('.collectionShow ul a');
+        const searchInput = document.querySelector('.input-field');
+
+        // Fonction pour filtrer les éléments
+        function filterItems() {
+            const filterValue = searchInput.value.toLowerCase(); // Mettre la recherche en minuscule pour une comparaison insensible à la casse
+
+            allCollections.forEach(item => {
+                const text = item.textContent.toLowerCase(); // Récupérer le texte de chaque élément
+                if (text.includes(filterValue)) {
+                    item.style.display = ''; // Afficher si le texte correspond
+                } else {
+                    item.style.display = 'none'; // Masquer si le texte ne correspond pas
+                }
+            });
+        }
+
+        // Ajoute un écouteur d'événement sur la saisie
+        searchInput.addEventListener('input', filterItems);
+    </script>
 
     <?php require_once '../inc/script.php' ?>
 </body>

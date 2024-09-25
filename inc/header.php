@@ -114,7 +114,7 @@
         <ul class="infopopup">
             <li><i class='bx bxs-window-alt'></i> Site version - <?= $kpf_config["other"]["website_version"] ?></li>
             <li><i class='bx bxs-extension'></i> Framework version - <?= $kpf_config["framework"]["framework_version"] ?> (<?= $kpf_config["framework"]["title_short"] ?>)</li>
-            <li><i class='bx bxs-time'></i> Framework github version - <?= $kp_github_lastversion ?></li>
+            <li><i class='bx bxs-time'></i> Framework github version - <?= print_r($kp_github_lastversion) ?></li>
         </ul>
     </div>
 </div>

@@ -1000,6 +1000,57 @@ h3.title {
   background-color: hsl(222, 25%, 16%);
 }
 
+.searchRealtime {
+  /* Input field */
+  /* Input label */
+  /* Input highlight */
+  /* Input field:focus styles */
+}
+.searchRealtime .input-container {
+  position: relative;
+  margin: 20px;
+}
+.searchRealtime .input-field {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  background-color: transparent;
+  color: hsl(290, 80%, 53%);
+}
+.searchRealtime .input-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.searchRealtime .input-highlight {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: hsl(290, 80%, 53%);
+  transition: all 0.3s ease;
+}
+.searchRealtime .input-field:focus + .input-label {
+  top: -20px;
+  font-size: 12px;
+  color: hsl(290, 80%, 53%);
+}
+.searchRealtime .input-field:focus + .input-label + .input-highlight {
+  width: 100%;
+}
+.searchRealtime .input-field:placeholder-shown {
+  color: rgb(255, 255, 255);
+}
+
 @media screen and (max-width: 1501px) {
   .galerie.galsplit .content {
     columns: 5;

@@ -1,3 +1,11 @@
+[200] [66f424f85c2dc] 2024-09-25 14:58:00.000000 127.0.0.1 [SUCCESS] File updated (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
+[200] [66f424f83e690] 2024-09-25 14:58:00.000000 127.0.0.1 [INFO] FFMPEG start script called. File modified date was 2024-09-25 14:42:56 and updated to 2024-09-25 14:58:00. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
+[200] [66f424f83e353] 2024-09-25 14:58:00.000000 127.0.0.1 [INFO] Thumbnail generation completed. Successes: 0, Failures: 0 [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
+[200] [66f423ec8d3f5] 2024-09-25 14:53:32.000000 127.0.0.1 [INFO] Nouvelle connexion détecté [HTTP] [http://softscan3.knet/login.php] (http://softscan3.knet/public/login.php) GET -
+[200] [66f421708e865] 2024-09-25 14:42:56.000000 127.0.0.1 [SUCCESS] File updated (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
+[200] [66f4217050cf2] 2024-09-25 14:42:56.000000 127.0.0.1 [INFO] FFMPEG start script called. File modified date was 2024-09-25 13:20:38 and updated to 2024-09-25 14:42:56. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
+[200] [66f42170509af] 2024-09-25 14:42:56.000000 127.0.0.1 [INFO] Thumbnail generation completed. Successes: 0, Failures: 0 [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
+[200] [66f4216d709d2] 2024-09-25 14:42:53.000000 127.0.0.1 [INFO] Nouvelle connexion détecté [HTTP] [http://softscan3.knet/login.php] (http://softscan3.knet/public/login.php) GET -
 [200] [66f40e4b4987a] 2024-09-25 13:21:15.000000 127.0.0.1 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://localhost/] (http://localhost/public/index.php) GET -
 [200] [66f40e4b1f8a7] 2024-09-25 13:21:15.000000 127.0.0.1 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://localhost/] (http://localhost/public/index.php) GET -
 [200] [66f40e46a4fb2] 2024-09-25 13:21:10.000000 127.0.0.1 [INFO] Nouvelle connexion détecté [HTTP] [http://localhost/login.php] (http://localhost/public/login.php) GET -
