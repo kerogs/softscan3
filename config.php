@@ -107,9 +107,9 @@ function logs($pathLogs, $message = "-", $statusCode = 200, $logType = "INFO")
 
     $contentToAdd = "[$statusCode] [$uniqid] $timestamp $ipv4 [$logType] $message [$httpMethod] [$pathShow] ($pathReal) $requestMethod $responseOutput";
 
-    if(prependToFile($pathLogs, $contentToAdd)){
+    if (prependToFile($pathLogs, $contentToAdd)) {
         return true;
-    } else{
+    } else {
         return false;
     }
 }
@@ -192,7 +192,7 @@ if (
     }
 } else {
     // Fichier last_ffmpeg.ksc n'existe pas
-    if(!file_exists($lastFfmpegFile)) {
+    if (!file_exists($lastFfmpegFile)) {
         // Creer le fichier last_ffmpeg.ksc
         logs($logFile, "The file last_ffmpeg.ksc does not exist.", 500, "ERROR");
     }
@@ -213,7 +213,51 @@ $kpf_configFilePath = $path . '/config.yml';
 $kpf_config = Yaml::parseFile($kpf_configFilePath);
 
 
-// ! check version framework KPF
+// ! Github
 use Kerogs\KerogsPhp\Github;
-$kp_github = new Github();
-$kp_github_lastversion = $kp_github->getLatestRelease('KSLaboratories', 'KerogsPHP-Framework');
+
+$versionFile = __DIR__ . "/public/temp/version.ksp";
+$updateInterval = 12 * 3600; // 12 heures en secondes
+
+// Fonction pour obtenir la dernière version d'un dépôt GitHub
+function getLatestVersion(Github $github, string $owner, string $repo): string
+{
+    $latestRelease = $github->getLatestRelease($owner, $repo);
+
+    // Si la réponse est un tableau, on récupère un élément (ex. "tag_name" ou autre, selon votre structure)
+    if (is_array($latestRelease)) {
+        return $latestRelease;
+    }
+
+    return $latestRelease;
+}
+
+// Vérification si le fichier existe déjà
+if (file_exists($versionFile)) {
+    $lastModified = filemtime($versionFile);
+    $currentTime = time();
+
+    // Si la dernière mise à jour a eu lieu dans les 12 dernières heures, on ne fait rien
+    if (($currentTime - $lastModified) < $updateInterval) {
+    } else {
+        $kp_github = new Github();
+        $frameworkVersion = getLatestVersion($kp_github, 'KSLaboratories', 'KerogsPHP-Framework');
+        $siteVersion = getLatestVersion($kp_github, 'kerogs', 'SoftScan3');
+        $currentDate = date('Y-m-d H:i:s');
+
+        $versionData = $frameworkVersion . '#~>' . $siteVersion . '#~>' . $currentDate;
+
+        file_put_contents($versionFile, $versionData);
+    }
+} else {
+    $kp_github = new Github();
+    $frameworkVersion = getLatestVersion($kp_github, 'KSLaboratories', 'KerogsPHP-Framework');
+    $siteVersion = getLatestVersion($kp_github, 'kerogs', 'SoftScan3');
+    $currentDate = date('Y-m-d H:i:s');
+
+    $versionData = $frameworkVersion . '#~>' . $siteVersion . '#~>' . $currentDate;
+
+    file_put_contents($versionFile, $versionData);
+}
+
+$kpfss3_version_github = explode("#~>", file_get_contents($versionFile));

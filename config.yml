@@ -13,7 +13,7 @@ seo:
   lang_short: "fr"
   color: "#a038ec"
   image: ""
-  favicon: "src/img/logo_c.png"
+  favicon: "src/img/favicon.png"
   sitemap: "src/xml/sitemap.xml"
 
 # Labs/test IP authorization Configuration
@@ -24,7 +24,7 @@ labs:
 
 # Other
 other:
-  website_version: 3.2-sh9
+  website_version: 3.2-sh10
 
 framework:
   framework_version: 2.2.1-beta

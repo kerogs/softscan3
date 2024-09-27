@@ -113,8 +113,10 @@
         </div>
         <ul class="infopopup">
             <li><i class='bx bxs-window-alt'></i> Site version - <?= $kpf_config["other"]["website_version"] ?></li>
+            <li><i class='bx bxs-flag-checkered' ></i> Site github version - <?= $kpfss3_version_github[1] ?></li>
             <li><i class='bx bxs-extension'></i> Framework version - <?= $kpf_config["framework"]["framework_version"] ?> (<?= $kpf_config["framework"]["title_short"] ?>)</li>
-            <li><i class='bx bxs-time'></i> Framework github version - <?= print_r($kp_github_lastversion) ?></li>
+            <li><i class='bx bxs-flag-checkered' ></i> Framework github version - <?= $kpfss3_version_github[0] ?></li>
+            <li><i class='bx bxs-time'></i> Dernière vérification - <?= $kpfss3_version_github[2] ?></li>
         </ul>
     </div>
 </div>
