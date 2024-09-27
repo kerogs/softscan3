@@ -55,7 +55,7 @@
 ## À savoir
 - Les miniatures sont régénérées toutes les 6 minutes (incluant la page d'accueil).
 - Le stockage des statistiques se fait dans `public/temp/stats.json`.
-- Vous pouvez modifier le mot de passe dans le fichier `public/login.php`.
+- Vous pouvez modifier le mot de passe dans le fichier `public/login.php`. (défaut : ``kerogs``)
 
 ## Installation
 1. Clonez le repository :

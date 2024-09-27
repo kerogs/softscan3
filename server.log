@@ -1,5 +1,0 @@
-[200] [66f70591607f9] 2024-09-27 19:20:49.000000 127.0.0.1 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f705914ad4f] 2024-09-27 19:20:49.000000 127.0.0.1 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f7034fe3a8d] 2024-09-27 19:11:11.000000 127.0.0.1 [SUCCESS] File updated (fileStats.json) [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f7034fa114b] 2024-09-27 19:11:11.000000 127.0.0.1 [INFO] FFMPEG start script called. File modified date was 2024-09-27 18:58:32 and updated to 2024-09-27 19:11:11. [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
-[200] [66f7034fa0f05] 2024-09-27 19:11:11.000000 127.0.0.1 [INFO] Thumbnail generation completed. Successes: 0, Failures: 0 [HTTP] [http://softscan3.knet/] (http://softscan3.knet/public/index.php) GET -
