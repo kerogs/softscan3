@@ -128,7 +128,7 @@ function prependToFile($filePath, $newContent)
 
 session_start();
 
-const KEY_ACCESS = "alexia1";
+const KEY_ACCESS = "kerogs";
 
 if (isset($_POST['password'])) {
 
