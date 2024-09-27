@@ -16,8 +16,6 @@
 // ? You can call this file with this command : require_once('../config.php'); 
 
 
-
-
 // ======================================> Configuration php
 // Path base for the project
 $path = __DIR__;

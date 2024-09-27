@@ -196,10 +196,10 @@ if (isset($_POST['password'])) {
         loginAnimation = () => {
             headertohundred = document.getElementById('headertohundred');
 
-            for (let i = 0; ri <= 100; i++) {
+            for (let i = 0; i <= 100; i++) {
                 setTimeout(() => {
                     headertohundred.style.width = i + '%';
-                }, i * 10);
+                }, i * 16);
             }
         }
     </script>

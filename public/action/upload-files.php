@@ -6,7 +6,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Vérifier si le dossier existe
     if (!is_dir($uploadDir)) {
-        echo "Le dossier sélectionné n'existe pas.";
+        // echo "Le dossier sélectionné n'existe pas.";
+        $returnStatus = "ko";
         exit;
     }
 
@@ -21,15 +22,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 // Déplacer le fichier vers le dossier cible
                 if (move_uploaded_file($files['tmp_name'][$i], $targetFile)) {
-                    echo "Le fichier " . htmlspecialchars(basename($files['name'][$i])) . " a été téléchargé avec succès.<br>";
+                    // echo "Le fichier " . htmlspecialchars(basename($files['name'][$i])) . " a été téléchargé avec succès.<br>";
                 } else {
-                    echo "Erreur lors du téléchargement du fichier " . htmlspecialchars(basename($files['name'][$i])) . ".<br>";
+                    // echo "Erreur lors du téléchargement du fichier " . htmlspecialchars(basename($files['name'][$i])) . ".<br>";
+                    $returnStatus = "ko";
                 }
             } else {
-                echo "Erreur avec le fichier " . htmlspecialchars(basename($files['name'][$i])) . ".<br>";
+                // echo "Erreur avec le fichier " . htmlspecialchars(basename($files['name'][$i])) . ".<br>";
+                $returnStatus = "ko";
             }
         }
     } else {
-        echo "Aucun fichier n'a été téléchargé.";
+        // echo "Aucun fichier n'a été téléchargé.";
+        $returnStatus = "ko";
     }
+}
+
+if($returnStatus != "ko"){
+    header('Location: ../add/create/ok');
+} else{
+    header('Location: ../add/create/ko');
 }

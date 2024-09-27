@@ -17,9 +17,6 @@ scanDirRecursive($directoryToScan, $returnNameType, $returnDirPath, $authorise, 
 shuffle($results);
 shuffle($directories);
 
-
-
-
 // ? check for counting
 // ? count
 // ? All files in var $results
