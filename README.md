@@ -141,3 +141,4 @@ max_execution_time = 360000
     - Mode par défaut : affichage de l'image
     - Mode Google : style de présentation inspiré de Google
     - Mode Slider : affichage sous forme de carrousel permettant le défilement
+- Ajouter un input pour la section recherche.
