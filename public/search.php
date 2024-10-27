@@ -63,6 +63,56 @@ $ss3_Search_ShowNowSearch = $_SESSION['ss3_search'][0]; // ss3_Search_ShowNowSea
             <!-- left -->
             <div class="left">
 
+                <form action="search" class="searchsearch">
+                    <div class="searchsearch__left">
+                        <input type="search" name="search" placeholder="Search..." id="" value="<?= $_GET['search'] ?>">
+
+                        <div class="catList">
+                            <label for="all" <?= $_GET['type'] == "all" ? 'class="active"' : '' ?>>
+                                All
+                                <input type="radio" name="type" value="all" id="all" <?= $_GET['type'] == "all" ? 'checked' : '' ?>>
+                            </label>
+                            <label for="image" <?= $_GET['type'] == "image" ? 'class="active"' : '' ?>>
+                                Image
+                                <input type="radio" name="type" value="image" id="image" <?= $_GET['type'] == "image" ? 'checked' : '' ?>>
+                            </label>
+                            <label for="video" <?= $_GET['type'] == "video" ? 'class="active"' : '' ?>>
+                                Video
+                                <input type="radio" name="type" value="video" id="video" <?= $_GET['type'] == "video" ? 'checked' : '' ?>>
+                            </label>
+                            <label for="gif" <?= $_GET['type'] == "gif" ? 'class="active"' : '' ?>>
+                                GIF
+                                <input type="radio" name="type" value="gif" id="gif" <?= $_GET['type'] == "gif" ? 'checked' : '' ?>>
+                            </label>
+                            <label for="other" <?= $_GET['type'] == "other" ? 'class="active"' : '' ?>>
+                                Other
+                                <input type="radio" name="type" value="other" id="other" <?= $_GET['type'] == "other" ? 'checked' : '' ?>>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="searchsearch__right">
+                        <button type="submit">
+                            <i class='bx bx-search'></i>
+                        </button>
+                    </div>
+                </form>
+
+                <script>
+                    const allRadio = document.querySelectorAll('input[name="type"]');
+
+                    allRadio.forEach(radio => {
+                        radio.addEventListener('change', () => {
+                            document.querySelectorAll('.catList label').forEach(label => {
+                                label.classList.remove('active');
+                            });
+
+                            const selectedLabel = radio.closest('label');
+                            selectedLabel.classList.add('active');
+                        });
+                    });
+                </script>
+
+
                 <?php if (strlen($_GET['search']) >= 3) : ?>
 
                     <div class="collectionShow">
@@ -151,7 +201,7 @@ $ss3_Search_ShowNowSearch = $_SESSION['ss3_search'][0]; // ss3_Search_ShowNowSea
                             ?>
                         </div>
                     </div>
-                <?php else : ?>
+                <?php elseif (strlen($_GET['search']) < 3 && strlen($_GET['search']) > 0) : ?>
 
                     <div class="littlePopup alert">
                         <p>La valeur de recherche doit être supérieur ou égal à 3 characters.</p>

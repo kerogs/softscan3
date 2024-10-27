@@ -56,6 +56,8 @@ function scanDossiers($dossier)
             echo '<div class="littlePopup ok"><p>Action réussit !</p></div>';
         } elseif (isset($_GET['s']) && $_GET['s'] == "ko") {
             echo '<div class="littlePopup warning"><p>Action echouée !</p></div>';
+        } elseif(isset($_GET['s']) && $_GET['s'] == "partial") {
+            echo '<div class="littlePopup warning"><p>Une erreur est survenue, certains fichiers n\'ont pas été importés !</p></div>';
         }
 
 

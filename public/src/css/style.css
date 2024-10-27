@@ -235,6 +235,17 @@ footer a {
   cursor: pointer;
   filter: drop-shadow(0 0 10px #000);
 }
+.categoryRecoSplide .splide__progress__bar {
+  background: hsl(290, 80%, 53%);
+  height: 6px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.categoryRecoSplide:hover .splide__progress__bar {
+  opacity: 0.4;
+}
 .categoryRecoSplide .splide__arrow.splide__arrow--prev {
   position: absolute;
   top: 50%;
@@ -251,7 +262,6 @@ footer a {
 }
 .categoryRecoSplide .splide__slide .card {
   position: relative;
-  background-color: red;
   width: 100%;
   height: 230px;
   overflow: hidden;
@@ -1051,6 +1061,106 @@ h3.title {
   color: rgb(255, 255, 255);
 }
 
+.tipsR {
+  cursor: default;
+}
+.tipsR b > em {
+  color: hsl(43, 80%, 73%);
+  padding: 0 6px;
+}
+.tipsR .tip {
+  border-radius: 10px;
+  padding: 10px;
+  background-color: hsl(222, 25%, 12%);
+}
+.tipsR .tip h3 {
+  margin-bottom: 10px;
+}
+
+.searchsearch {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.searchsearch__left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.searchsearch__left input[type=search] {
+  width: 100%;
+  padding: 6px 12px;
+  background-color: hsl(222, 25%, 12%);
+  color: #fff;
+  border: none;
+  font-size: 20px;
+}
+.searchsearch__left input[type=search]:focus {
+  background-color: hsl(222, 25%, 16%);
+}
+.searchsearch__left .catList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.searchsearch__left .catList label {
+  flex: 1;
+  background-color: hsl(222, 25%, 12%);
+  padding: 10px;
+  cursor: pointer;
+}
+.searchsearch__left .catList label input[type=radio] {
+  display: none;
+}
+.searchsearch__left .catList label.active {
+  background-color: hsl(290, 80%, 53%);
+}
+.searchsearch__left .catList label:hover {
+  background-color: hsl(222, 25%, 16%);
+}
+.searchsearch__right {
+  width: 200px;
+  height: auto;
+  position: relative;
+}
+.searchsearch__right button {
+  background: none;
+  border: none;
+  background-color: hsl(290, 80%, 53%);
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.searchsearch__right button i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 1.5em;
+}
+
+.onlyphotosorgifs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.onlyphotosorgifs > a {
+  flex: 1;
+  background-color: hsl(222, 25%, 12%);
+  padding: 10px;
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+}
+.onlyphotosorgifs > a:hover {
+  background-color: hsl(222, 25%, 16%);
+}
+.onlyphotosorgifs > a.active {
+  background-color: hsl(290, 80%, 53%);
+}
+
 @media screen and (max-width: 1501px) {
   .galerie.galsplit .content {
     columns: 5;
@@ -1177,6 +1287,11 @@ h3.title {
 @media screen and (max-width: 520px) {
   header > div.search form label select {
     display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .searchsearch__right {
+    width: 100px;
   }
 }
 @media screen and (max-width: 400px) {

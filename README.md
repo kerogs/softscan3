@@ -38,7 +38,7 @@
 - Recherche avancée fonctionnant avec des URLs de dossiers et différents formats d'extensions.
 - Page de connexion sécurisée.
 
-### Aperçu (les images représentes la version `<=3.1`)
+### Aperçu (les images représentes la version `3.1`)
 
 #### Ordinateur
 
