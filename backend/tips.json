@@ -1,0 +1,36 @@
+{
+    "tips": [
+        {
+            "title": "Recharger FFMPEG",
+            "content": "Si les vidéos n'ont pas d'image de prévisualisation, vous pouvez cliquer sur \"<b><em>Configuration</em></b>\" puis sur \"<b><em>Forcer le rechargement FFMPEG</em></b>\" pour générer les images de prévisualisation."
+        },
+        {
+            "title": "Utilité de FFMPEG",
+            "content": "FFMPEG optimise le chargement des pages contenant des vidéos en générant des images de prévisualisation, qui sont chargées à la place des vidéos pour accélérer l'affichage."
+        },
+        {
+            "title": "Importer un dossier",
+            "content": "Dans la section \"<b><em>Add</em></b>\", vous pouvez importer un dossier entier ainsi que ses sous-dossiers."
+        },
+        {
+            "title": "Ajouter des images manuellement",
+            "content": "Vous pouvez ajouter des images manuellement dans le site en les plaçant dans le dossier \"<b><em>/public/public_data/</em></b>\"."
+        },
+        {
+            "title": "Pourquoi SoftScan 3 ?",
+            "content": "À l'origine, SoftScan 1 était conçu uniquement pour afficher des images, des GIFs et des vidéos. Il comportait moins de fichiers et n'avait qu'une page unique, mais il était visuellement moins attractif, peu optimisé et offrait moins de fonctionnalités."
+        },
+        {
+            "title": "Éteindre le serveur à distance",
+            "content": "Vous pouvez éteindre le serveur à distance en cliquant sur \"<b><em>Configuration</em></b>\" puis sur \"<b><em>Éteindre le serveur</em></b>\". Cependant, cette fonctionnalité n'est disponible que sous Windows."
+        },
+        {
+            "title": "Recherche avancée",
+            "content": "Vous pouvez effectuer des recherches avancées en spécifiant le type de fichier recherché (Image, GIF, Vidéo, etc.). Les résultats afficheront les éléments les plus proches de votre recherche."
+        },
+        {
+            "title": "Logs",
+            "content": "Les logs du serveur sont disponibles. Vous pouvez les consulter dans le fichier situé à la racine, nommé \"<b><em>server.log</em></b>\"."
+        }
+    ]
+}

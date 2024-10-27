@@ -24,7 +24,7 @@ labs:
 
 # Other
 other:
-  website_version: 3.2-sh13
+  website_version: 3.3-sh14
 
 framework:
   framework_version: 2.2.1-beta

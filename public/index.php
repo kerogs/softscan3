@@ -146,14 +146,14 @@ if (file_exists($filepath)) {
 
     <main>
 
-        <div class="categoryRecoSplide">
+        <div class="categoryRecoSplide" <?= count($results) < 12 ? 'style="display: none;"' : '' ?>>
             <div class="gradientLeft"></div>
             <div id="splide" class="splide">
                 <div class="splide__track">
                     <ul class="splide__list">
                         <?php
                         // Limiter les résultats pour le carrousel
-                        $resultForSplideImg = array_slice($results, 0, 8);
+                        $resultForSplideImg = array_slice($results, 0, 12);
 
                         foreach ($resultForSplideImg as $result) {
                             // Obtenir l'extension du fichier
@@ -206,17 +206,22 @@ if (file_exists($filepath)) {
                         ?>
                     </ul>
                 </div>
+
+                <div class="splide__progress">
+                    <div class="splide__progress__bar">
+                    </div>
+                </div>
             </div>
 
             <script>
                 // Initialiser Splide
                 new Splide('#splide', {
                     type: 'loop',
-                    perPage: 4,
+                    perPage: 6,
                     perMove: 1,
                     autoplay: true,
                     interval: 3500,
-                    pauseOnHover: true,
+                    pauseOnHover: false,
                     pauseOnFocus: false,
                     arrows: true,
                     pagination: false,
@@ -237,7 +242,7 @@ if (file_exists($filepath)) {
         <div class="splitArea">
             <!-- left -->
             <div class="left">
-                <div class="lastcontent">
+                <div class="lastcontent" <?= !isset($_SESSION['recent_urls']) ? 'style="display: none;"' : "" ?>>
                     <h2 class="title"><i class='bx bx-history'></i> Contenu vu</h2>
 
                     <div class="cards">
@@ -280,7 +285,7 @@ if (file_exists($filepath)) {
                     </div>
                 </div>
 
-                <div class="collectionShow">
+                <div class="collectionShow" <?= count($directories) == 0 ? 'style="display: none;"' : '' ?>>
                     <div class="titlee">
                         <h2 class="title">
                             <i class='bx bxs-collection'></i> Collections
@@ -302,7 +307,7 @@ if (file_exists($filepath)) {
                     </ul>
                 </div>
 
-                <div class="galerie galsplit">
+                <div class="galerie galsplit" <?= count($results) == 0 ? 'style="display: none;"' : '' ?>>
                     <div class="titlee">
                         <h2 class="title">
                             <i class='bx bx-image-alt'></i> Galerie
@@ -327,7 +332,7 @@ if (file_exists($filepath)) {
                     </div>
                 </div>
 
-                <div class="galerie galsplit">
+                <div class="galerie galsplit" <?= count($results) == 0 ? 'style="display: none;"' : '' ?>>
                     <div class="titlee">
                         <h2 class="title">
                             <i class='bx bx-video'></i> Vidéos
@@ -339,6 +344,8 @@ if (file_exists($filepath)) {
                         // Limiter les résultats pour la galerie
                         $resultsVideo = array_slice($results, 0, 100);
 
+                        $iVideoCount = 0; 
+
                         foreach ($resultsVideo as $image) {
 
                             $extension = pathinfo($image, PATHINFO_EXTENSION);
@@ -346,7 +353,13 @@ if (file_exists($filepath)) {
                             if (in_array($extension, $videoExtensions)) {
                                 // add video
                                 echo '<div><a href="view?url=' . htmlspecialchars($image) . '"><img src="' . htmlspecialchars(videoToThumbnailURL($image)) . '" alt=""></a></div>';
+
+                                $iVideoCount++;
                             }
+                        }
+
+                        if ($iVideoCount == 0) {
+                            echo "<p>Aucune vidéo.</p>";
                         }
                         ?>
                     </div>

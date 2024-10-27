@@ -16,7 +16,7 @@
         </a>
     </div>
 
-    <div class="lastCollectionrandom">
+    <div class="lastCollectionrandom" <?= isset($directories) ? 'style="display: block;"' : 'style="display: none;"' ?>>
         <h3 class="title">
             <i class='bx bx-category-alt'></i> Dernières Collection
         </h3>
@@ -336,5 +336,29 @@
         <a href=""><button><?= $_SESSION['lastContentView_Cat']?></button></a>
     </div>
 
+    <div class="tipsR">
+        <h3 class="title">
+            <i class="bx bx-help-circle"></i> Tips
+        </h3>
+
+        <div class="tip">
+            <?php
+            
+                $jsonDecode = json_decode(file_get_contents('../backend/tips.json'), true);
+
+                // afficher une valeur aléatoire.
+
+                $arrayRand = array_rand($jsonDecode['tips']);
+
+                // afficher le "title"
+
+                echo '<h3>' . $jsonDecode['tips'][$arrayRand]['title'] . '</h3>';
+                // afficher le "content"
+                echo $jsonDecode['tips'][$arrayRand]['content'];
+
+            
+            ?>
+        </div>
+    </div>
 
 </div>

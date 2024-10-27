@@ -1,45 +1,43 @@
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $uploadDir = "../".$_POST['dir']; // Récupérer le dossier sélectionné
-    $targetDir = $uploadDir . '/';
+    $uploadDir = "../" . $_POST['dir']; // Récupérer le dossier sélectionné
+    $targetDir = rtrim($uploadDir, '/') . '/';
 
-    // Vérifier si le dossier existe
     if (!is_dir($uploadDir)) {
-        // echo "Le dossier sélectionné n'existe pas.";
-        $returnStatus = "ko";
-        exit;
+        mkdir($uploadDir, 0777, true);
     }
 
-    // Vérifier si des fichiers ont été téléchargés
-    if (isset($_FILES['files'])) {
+    $successCount = 0;
+    $errorCount = 0;
+
+    if (isset($_FILES['files']) && is_array($_FILES['files']['name'])) {
         $files = $_FILES['files'];
 
-        // Boucle sur chaque fichier téléchargé
         for ($i = 0; $i < count($files['name']); $i++) {
-            if ($files['error'][$i] == 0) {
+            if ($files['error'][$i] === UPLOAD_ERR_OK) {
                 $targetFile = $targetDir . basename($files['name'][$i]);
 
-                // Déplacer le fichier vers le dossier cible
                 if (move_uploaded_file($files['tmp_name'][$i], $targetFile)) {
-                    // echo "Le fichier " . htmlspecialchars(basename($files['name'][$i])) . " a été téléchargé avec succès.<br>";
+                    $successCount++;
                 } else {
-                    // echo "Erreur lors du téléchargement du fichier " . htmlspecialchars(basename($files['name'][$i])) . ".<br>";
-                    $returnStatus = "ko";
+                    $errorCount++;
                 }
             } else {
-                // echo "Erreur avec le fichier " . htmlspecialchars(basename($files['name'][$i])) . ".<br>";
-                $returnStatus = "ko";
+                $errorCount++;
             }
         }
     } else {
-        // echo "Aucun fichier n'a été téléchargé.";
-        $returnStatus = "ko";
+        $errorCount++;
     }
-}
 
-if($returnStatus != "ko"){
-    header('Location: ../add/create/ok');
-} else{
-    header('Location: ../add/create/ko');
+    if ($errorCount === 0) {
+        header('Location: ../add/create/ok');
+    } elseif ($successCount > 0) {
+        header('Location: ../add/create/partial');
+    } else {
+        header('Location: ../add/create/ko');
+    }
+    exit;
 }
+?>
