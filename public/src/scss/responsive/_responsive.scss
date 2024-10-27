@@ -160,6 +160,12 @@
     }
 }
 
+@media screen and (max-width: 500px) {
+    .searchsearch__right{
+        width: 100px;
+    }
+}
+
 @media screen and (max-width: 400px) {
     header > div.search form label input{
         display: none;

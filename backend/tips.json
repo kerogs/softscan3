@@ -31,6 +31,10 @@
         {
             "title": "Logs",
             "content": "Les logs du serveur sont disponibles. Vous pouvez les consulter dans le fichier situé à la racine, nommé \"<b><em>server.log</em></b>\"."
-        }
+        },
+        {
+            "title": "Rechercher avec une catégorie",
+            "content": "Pour affiner votre recherche en fonction d'une catégorie, vous pouvez entrer directement le nom de la galerie ou de l'extension dans la barre de recherche. Les résultats correspondants seront mis en avant, mais les autres résultats resteront visibles."
+        }        
     ]
 }

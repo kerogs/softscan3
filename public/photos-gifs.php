@@ -5,7 +5,16 @@ require_once('../config.php');
 $directoryToScan = 'public_data';
 $returnNameType = 2;
 $returnDirPath = true;
-$authorise = $imageExtensions;
+
+if(isset($_GET['o'])) {
+    if($_GET['o'] == "image") {
+        $authorise = array('jpg', 'png', 'jpeg', 'webp', 'svg');
+    } elseif($_GET['o'] == "gif") {
+        $authorise = array('gif');
+    }
+} else{
+    $authorise = $imageExtensions;
+}
 $ignore = [];
 $recursive = true;
 
@@ -46,6 +55,19 @@ shuffle($directories);
         <div class="splitArea">
             <!-- left -->
             <div class="left">
+
+                <div class="onlyphotosorgifs">
+                    <a href="photos-gifs" <?= !isset($_GET['o']) ? 'class="active"' : '' ?>>
+                        Photo & GIF
+                    </a>
+                    <a href="photos-gifs?o=photo" <?= $_GET['o'] == 'photo' ? 'class="active"' : '' ?>>
+                        Photo
+                    </a>
+                    
+                    <a href="photos-gifs?o=gif" <?= $_GET['o'] == 'gif' ? 'class="active"' : '' ?>>
+                        GIF
+                    </a>
+                </div>
 
                 <div class="galerie galsplit">
                     <div class="titlee">

@@ -1,0 +1,18 @@
+[200] [671e4e196127b] 2024-10-27 14:28:41.000000 127.0.0.1 [INFO] Nouvelle connexion détecté [HTTP] [http://localhost/login.php] (http://localhost/public/login.php) GET -
+[200] [671e4c7b89909] 2024-10-27 14:21:47.000000 127.0.0.1 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://localhost/] (http://localhost/public/index.php) GET -
+[200] [671e4c7b802c3] 2024-10-27 14:21:47.000000 127.0.0.1 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://localhost/] (http://localhost/public/index.php) GET -
+[200] [671e4b9550d94] 2024-10-27 14:17:57.000000 127.0.0.1 [SUCCESS] File updated (fileStats.json) [HTTP] [http://localhost/] (http://localhost/public/index.php) GET -
+[200] [671e4b954c478] 2024-10-27 14:17:57.000000 127.0.0.1 [INFO] FFMPEG start script called. File modified date was 2024-10-27 13:34:38 and updated to 2024-10-27 14:17:57. [HTTP] [http://localhost/] (http://localhost/public/index.php) GET -
+[200] [671e4b954c286] 2024-10-27 14:17:57.000000 127.0.0.1 [INFO] Thumbnail generation completed. Successes: 0, Failures: 0 [HTTP] [http://localhost/] (http://localhost/public/index.php) GET -
+[200] [671e4b954c122] 2024-10-27 14:17:57.000000 127.0.0.1 [INFO] Thumbnail already exists for: C:\Users\lucky\Documents\git\softscan3/public/public_data\Brawlhalla 2024.10.15 - 23.21.24.04.mp4 [HTTP] [http://localhost/] (http://localhost/public/index.php) GET -
+[200] [671e4b954bf57] 2024-10-27 14:17:57.000000 127.0.0.1 [INFO] Thumbnail already exists for: C:\Users\lucky\Documents\git\softscan3/public/public_data\Brawlhalla 2024.10.15 - 23.13.19.03.mp4 [HTTP] [http://localhost/] (http://localhost/public/index.php) GET -
+[200] [671e4b954bc73] 2024-10-27 14:17:57.000000 127.0.0.1 [INFO] Thumbnail already exists for: C:\Users\lucky\Documents\git\softscan3/public/public_data\Brawlhalla 2024.10.15 - 15.19.56.02.mp4 [HTTP] [http://localhost/] (http://localhost/public/index.php) GET -
+[200] [671e48858f98b] 2024-10-27 14:04:53.000000 127.0.0.1 [INFO] Nouvelle connexion détecté [HTTP] [http://localhost/login.php] (http://localhost/public/login.php) GET -
+[200] [671e437838d81] 2024-10-27 13:43:20.000000 192.168.1.54 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [671e43782fbbf] 2024-10-27 13:43:20.000000 192.168.1.54 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [671e4347e5ed2] 2024-10-27 13:42:31.000000 192.168.1.54 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [671e4347dcc79] 2024-10-27 13:42:31.000000 192.168.1.54 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [671e4343b19dc] 2024-10-27 13:42:27.000000 192.168.1.54 [INFO] Nouvelle connexion détecté [HTTP] [http://192.168.1.16/login.php] (http://192.168.1.16/public/login.php) GET -
+[200] [671e42c401542] 2024-10-27 13:40:20.000000 192.168.1.45 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [671e42c3ec8e3] 2024-10-27 13:40:19.000000 192.168.1.45 [INFO] No need to update thumbnails. The file was modified less than 6 minutes ago. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [671e42bf159cd] 2024-10-27 13:40:15.000000 192.168.1.45 [INFO] Nouvelle connexion détecté [HTTP] [http://192.168.1.16/login.php] (http://192.168.1.16/public/login.php) GET -
