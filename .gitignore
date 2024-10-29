@@ -15,3 +15,5 @@ dist/ffmpeg/bin/*
 public/temp/stats.json
 public/temp/fileStats.json
 public/temp/version.ksp
+
+.env

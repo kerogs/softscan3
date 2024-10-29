@@ -124,19 +124,34 @@ function prependToFile($filePath, $newContent)
 
 
 // ! default section
-
-
 session_start();
 
-const KEY_ACCESS = "kerogs";
+require '../vendor/autoload.php';
+use Dotenv\Dotenv;
+
+// ? check if .env exists, if not, create it and set default password with hash.
+if(!file_exists("../.env")){
+    file_put_contents("../.env", 'KEY_ACCESS=$2y$10$ctTRFAaSpHWhjJ.4D63Zi.bTM5h4lka9hDyuytXJYI/ge/stLJ1QO '."\n".'CRYPT_KEY='.uniqid());
+    logs("../server.log", "New .env file created", 200, "INFO");
+    logs("../server.log", "Add default password in .env", 200, "INFO");
+    logs("../server.log", "Add random crypt key in .env", 200, "INFO");
+
+    header("location: ./login.php");
+    exit();
+} else{
+    $dotenv = Dotenv::createImmutable('../');
+    $dotenv->load();
+}
+
+$KEY_ACCESS = $_ENV['KEY_ACCESS'];   
 
 if (isset($_POST['password'])) {
 
     $password = htmlentities($_POST['password']);
 
-    if ($password == KEY_ACCESS) {
+    if ($password == password_verify($password, $KEY_ACCESS)) {
 
-        $_SESSION['keyaccess'] = KEY_ACCESS;
+        $_SESSION['keyaccess'] = $KEY_ACCESS;
         logs("../../server.log", "Connecté", 200, "ACCEPT");
         header("location: ./");
         exit();
@@ -144,7 +159,7 @@ if (isset($_POST['password'])) {
         logs("../../server.log", "Mot de passe incorrect", 401, "REJECT");
     }
 } else {
-    logs("../server.log", "Nouvelle connexion détecté", 200, "INFO");
+    logs("../server.log", "Nouvelle connexion détect é", 200, "INFO");
 }
 
 ?>

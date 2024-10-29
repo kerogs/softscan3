@@ -39,6 +39,10 @@
             <i class='bx bxs-cog'></i>
         </div>
         <button onclick="ffmpegReload()">Forcer le rechargement FFMPEG</button>
+        <div class="splitConfigForm">
+            <input type="text" name="" placeholder="New password" id="newPasswordInput">
+            <input type="submit" id="newPasswordBtn" onclick="newPassword()" value="Save">
+        </div>
         <div class="dangerzone">
             <div class="titlee">
                 <h3>Zone de danger</h3>
@@ -52,6 +56,27 @@
 </div>
 
 <script>
+
+    function newPassword(){
+        const askConfirmation = confirm("Vous êtes sur le point de changer le mot de passe. Voulez-vous continuer ?");
+
+        if(askConfirmation){
+            let newPassword = document.getElementById('newPasswordInput').value;
+            let newPasswordBtn = document.getElementById('newPasswordBtn');
+            const bodyArea = document.querySelector("body");
+
+            if(newPassword == ''){
+                bodyArea.innerHTML += '<div class="littlePopup alert"><p>Vous devez entrer un mot de passe.</p></div>';
+            } else{
+                bodyArea.innerHTML += '<div class="littlePopup notif"><p>Le mot de passe est entrain de changer.</p></div>';
+
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "action/newPassword.php?newPassword="+newPassword, true);
+                xhr.send();
+            }
+        }
+    }
+
     function stopServer() {
 
         // ? add popup message

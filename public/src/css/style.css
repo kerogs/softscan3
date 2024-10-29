@@ -1161,6 +1161,36 @@ h3.title {
   background-color: hsl(290, 80%, 53%);
 }
 
+.splitConfigForm {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  margin: 0 0 13px 0;
+}
+.splitConfigForm input {
+  font-size: 16px;
+  padding: 13px 10px;
+}
+.splitConfigForm input[type=text] {
+  flex: 1;
+  background-color: hsl(222, 25%, 12%);
+  color: #fff;
+  border: none;
+  outline: none;
+}
+.splitConfigForm input[type=text]:focus {
+  background-color: hsl(222, 25%, 16%);
+}
+.splitConfigForm input[type=submit] {
+  background-color: hsl(290, 80%, 53%);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.splitConfigForm input[type=submit]:hover {
+  background-color: #a816c5;
+}
+
 @media screen and (max-width: 1501px) {
   .galerie.galsplit .content {
     columns: 5;
