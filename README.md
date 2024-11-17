@@ -37,6 +37,7 @@
 - Possibilité d'éteindre le serveur à distance.
 - Recherche avancée fonctionnant avec des URLs de dossiers et différents formats d'extensions.
 - Page de connexion sécurisée.
+- supporte docker
 
 ### Aperçu (les images représentes la version `3.1`)
 
@@ -130,6 +131,12 @@ max_execution_time = 360000
 
 3. Redémarrez votre serveur web.
 
+### Docker build && run
+```sh
+docker compose up --build
+```
+
+
 ## Problèmes connus
 
 - Sur téléphone, lors de l'envoi de plusieurs fichiers, une erreur peut survenir et seulement une partie des fichiers sera transférée.
@@ -141,4 +148,3 @@ max_execution_time = 360000
     - Mode par défaut : affichage de l'image
     - Mode Google : style de présentation inspiré de Google
     - Mode Slider : affichage sous forme de carrousel permettant le défilement
-- Ajouter un input pour la section recherche.
