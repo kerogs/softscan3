@@ -71,8 +71,14 @@ if ($url) {
         }
 
         // Rediriger vers view.php avec l'URL encodée
-        header("Location: ../view.php?url=" . urlencode($url).'&viewCounter=noCount');
-        exit();
+        if(is_numeric($_GET['index']) && $_GET['verticalscroll']) {
+            header("Location: ../vertiscroll?dir=" . $_GET['vertidir'] .'&index='.$_GET['index']);
+            exit();
+        }
+        else{
+            header("Location: ../view.php?url=" . urlencode($url).'&viewCounter=noCount');
+            exit();
+        }
         
     } catch (Exception $e) {
         logs('../../server.log', "Erreur : " . $e->getMessage(), 500, "ERROR");

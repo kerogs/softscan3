@@ -47,6 +47,12 @@ scanDirRecursive($directoryToScan, $returnNameType, $returnDirPath, $authorise, 
 
     <main>
 
+        <a class="vertiscrollbtn" href="/vertiscroll?dir=<?= $_GET['dir'] ?>">
+            <button>
+                <i class='bx bxs-mobile' ></i> Ouvrir dans VertiScroll
+            </button>
+        </a>
+
         <?php
 
         if (count($directories) > 0 && $_GET['dir'] == true && $_GET['desrec'] != "true") {

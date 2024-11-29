@@ -9,6 +9,11 @@ $url = basename($_SERVER['PHP_SELF']);
         <a href="/">
             <li <?= $url == 'index.php' || $url == '' ? 'class="active"' : '' ?>><i class='bx bxs-home-heart'></i> Home</li>
         </a>
+        <a href="/vertiscroll">
+            <li>
+                <i class='bx bxs-mobile'></i> VertiScrolll
+            </li>
+        </a>
         <a href="/photos-gifs">
             <li><i class='bx bxs-image-alt'></i> Photos & GIFs</li>
         </a>
@@ -16,10 +21,10 @@ $url = basename($_SERVER['PHP_SELF']);
             <li><i class='bx bxs-video-recording'></i> Videos</li>
         </a>
         <a href="/all">
-            <li <?= $url == 'all.php' ? 'class="active"' : '' ?> ><i class='bx bxs-collection'></i> All</li>
+            <li <?= $url == 'all.php' ? 'class="active"' : '' ?>><i class='bx bxs-collection'></i> All</li>
         </a>
         <a href="/collections">
-            <li <li <?= $url == 'collections.php' ? 'class="active"' : '' ?> ><i class='bx bxs-collection'></i> Collections</li>
+            <li <li <?= $url == 'collections.php' ? 'class="active"' : '' ?>><i class='bx bxs-collection'></i> Collections</li>
         </a>
         <a href="/top100?by=top_vues">
             <li <?= $url == 'top100.php' ? 'class="active"' : '' ?>><i class='bx bxs-trophy'></i> Top 100</li>

@@ -144,7 +144,8 @@ header > div.githubad .card > img {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   opacity: 0.3;
 }
 header > div.githubad .card h2 {
@@ -278,12 +279,14 @@ footer a {
 .categoryRecoSplide .splide__slide .card > img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .categoryRecoSplide .splide__slide .card > video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .categoryRecoSplide .splide__slide .card > a {
   position: absolute;
@@ -410,7 +413,8 @@ h3.title {
 .lastcontent .cards .card img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .lastcontent .cards .card a {
   position: absolute;
@@ -474,12 +478,14 @@ h3.title {
 .lastadd ul a li .img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .lastadd ul a li .img video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .lastadd ul a li .type {
   text-transform: uppercase;
@@ -537,7 +543,8 @@ h3.title {
   margin: 20px 0;
 }
 .galerie .content {
-  columns: 6;
+  -moz-columns: 6;
+       columns: 6;
 }
 .galerie .content div {
   margin-bottom: 15px;
@@ -893,7 +900,8 @@ h3.title {
 .topStats ul li .img img {
   width: 60px;
   height: 80px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   vertical-align: middle;
 }
 .topStats ul li .information .name {
@@ -1057,6 +1065,9 @@ h3.title {
 .searchRealtime .input-field:focus + .input-label + .input-highlight {
   width: 100%;
 }
+.searchRealtime .input-field:-moz-placeholder-shown {
+  color: rgb(255, 255, 255);
+}
 .searchRealtime .input-field:placeholder-shown {
   color: rgb(255, 255, 255);
 }
@@ -1191,14 +1202,31 @@ h3.title {
   background-color: #a816c5;
 }
 
+.vertiscrollbtn button {
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  padding: 9px 0;
+  background-color: hsl(290, 80%, 53%);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 20px;
+}
+.vertiscrollbtn button:hover {
+  background-color: #a816c5;
+}
+
 @media screen and (max-width: 1501px) {
   .galerie.galsplit .content {
-    columns: 5;
+    -moz-columns: 5;
+         columns: 5;
   }
 }
 @media screen and (max-width: 1343px) {
   .galerie.galsplit .content {
-    columns: 4;
+    -moz-columns: 4;
+         columns: 4;
   }
 }
 @media screen and (max-width: 1229px) {
@@ -1209,7 +1237,8 @@ h3.title {
     width: 320px;
   }
   .galerie.allgal .content {
-    columns: 5;
+    -moz-columns: 5;
+         columns: 5;
   }
   .lastcontent .cards .card:nth-child(4) {
     display: none;
@@ -1217,10 +1246,12 @@ h3.title {
 }
 @media screen and (max-width: 1077px) {
   .galerie.galsplit .content {
-    columns: 3;
+    -moz-columns: 3;
+         columns: 3;
   }
   .galerie.allgal .content {
-    columns: 4;
+    -moz-columns: 4;
+         columns: 4;
   }
   .lastcontent .cards .card:nth-child(3) {
     display: none;
@@ -1256,7 +1287,8 @@ h3.title {
     width: 100%;
   }
   .galerie.allgal .content {
-    columns: 3;
+    -moz-columns: 3;
+         columns: 3;
   }
   header > div.btnplus button span {
     display: none;
@@ -1268,10 +1300,12 @@ h3.title {
     white-space: nowrap;
   }
   .galerie.galsplit .content {
-    columns: 3;
+    -moz-columns: 3;
+         columns: 3;
   }
   .galerie.allgal .content {
-    columns: 3;
+    -moz-columns: 3;
+         columns: 3;
   }
   .ambiantBackground .filter {
     display: none;
@@ -1308,10 +1342,12 @@ h3.title {
 }
 @media screen and (max-width: 600px) {
   .galerie.galsplit .content {
-    columns: 2;
+    -moz-columns: 2;
+         columns: 2;
   }
   .galerie.allgal .content {
-    columns: 2;
+    -moz-columns: 2;
+         columns: 2;
   }
 }
 @media screen and (max-width: 520px) {

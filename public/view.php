@@ -18,6 +18,8 @@ $directories = [];
 
 scanDirRecursive($directoryToScan, $returnNameType, $returnDirPath, $authorise, $ignore, $recursive, $results, $directories);
 
+$index = array_search($urlGet, $results);
+
 shuffle($results);
 shuffle($directories);
 
@@ -185,6 +187,14 @@ $stats = getUrlStats($json_file, $url);
                 ?>
 
                 <div class="infobox">
+
+                    <!-- Download Icon -->
+                    <a href="<?= $urlGet ?>" download="<?= basename($urlGet) ?>">
+                        <div>
+                            <i class='bx bx-download'></i> Télécharger
+                        </div>
+                    </a>
+
                     <div>
                         <i class='bx bx-show'></i> <?= $stats['vue'] ?> vues
                     </div>
@@ -200,6 +210,13 @@ $stats = getUrlStats($json_file, $url);
                     <a href="action/likedislike.php?url=<?= urlencode($urlGet) ?>&dislike=1&like=0">
                         <div <?php echo ($_COOKIE[$cookieUrlKey] === 'dislike') ? 'class="dislike"' : '' ?>>
                             <i class='bx bx-dislike'></i> <?= $stats['dislike'] ?>
+                        </div>
+                    </a>
+
+                    <!-- see in vertiscroll -->
+                    <a href="vertiscroll?dir=<?= pathinfo($urlGet, PATHINFO_DIRNAME) ?>&index=<?= $index ?>&recursive=true">
+                        <div>
+                            <i class='bx bxs-mobile'></i> VertiScroll
                         </div>
                     </a>
                 </div>
