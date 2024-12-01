@@ -40,7 +40,7 @@ function scanDirectory($dir)
 // Fonction pour vérifier si un fichier est une vidéo
 function isVideo($file)
 {
-    $videoExtensions = ['mp4', 'avi', 'mov', 'mkv', 'flv'];
+    $videoExtensions = ['mp4', 'avi', 'mov', 'mkv', 'flv', 'webm'];
     $extension = strtolower(pathinfo($file, PATHINFO_EXTENSION));
     return in_array($extension, $videoExtensions);
 }
@@ -62,7 +62,7 @@ function generateThumbnails($sourceDir, $destDir, $ffmpeg)
             // Créer les répertoires manquants dans temp/thumbnail/
             if (!is_dir($thumbnailPath)) {
                 if (!mkdir($thumbnailPath, 0777, true)) {
-                    logs(__DIR__ . '/server.log', "Erreur de création du répertoire : $thumbnailPath", 500, "ERROR");
+                    logs(__DIR__ . '/server.log', "Error while creating thumbnail directory : $thumbnailPath", 500, "ERROR");
                     continue;
                 }
             }
@@ -85,7 +85,7 @@ function generateThumbnails($sourceDir, $destDir, $ffmpeg)
                     $failureCount++;
                 }
             } else {
-                logs(__DIR__ . '/server.log', "Thumbnail already exists for: $file", 200, "INFO");
+                // logs(__DIR__ . '/server.log', "Thumbnail ok", 302, "INFO");
             }
         }
     }

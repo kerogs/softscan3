@@ -38,6 +38,7 @@
 - Recherche avancée fonctionnant avec des URLs de dossiers et différents formats d'extensions.
 - Page de connexion sécurisée.
 - supporte docker
+- Section de scroll vertical pour regarder la galerie de manière plus confortable sur téléphone ou ordinateur avec rien pour déranger la vision
 
 ### Aperçu (les images représentes la version `3.1`)
 
@@ -139,12 +140,7 @@ docker compose up --build
 
 ## Problèmes connus
 
-- Sur téléphone, lors de l'envoi de plusieurs fichiers, une erreur peut survenir et seulement une partie des fichiers sera transférée.
-- Adapter le code de génération des miniatures afin de supporter les fichiers au format `WEBM`
-
-## Futur MAJ Prévu :
-
-- 3 modes d'affichage :
-    - Mode par défaut : affichage de l'image
-    - Mode Google : style de présentation inspiré de Google
-    - Mode Slider : affichage sous forme de carrousel permettant le défilement
+## Futur MAJ Prévu
+- Possibilité de supprimer des images depuis l'interface web
+- Les images disliké ne seront plus affiché dans les recommendation
+- Les images liké seront indiqué plus clairement dans les recommendation
