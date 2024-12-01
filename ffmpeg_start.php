@@ -50,8 +50,10 @@ function isVideo($file)
 function generateThumbnails($sourceDir, $destDir, $ffmpeg)
 {
     $files = scanDirectory($sourceDir);
+    $totalFiles = count($files); // Total des fichiers scannés
     $successCount = 0;
     $failureCount = 0;
+    $processedCount = 0; // Compteur pour suivre les fichiers traités
 
     foreach ($files as $file) {
         if (isVideo($file)) {
@@ -74,9 +76,11 @@ function generateThumbnails($sourceDir, $destDir, $ffmpeg)
                     // Ouvrir la vidéo
                     $video = $ffmpeg->open($file);
 
-                    // Extraire une frame à la 10ème seconde et la sauvegarder
-                    // ! $video->frame(TimeCode::fromSeconds(10))->save($thumbnailFile);
-                    $video->frame(TimeCode::fromSeconds(2))->save($thumbnailFile);
+                    // Extraire une frame à la 2ème seconde
+                    $frame = $video->frame(TimeCode::fromSeconds(2));
+
+                    // Sauvegarder avec compression (réduction de la qualité à 50%)
+                    $frame->save($thumbnailFile, ['quality' => 50]);
 
                     logs(__DIR__ . '/server.log', "Thumbnail created for: $file", 200, "INFO");
                     $successCount++;
@@ -84,8 +88,15 @@ function generateThumbnails($sourceDir, $destDir, $ffmpeg)
                     logs(__DIR__ . '/server.log', "Failed to create thumbnail for: $file. Error: " . $e->getMessage(), 500, "ERROR");
                     $failureCount++;
                 }
-            } else {
-                // logs(__DIR__ . '/server.log', "Thumbnail ok", 302, "INFO");
+            }
+
+            // Met à jour le compteur de fichiers traités
+            $processedCount++;
+
+            // Ajoute un log toutes les 8 vidéos traitées
+            if ($processedCount % 8 == 0 || $processedCount === $totalFiles) {
+                $percentage = round(($processedCount / $totalFiles) * 100, 2);
+                logs(__DIR__ . '/server.log', "Progress: $processedCount/$totalFiles files processed ($percentage%)", 200, "INFO");
             }
         }
     }
@@ -94,7 +105,6 @@ function generateThumbnails($sourceDir, $destDir, $ffmpeg)
     logs(__DIR__ . '/server.log', "Thumbnail generation completed. Successes: $successCount, Failures: $failureCount", 200, "INFO");
 }
 
+
 // Exécuter la génération des miniatures
 generateThumbnails($sourceDir, $destDir, $ffmpeg);
-
-?>

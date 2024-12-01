@@ -12,11 +12,7 @@ $returnDirPath = true;
 $authorise = ['jpg', 'gif', 'png', 'jpeg', 'webp', 'svg', 'mp4', 'webm', 'mov', 'avi'];
 $ignore = [];
 
-if ($_GET['desrec'] == "true") {
-    $recursive = false;
-} else {
-    $recursive = true;
-}
+$recursive = true;
 $results = [];
 $directories = [];
 
@@ -185,41 +181,20 @@ $stats = getUrlStats($json_file, $results[$index]);
                     <p><?= $stats['dislike'] ?></p>
                 </div>
             </div>
-            <a href="all?dir=<?= $_GET['dir'] ?>">
+            <a href="all?dir=<?= dirname($results[$index]) ?>">
                 <div class="btn hover">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h6l2 2h8q.825 0 1.413.588T22 8v10q0 .825-.587 1.413T20 20z" />
                     </svg>
                 </div>
             </a>
-            <?php if ($_GET['desrec'] == "true") : ?>
-                <a href="vertiscroll?dir=<?= $_GET['dir'] ?>&recursive=false">
-                    <div class="btn hover">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <g fill="none" stroke="currentColor">
-                                <path d="M11.5 7.1c0-.56 0-.84.109-1.054a1 1 0 0 1 .437-.437C12.26 5.5 12.54 5.5 13.1 5.5h.237c.245 0 .367 0 .482.028a1 1 0 0 1 .29.12c.1.061.187.148.36.32l.062.063c.173.174.26.26.36.322a1 1 0 0 0 .29.12c.115.027.237.027.482.027H16.9c.56 0 .84 0 1.054.11a1 1 0 0 1 .437.436c.109.214.109.494.109 1.054v1.8c0 .56 0 .84-.109 1.054a1 1 0 0 1-.437.437c-.214.109-.494.109-1.054.109h-3.8c-.56 0-.84 0-1.054-.109a1 1 0 0 1-.437-.437C11.5 10.74 11.5 10.46 11.5 9.9zm0 10c0-.56 0-.84.109-1.054a1 1 0 0 1 .437-.437c.214-.109.494-.109 1.054-.109h.237c.245 0 .367 0 .482.028q.154.037.29.12c.1.061.187.148.36.32l.062.064c.173.172.26.26.36.32q.136.084.29.12c.115.028.237.028.482.028H16.9c.56 0 .84 0 1.054.11a1 1 0 0 1 .437.436c.109.214.109.494.109 1.054v1.8c0 .56 0 .84-.109 1.054a1 1 0 0 1-.437.437c-.214.109-.494.109-1.054.109h-3.8c-.56 0-.84 0-1.054-.109a1 1 0 0 1-.437-.437c-.109-.214-.109-.494-.109-1.054z" />
-                                <path d="M5.5 3v3.9c0 .56 0 .84.109 1.054a1 1 0 0 0 .437.437C6.26 8.5 6.54 8.5 7.1 8.5h4.4M5.5 5v11.9c0 .56 0 .84.109 1.054a1 1 0 0 0 .437.437c.214.109.494.109 1.054.109h4.4" />
-                            </g>
-                        </svg>
-                    </div>
-                </a>
-            <?php else : ?>
-                <a href="vertiscroll?dir=<?= $_GET['dir'] ?>&recursive=true&index=<?= $index ?>">
-                    <div class="btn hover">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <defs>
-                                <mask id="letsIconsFoldersLineDuotone0">
-                                    <g fill="none">
-                                        <path stroke="silver" stroke-opacity="0.24" d="M5.5 3v3.9c0 .56 0 .84.109 1.054a1 1 0 0 0 .437.437C6.26 8.5 6.54 8.5 7.1 8.5h4.4M5.5 5v11.9c0 .56 0 .84.109 1.054a1 1 0 0 0 .437.437c.214.109.494.109 1.054.109h4.4" />
-                                        <path fill="#fff" d="M11 6.6c0-.56 0-.84.109-1.054a1 1 0 0 1 .437-.437C11.76 5 12.04 5 12.6 5h.737c.245 0 .367 0 .482.028a1 1 0 0 1 .29.12c.1.061.187.148.36.32l.062.063c.173.173.26.26.36.322a1 1 0 0 0 .29.12c.115.027.237.027.482.027H17.4c.56 0 .84 0 1.054.109a1 1 0 0 1 .437.437C19 6.76 19 7.04 19 7.6v2.8c0 .56 0 .84-.109 1.054a1 1 0 0 1-.437.437C18.24 12 17.96 12 17.4 12h-4.8c-.56 0-.84 0-1.054-.109a1 1 0 0 1-.437-.437C11 11.24 11 10.96 11 10.4zm0 10c0-.56 0-.84.109-1.054a1 1 0 0 1 .437-.437C11.76 15 12.04 15 12.6 15h.737c.245 0 .367 0 .482.028q.154.036.29.12c.1.061.187.148.36.32l.062.063c.173.173.26.26.36.322q.136.082.29.12c.115.027.237.027.482.027H17.4c.56 0 .84 0 1.054.109a1 1 0 0 1 .437.437C19 16.76 19 17.04 19 17.6v2.8c0 .56 0 .84-.109 1.054a1 1 0 0 1-.437.437C18.24 22 17.96 22 17.4 22h-4.8c-.56 0-.84 0-1.054-.109a1 1 0 0 1-.437-.437C11 21.24 11 20.96 11 20.4z" />
-                                    </g>
-                                </mask>
-                            </defs>
-                            <path fill="currentColor" d="M0 0h24v24H0z" mask="url(#letsIconsFoldersLineDuotone0)" />
-                        </svg>
-                    </div>
-                </a>
-            <?php endif; ?>
+            <a href="view?url=<?= $results[$index] ?>">
+                <div class="btn hover">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m1 15h-2v-6h2zm0-8h-2V7h2z" />
+                    </svg>
+                </div>
+            </a>
         </div>
     </main>
 
@@ -255,7 +230,7 @@ $stats = getUrlStats($json_file, $results[$index]);
 
         // Gestion des boutons
         function handleArrowClick(button) {
-            button.addEventListener('click', function (event) {
+            button.addEventListener('click', function(event) {
                 event.preventDefault();
 
                 // Récupérer l'attribut href
