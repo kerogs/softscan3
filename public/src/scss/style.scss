@@ -1496,4 +1496,33 @@ h3.title {
     }
 }
 
+.nnhover{
+
+    border: 2px solid $secondary !important;
+    margin: 0 !important;
+
+    span{
+        &:nth-child(2){
+            display: none;
+        }
+    }
+
+    &.active{
+        background-color: $secondary !important;
+    }
+
+    &:hover{
+        span{
+            &:nth-child(1){
+                display: none;
+            }
+            &:nth-child(2){
+                display: block;
+            }
+        }
+
+        background-color: $background3 !important;
+    }
+}
+
 @import './responsive/responsive';

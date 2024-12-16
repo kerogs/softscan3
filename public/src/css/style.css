@@ -1217,6 +1217,26 @@ h3.title {
   background-color: #a816c5;
 }
 
+.nnhover {
+  border: 2px solid hsl(290, 80%, 53%) !important;
+  margin: 0 !important;
+}
+.nnhover span:nth-child(2) {
+  display: none;
+}
+.nnhover.active {
+  background-color: hsl(290, 80%, 53%) !important;
+}
+.nnhover:hover {
+  background-color: hsl(222, 25%, 16%) !important;
+}
+.nnhover:hover span:nth-child(1) {
+  display: none;
+}
+.nnhover:hover span:nth-child(2) {
+  display: block;
+}
+
 @media screen and (max-width: 1501px) {
   .galerie.galsplit .content {
     -moz-columns: 5;

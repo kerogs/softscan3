@@ -157,9 +157,8 @@ function prependToFile($filePath, $newContent)
 
 
 
-
-
-
+// ! serveur config internal
+$srvIntConfigJSON = json_decode(file_get_contents(__DIR__ . '/backend/config.json'), true);
 
 // ! FFMPEG
 $lastFfmpegFile = $path . '/dist/last_ffmpeg.ksc';
@@ -174,7 +173,7 @@ if (
     $currentTime = time();
     $sixMinutes = 12 * 60; // 6 minutes en secondes
 
-    if (($currentTime - $fileModificationTime) > $sixMinutes) {
+    if (($currentTime - $fileModificationTime) > $sixMinutes && $srvIntConfigJSON['ffmpeg']) {
         // Appeler le script ffmpeg_start.php en arrière-plan
         // exec('php ' . escapeshellarg($path . '/ffmpeg_start.php') . ' > /dev/null 2>&1 &');
         require 'ffmpeg_start.php';
@@ -188,7 +187,11 @@ if (
         logs($logFile, "FFMPEG start script called. File modified date was $oldDate and updated to $newDate.", 200, "INFO");
     } else {
         // Pas besoin de mettre à jour les thumbnails
-        logs($logFile, "No need to update thumbnails. The file was modified less than 6 minutes ago.", 200, "INFO");
+        if(!$srvIntConfigJSON['ffmpeg']) {
+            logs($logFile, "FFMPEG auto is disabled.", 200, "INFO");
+        } else{
+            logs($logFile, "No need to update thumbnails. The file was modified less than 6 minutes ago.", 200, "INFO");
+        }
     }
 } else {
     // Fichier last_ffmpeg.ksc n'existe pas

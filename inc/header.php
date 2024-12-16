@@ -3,13 +3,13 @@
     <div class="search">
         <form action="/search" method="get">
             <label for="search">
-                <input value="<?= basename($_SERVER['PHP_SELF']) == 'search.php' && $_GET['type'] ? $_GET['search'] : '' ; ?>" type="text" id="search" name="search" placeholder="Search...">
+                <input value="<?= basename($_SERVER['PHP_SELF']) == 'search.php' && $_GET['type'] ? $_GET['search'] : ''; ?>" type="text" id="search" name="search" placeholder="Search...">
                 <select name="type" id="">
-                    <option <?= $_GET['type'] == 'all' && basename($_SERVER['PHP_SELF']) == 'search.php' ? 'selected' : '' ; ?> value="all">All</option>
-                    <option <?= $_GET['type'] == 'image' && basename($_SERVER['PHP_SELF']) == 'search.php' ? 'selected' : '' ; ?> value="image">Image</option>
-                    <option <?= $_GET['type'] == 'video' && basename($_SERVER['PHP_SELF']) == 'search.php' ? 'selected' : '' ; ?> value="video">Video</option>
-                    <option <?= $_GET['type'] == 'gif' && basename($_SERVER['PHP_SELF']) == 'search.php' ? 'selected' : '' ; ?> value="gif">GIF</option>
-                    <option <?= $_GET['type'] == 'other' && basename($_SERVER['PHP_SELF']) == 'search.php' ? 'selected' : '' ; ?> value="other">Image/GIF</option>
+                    <option <?= $_GET['type'] == 'all' && basename($_SERVER['PHP_SELF']) == 'search.php' ? 'selected' : ''; ?> value="all">All</option>
+                    <option <?= $_GET['type'] == 'image' && basename($_SERVER['PHP_SELF']) == 'search.php' ? 'selected' : ''; ?> value="image">Image</option>
+                    <option <?= $_GET['type'] == 'video' && basename($_SERVER['PHP_SELF']) == 'search.php' ? 'selected' : ''; ?> value="video">Video</option>
+                    <option <?= $_GET['type'] == 'gif' && basename($_SERVER['PHP_SELF']) == 'search.php' ? 'selected' : ''; ?> value="gif">GIF</option>
+                    <option <?= $_GET['type'] == 'other' && basename($_SERVER['PHP_SELF']) == 'search.php' ? 'selected' : ''; ?> value="other">Image/GIF</option>
                 </select>
                 <button type="submit"><i class='bx bx-search'></i></button>
             </label>
@@ -38,6 +38,13 @@
             <h3>Configuration du serveur</h3>
             <i class='bx bxs-cog'></i>
         </div>
+        <div>
+            <?php if ($srvConfigJSON['autoFFMPEG']) : ?>
+                <a href="/action/autoFFMPEG.php?set=false"><button class="nnhover <?= $srvConfigJSON['autoFFMPEG'] ? 'active' : '' ?>"><span>FFMPEG auto activé</span><span>Désactiver le FFMPEG auto</span></button></a>
+            <?php else : ?>
+                <a href="/action/autoFFMPEG.php?set=true"><button class="nnhover <?= $srvConfigJSON['autoFFMPEG'] ? 'active' : '' ?>"><span>FFMPEG auto désactivé</span><span>Activer le FFMPEG auto</span></button></a>
+            <?php endif; ?>
+        </div>
         <button onclick="ffmpegReload()">Forcer le rechargement FFMPEG</button>
         <div class="splitConfigForm">
             <input type="text" name="" placeholder="New password" id="newPasswordInput">
@@ -56,22 +63,21 @@
 </div>
 
 <script>
-
-    function newPassword(){
+    function newPassword() {
         const askConfirmation = confirm("Vous êtes sur le point de changer le mot de passe. Voulez-vous continuer ?");
 
-        if(askConfirmation){
+        if (askConfirmation) {
             let newPassword = document.getElementById('newPasswordInput').value;
             let newPasswordBtn = document.getElementById('newPasswordBtn');
             const bodyArea = document.querySelector("body");
 
-            if(newPassword == ''){
+            if (newPassword == '') {
                 bodyArea.innerHTML += '<div class="littlePopup alert"><p>Vous devez entrer un mot de passe.</p></div>';
-            } else{
+            } else {
                 bodyArea.innerHTML += '<div class="littlePopup notif"><p>Le mot de passe est entrain de changer.</p></div>';
 
                 var xhr = new XMLHttpRequest();
-                xhr.open("GET", "action/newPassword.php?newPassword="+newPassword, true);
+                xhr.open("GET", "action/newPassword.php?newPassword=" + newPassword, true);
                 xhr.send();
             }
         }
@@ -138,9 +144,9 @@
         </div>
         <ul class="infopopup">
             <li><i class='bx bxs-window-alt'></i> Site version - <?= $kpf_config["other"]["website_version"] ?></li>
-            <li><i class='bx bxs-flag-checkered' ></i> Site github version - <?= $kpfss3_version_github[1] ?></li>
+            <li><i class='bx bxs-flag-checkered'></i> Site github version - <?= $kpfss3_version_github[1] ?></li>
             <li><i class='bx bxs-extension'></i> Framework version - <?= $kpf_config["framework"]["framework_version"] ?> (<?= $kpf_config["framework"]["title_short"] ?>)</li>
-            <li><i class='bx bxs-flag-checkered' ></i> Framework github version - <?= $kpfss3_version_github[0] ?></li>
+            <li><i class='bx bxs-flag-checkered'></i> Framework github version - <?= $kpfss3_version_github[0] ?></li>
             <li><i class='bx bxs-time'></i> Dernière vérification - <?= $kpfss3_version_github[2] ?></li>
         </ul>
     </div>

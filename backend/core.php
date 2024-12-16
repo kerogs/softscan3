@@ -25,3 +25,10 @@ if (!$_SESSION['keyaccess']) {
     exit();
 }
 
+if (!file_exists(__DIR__ . '/config.json')) {
+    file_put_contents(__DIR__ . '/config.json', json_encode([
+        "autoFFMPEG" => true,
+    ]));
+}
+
+$srvConfigJSON = json_decode(file_get_contents(__DIR__ . '/config.json'), true);
