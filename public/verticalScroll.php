@@ -147,7 +147,7 @@ $stats = getUrlStats($json_file, $results[$index]);
                     <img src="./src/img/mascott.png" alt="">
                 </div>
             </a>
-            <div class="group">
+            <div data-hideAndSave="true" class="group">
                 <div class="btn">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5" />
@@ -157,7 +157,7 @@ $stats = getUrlStats($json_file, $results[$index]);
                     <p><?= $stats['vue'] + 1 ?></p>
                 </div>
             </div>
-            <div class="group">
+            <div data-hideAndSave="true" class="group">
                 <a href="action/likedislike.php?url=<?= urlencode($urlGet) ?>&like=1&dislike=0&verticalscroll=true&index=<?= $index ?>&vertidir=<?= $_GET['dir'] ?>">
                     <div class="btn hover">
                         <svg <?php echo ($_COOKIE[$urlGet] === 'like') ? 'class="like"' : '' ?> xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -169,7 +169,7 @@ $stats = getUrlStats($json_file, $results[$index]);
                     <p><?= $stats['like'] ?></p>
                 </div>
             </div>
-            <div class="group">
+            <div data-hideAndSave="true" class="group">
                 <a href="action/likedislike.php?url=<?= urlencode($urlGet) ?>&dislike=1&like=0&verticalscroll=true&index=<?= $index ?>&vertidir=<?= $_GET['dir'] ?>">
                     <div class="btn hover">
                         <svg <?php echo ($_COOKIE[$urlGet] === 'dislike') ? 'class="dislike"' : '' ?> xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -181,20 +181,25 @@ $stats = getUrlStats($json_file, $results[$index]);
                     <p><?= $stats['dislike'] ?></p>
                 </div>
             </div>
-            <a href="all?dir=<?= dirname($results[$index]) ?>">
+            <a data-hideAndSave="true" href="all?dir=<?= dirname($results[$index]) ?>">
                 <div class="btn hover">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h6l2 2h8q.825 0 1.413.588T22 8v10q0 .825-.587 1.413T20 20z" />
                     </svg>
                 </div>
             </a>
-            <a href="view?url=<?= $results[$index] ?>">
+            <a data-hideAndSave="true" href="view?url=<?= $results[$index] ?>">
                 <div class="btn hover">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m1 15h-2v-6h2zm0-8h-2V7h2z" />
                     </svg>
                 </div>
             </a>
+            <div class="btn hover" id="hideAndSave">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="currentColor" fill-rule="evenodd" d="M6.887 5.172L5.172 6.887c-.578.578-.868.867-1.02 1.235S4 8.898 4 9.716v4.61c0 .826 0 1.239.155 1.61c.155.37.45.66 1.037 1.239l1.699 1.674c.576.568.865.852 1.23 1.002c.364.149.768.149 1.578.149h4.644c.818 0 1.226 0 1.594-.152s.656-.441 1.235-1.02l1.656-1.656c.579-.579.867-.867 1.02-1.235c.152-.368.152-.776.152-1.594V9.7c0-.81 0-1.214-.15-1.579c-.149-.364-.433-.653-1.001-1.229l-1.674-1.699c-.58-.588-.87-.882-1.24-1.037S15.152 4 14.326 4h-4.61c-.818 0-1.226 0-1.594.152s-.657.442-1.235 1.02m1.56 4.934a1 1 0 1 0-.894 1.788l.305.153l-.252.506a1 1 0 1 0 1.788.894l.341-.68q.627.161 1.265.233v1a1 1 0 1 0 2 0v-1a9 9 0 0 0 1.265-.234l.34.681a1 1 0 1 0 1.79-.894l-.253-.506l.305-.153a1 1 0 1 0-.894-1.788l-.423.21a7 7 0 0 1-6.26 0z" clip-rule="evenodd" />
+                </svg>
+            </div>
         </div>
     </main>
 
@@ -202,6 +207,49 @@ $stats = getUrlStats($json_file, $results[$index]);
 <script>
     // Fonction principale pour initialiser les comportements
     function initializeScripts() {
+
+
+        let allHideAndSave = document.querySelectorAll('[data-hideAndSave="true"]');
+
+        function hideAndSaveDisplay(show = true) {
+            if (!show) {
+                allHideAndSave.forEach((element) => {
+                    element.style.display = 'none';
+                })
+            } else {
+                allHideAndSave.forEach((element) => {
+                    element.style.display = 'block';
+                })
+            }
+        }
+
+
+        const hideAndSave = document.getElementById('hideAndSave');
+
+        if (hideAndSave) {
+            hideAndSave.addEventListener('click', function(event) {
+
+                // check if cookie "vertiScrollhideAndSave" exists and is set to "true"
+                if (document.cookie.includes('vertiScrollhideAndSave=true')) {
+                    // if it exists and is set to "true", remove it
+                    document.cookie = 'vertiScrollhideAndSave=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+                    hideAndSaveDisplay(true);
+                } else {
+                    // if it doesn't exist, set it to "true"
+                    document.cookie = 'vertiScrollhideAndSave=true; path=/';
+                    hideAndSaveDisplay(false);
+                }
+
+            })
+        }
+
+        // if cookie "vertiScrollhideAndSave" exists and is set to "true"
+        if (document.cookie.includes('vertiScrollhideAndSave=true')) {
+            hideAndSaveDisplay(false);
+        } else {
+            hideAndSaveDisplay(true);
+        }
+
         console.log('Réinitialisation des scripts...');
         // Gestion de la vidéo
         const video = document.getElementById('video');
