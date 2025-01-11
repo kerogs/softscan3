@@ -20,8 +20,15 @@ if (KPF_DEBUG_MODE) {
 $videoExtensions = ['mp4', 'webm', 'mov', 'avi'];
 $imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp', "svg"];
 
-if (!$_SESSION['keyaccess']) {
-    header('Location: login.php');
+// ? import ENV
+require '../vendor/autoload.php';
+use Dotenv\Dotenv;
+
+$dotenv = Dotenv::createImmutable('../');
+$dotenv->safeLoad();
+
+if (!$_SESSION['keyaccess'] || $_SESSION['keyaccess'] != $_ENV['KEY_ACCESS']) {
+    header('Location: login.php?redirect=' . $_SERVER['REQUEST_URI']);
     exit();
 }
 
