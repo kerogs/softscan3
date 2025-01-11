@@ -1,7 +1,42 @@
 <?php
 
+// Activer l'affichage des erreurs pour le débogage (uniquement en développement)
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+session_start();
+
+
+
+
+
+
+
+require_once __DIR__ . '/../../vendor/autoload.php';
+// ! SECURITY CHECK IF USER IS LOGGED IN
+use Dotenv\Dotenv;
+
+$dotenv = Dotenv::createImmutable('../../');
+$dotenv->safeLoad();
+
+if (!isset($_SESSION['keyaccess']) || $_SESSION['keyaccess'] != $_ENV['KEY_ACCESS']) {
+    echo 'Vous devez vous connecter pour accéder à cette page.';
+    exit;
+}
+
+
+
+
+
+
+
 if (isset($_GET['newPassword'])) {
-    require_once '../../config.php';
+    // require_once '../../config.php';
+
+    // Vérifier si la nouvelle valeur du mot de passe est bien présente
+    if (empty($_GET['newPassword'])) {
+        echo 'Aucun mot de passe fourni.';
+        exit;
+    }
 
     // Échapper la nouvelle valeur pour éviter les problèmes de sécurité
     $newPassword = htmlspecialchars($_GET['newPassword']);
@@ -9,26 +44,56 @@ if (isset($_GET['newPassword'])) {
     // Chemin vers le fichier .env
     $envFilePath = '../../.env';
 
+    // Vérifier si le fichier .env existe avant de tenter de le lire
+    if (!file_exists($envFilePath)) {
+        echo 'Le fichier .env est introuvable.';
+        exit;
+    }
+
     // Lire le contenu du fichier .env
     $envContent = file_get_contents($envFilePath);
 
     // Vérifiez si le fichier a été lu correctement
     if ($envContent === false) {
-        die('Erreur lors de la lecture du fichier .env');
+        echo 'Erreur lors de la lecture du fichier .env';
+        exit;
     }
 
     // Convertir le contenu en tableau associatif
     $envArray = [];
     foreach (explode("\n", $envContent) as $line) {
         // Ignorer les lignes vides et les commentaires
-        if (trim($line) !== '' && strpos(trim($line), '#') !== 0) {
-            list($key, $value) = explode('=', $line, 2);
-            $envArray[trim($key)] = trim($value);
+        $line = trim($line);
+        if ($line === '' || strpos($line, '#') === 0) {
+            continue;
         }
+
+        // Vérifier si la ligne est bien formatée (key=value)
+        $parts = explode('=', $line, 2);
+        if (count($parts) < 2) {
+            // Ligne mal formatée, afficher un message de débogage et sauter cette ligne
+            echo "Ligne mal formatée ignorée : $line<br>";
+            continue;
+        }
+
+        // Ajouter à l'array associatif
+        list($key, $value) = $parts;
+        $envArray[trim($key)] = trim($value);
+    }
+
+    // Vérifier si KEY_ACCESS existe avant de le modifier
+    if (!isset($envArray['KEY_ACCESS'])) {
+        echo 'KEY_ACCESS introuvable dans le fichier .env.';
+        exit;
     }
 
     // Modifier la valeur de KEY_ACCESS
-    $envArray['KEY_ACCESS'] = password_hash($newPassword, PASSWORD_DEFAULT);
+    $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+    if ($hashedPassword === false) {
+        echo 'Erreur lors du hachage du mot de passe.';
+        exit;
+    }
+    $envArray['KEY_ACCESS'] = $hashedPassword;
 
     // Reconstruire le contenu du fichier .env
     $newEnvContent = "";
@@ -38,11 +103,11 @@ if (isset($_GET['newPassword'])) {
 
     // Écrire le nouveau contenu dans le fichier .env
     if (file_put_contents($envFilePath, $newEnvContent) === false) {
-        die('Erreur lors de l\'écriture dans le fichier .env');
+        echo 'Erreur lors de l\'écriture dans le fichier .env. Veuillez vérifier les permissions.';
+        exit;
     }
 
     echo "KEY_ACCESS a été mis à jour avec succès.";
 } else {
     echo "Aucune nouvelle valeur fournie.";
 }
-?>

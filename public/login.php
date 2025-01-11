@@ -153,7 +153,11 @@ if (isset($_POST['password'])) {
 
         $_SESSION['keyaccess'] = $KEY_ACCESS;
         logs("../../server.log", "Connecté", 200, "ACCEPT");
-        header("location: ./");
+        if(isset($_GET['redirect'])){
+            header('Location: ' . $_GET['redirect']);
+        } else{
+            header("location: ./");
+        }
         exit();
     } else {
         logs("../../server.log", "Mot de passe incorrect", 401, "REJECT");
