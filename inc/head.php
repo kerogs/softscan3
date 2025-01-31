@@ -29,12 +29,3 @@
 <!-- favicon -->
 <link rel="shortcut icon" href="<?= $kpf_config["seo"]["favicon"] ?>" type="image/x-icon">
 <link rel="apple-touch-icon" href="<?= $kpf_config["seo"]["favicon"] ?>">
-
-<!-- PWA -->
-<link rel="manifest" href="manifest.json">
-<script>
-    //if browser support service worker
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js');
-    };
-</script>

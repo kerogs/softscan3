@@ -1525,4 +1525,20 @@ h3.title {
     }
 }
 
+.alertMessageFFMPEG{
+    background-color: transparentize($primary, .8);
+    border: 1px solid $primary;
+    padding: 10px;
+
+    a{
+        color: $secondary;
+
+        &:hover{
+            text-decoration: none;
+        }
+    }
+
+    margin: 10px 0
+}
+
 @import './responsive/responsive';

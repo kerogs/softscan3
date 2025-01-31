@@ -15,6 +15,8 @@
 // This file will call up everything you need for each of your pages. This is the file to call.
 // ? You can call this file with this command : require_once('../config.php'); 
 
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
 
 // ======================================> Configuration php
 // Path base for the project
@@ -216,51 +218,52 @@ $kpf_configFilePath = $path . '/config.yml';
 $kpf_config = Yaml::parseFile($kpf_configFilePath);
 
 
-// ! Github
-use Kerogs\KerogsPhp\Github;
+// // ! Github
+// use Kerogs\KerogsPhp\Github;
 
-$versionFile = __DIR__ . "/public/temp/version.ksp";
-$updateInterval = 12 * 3600; // 12 heures en secondes
+// $versionFile = __DIR__ . "/public/temp/version.ksp";
+// $updateInterval = 12 * 3600; // 12 heures en secondes
 
-// Fonction pour obtenir la dernière version d'un dépôt GitHub
-function getLatestVersion(Github $github, string $owner, string $repo): string
-{
-    $latestRelease = $github->getLatestRelease($owner, $repo);
+// // Fonction pour obtenir la dernière version d'un dépôt GitHub
+// function getLatestVersion(Github $github, string $owner, string $repo): string
+// {
+//     $latestRelease = $github->getLatestRelease($owner, $repo);
 
-    // Si la réponse est un tableau, on récupère un élément (ex. "tag_name" ou autre, selon votre structure)
-    if (is_array($latestRelease)) {
-        return $latestRelease;
-    }
+//     // Si la réponse est un tableau, on récupère un élément (ex. "tag_name" ou autre, selon votre structure)
+//     if (is_array($latestRelease)) {
+//         return $latestRelease;
+//     }
 
-    return $latestRelease;
-}
+//     return $latestRelease;
+// }
+// $latestRelease = "";
 
-// Vérification si le fichier existe déjà
-if (file_exists($versionFile)) {
-    $lastModified = filemtime($versionFile);
-    $currentTime = time();
+// // Vérification si le fichier existe déjà
+// if (file_exists($versionFile)) {
+//     $lastModified = filemtime($versionFile);
+//     $currentTime = time();
 
-    // Si la dernière mise à jour a eu lieu dans les 12 dernières heures, on ne fait rien
-    if (($currentTime - $lastModified) < $updateInterval) {
-    } else {
-        $kp_github = new Github();
-        $frameworkVersion = getLatestVersion($kp_github, 'KSLaboratories', 'KerogsPHP-Framework');
-        $siteVersion = getLatestVersion($kp_github, 'kerogs', 'SoftScan3');
-        $currentDate = date('Y-m-d H:i:s');
+//     // Si la dernière mise à jour a eu lieu dans les 12 dernières heures, on ne fait rien
+//     if (($currentTime - $lastModified) < $updateInterval) {
+//     } else {
+//         $kp_github = new Github();
+//         $frameworkVersion = getLatestVersion($kp_github, 'KSLaboratories', 'KerogsPHP-Framework');
+//         $siteVersion = getLatestVersion($kp_github, 'kerogs', 'SoftScan3');
+//         $currentDate = date('Y-m-d H:i:s');
 
-        $versionData = $frameworkVersion . '#~>' . $siteVersion . '#~>' . $currentDate;
+//         $versionData = $frameworkVersion . '#~>' . $siteVersion . '#~>' . $currentDate;
 
-        file_put_contents($versionFile, $versionData);
-    }
-} else {
-    $kp_github = new Github();
-    $frameworkVersion = getLatestVersion($kp_github, 'KSLaboratories', 'KerogsPHP-Framework');
-    $siteVersion = getLatestVersion($kp_github, 'kerogs', 'SoftScan3');
-    $currentDate = date('Y-m-d H:i:s');
+//         file_put_contents($versionFile, $versionData);
+//     }
+// } else {
+//     $kp_github = new Github();
+//     $frameworkVersion = getLatestVersion($kp_github, 'KSLaboratories', 'KerogsPHP-Framework');
+//     $siteVersion = getLatestVersion($kp_github, 'kerogs', 'SoftScan3');
+//     $currentDate = date('Y-m-d H:i:s');
 
-    $versionData = $frameworkVersion . '#~>' . $siteVersion . '#~>' . $currentDate;
+//     $versionData = $frameworkVersion . '#~>' . $siteVersion . '#~>' . $currentDate;
 
-    file_put_contents($versionFile, $versionData);
-}
+//     file_put_contents($versionFile, $versionData);
+// }
 
-$kpfss3_version_github = explode("#~>", file_get_contents($versionFile));
+// $kpfss3_version_github = explode("#~>", file_get_contents($versionFile));

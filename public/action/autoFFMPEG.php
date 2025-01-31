@@ -1,7 +1,5 @@
 <?php
     require_once '../../config.php';
-
-    $srvConfigJSON = json_decode(file_get_contents(__DIR__ . '/config.json'), true);
     
     // check for method GET
 

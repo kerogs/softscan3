@@ -1237,6 +1237,19 @@ h3.title {
   display: block;
 }
 
+.alertMessageFFMPEG {
+  background-color: rgba(241, 210, 131, 0.2);
+  border: 1px solid hsl(43, 80%, 73%);
+  padding: 10px;
+  margin: 10px 0;
+}
+.alertMessageFFMPEG a {
+  color: hsl(290, 80%, 53%);
+}
+.alertMessageFFMPEG a:hover {
+  text-decoration: none;
+}
+
 @media screen and (max-width: 1501px) {
   .galerie.galsplit .content {
     -moz-columns: 5;

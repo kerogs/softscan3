@@ -1,3 +1,4 @@
 {
-    "autoFFMPEG": false
+    "autoFFMPEG": false,
+    "allow": "ALL"
 }
