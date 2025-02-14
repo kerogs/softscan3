@@ -49,19 +49,41 @@ function scanDossiers($dossier)
 
     <main>
 
-        <?php
+        <?php if (isset($_GET['s']) && $_GET['s'] == "ok") : ?>
+            <script>
+                swal.fire({
+                    icon: 'success',
+                    title: "Action réussit !",
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    showCloseButton: true
+                })
+            </script>
+        <?php elseif (isset($_GET['s']) && $_GET['s'] == "ko") : ?>
+            <script>
+                swal.fire({
+                    icon: 'error',
+                    title: "Action echouée !",
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    showCloseButton: true
+                })
+            </script>
+        <?php elseif (isset($_GET['s']) && $_GET['s'] == "partial") : ?>
+            <script>
+                swal.fire({
+                    icon: 'warning',
+                    title: "Une erreur est survenue, certains fichiers n'ont pas été importés !",
+                    showConfirmButton: false,
+                    timer: 3800,
+                    timerProgressBar: true,
+                    showCloseButton: true
+                })
+            </script>
+        <?php endif; ?>
 
-
-        if (isset($_GET['s']) && $_GET['s'] == "ok") {
-            echo '<div class="littlePopup ok"><p>Action réussit !</p></div>';
-        } elseif (isset($_GET['s']) && $_GET['s'] == "ko") {
-            echo '<div class="littlePopup warning"><p>Action echouée !</p></div>';
-        } elseif(isset($_GET['s']) && $_GET['s'] == "partial") {
-            echo '<div class="littlePopup warning"><p>Une erreur est survenue, certains fichiers n\'ont pas été importés !</p></div>';
-        }
-
-
-        ?>
         <div class="btnlist">
             <a href="add/files"><button <?= isset($_GET['r']) && $_GET['r'] == "files" ? 'class="active"' : '' ?>>Import files</button></a>
             <a href="add/create"><button <?= isset($_GET['r']) && $_GET['r'] == "create" ? 'class="active"' : '' ?>>Create directory</button></a>

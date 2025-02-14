@@ -112,15 +112,6 @@ $stats = getUrlStats($json_file, $url);
     <?php require_once '../inc/nav.php' ?>
 
 
-    <?php
-
-    if (isset($_GET['viewCounter']) == "noCount") {
-        echo '<div class="littlePopup ok"><p>Avis envoyé avec succès.</p></div>';
-    }
-
-    ?>
-
-
 
 
     <div class="urlPath">

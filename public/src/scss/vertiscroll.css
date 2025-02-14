@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(222, 25%, 8%);
+  color: #fff;
+  font-family: "Space Grotesk", Arial sans-serif;
+  overflow: hidden;
+}
+
+button {
+  font-family: "Space Grotesk", Arial sans-serif;
+}
+
+img {
+  display: block;
+}
+
+main {
+  position: relative;
+  margin: 0 auto;
+  max-width: 540px;
+  height: 100vh;
+}
+main .infoarea {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  transform: translateX(calc(100% + 40px));
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+main .infoarea a {
+  text-decoration: none;
+  color: #fff;
+}
+main .infoarea .btn {
+  position: relative;
+  background-color: rgba(15, 18, 26, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+}
+main .infoarea .btn svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  fill: #fff !important;
+}
+main .infoarea .btn img {
+  width: 100%;
+  height: 100%;
+}
+main .infoarea .btn.hover:hover {
+  background-color: hsl(290, 80%, 53%);
+}
+main .infoarea .info {
+  position: relative;
+  background-color: rgba(15, 18, 26, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+}
+main .infoarea .info p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  font-weight: 600;
+}
+main .infoarea .group .btn {
+  border-radius: 100% 100% 0 0;
+}
+main .infoarea .group .info {
+  border-radius: 0 0 100% 100%;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-height: 100vh;
+  text-align: center;
+  justify-content: center;
+}
+.content video {
+  max-width: 100%;
+  max-height: 100vh;
+  cursor: pointer;
+}
+.content img {
+  max-width: 100%;
+  max-height: 100vh;
+}
+
+@media screen and (max-width: 808px) {
+  main .infoarea {
+    transform: translateX(0);
+    bottom: 60px;
+    right: unset;
+    left: 10px;
+  }
+  main .infoarea div.info {
+    display: none;
+  }
+  main .infoarea div.btn {
+    border-radius: 100% !important;
+  }
+  body {
+    background-color: #000;
+  }
+}
+#playbtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+  display: none;
+}
+#playbtn .inner {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  cursor: pointer;
+  background-color: rgba(15, 18, 26, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-radius: 100%;
+  padding: 10px;
+}
+#playbtn .inner svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+}
+#playbtn .inner:hover {
+  background-color: hsl(290, 80%, 53%);
+}/*# sourceMappingURL=vertiscroll.css.map */

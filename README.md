@@ -137,15 +137,9 @@ max_execution_time = 360000
 docker compose up --build
 ```
 
-
-## Problèmes connus
-
 ## Futur MAJ Prévu
 - Possibilité de supprimer des images depuis l'interface web
 - Les images disliké ne seront plus affiché dans les recommendation
 - Les images liké seront indiqué plus clairement dans les recommendation
 - Ajout d'un onglet statistique
     - Voir le nombre d'image disponible sur le serveur 
-- choisir si l'on veut un auto update des thumbnails (peut augmenter la latence de connexion sur le serveur) (si désactivé, il faudra le lancer manuellement)
-    - Choisir le délai entre chaque auto-update
-- Redirection d'url (si vous cliquer sur un lien du site, et que vous êtes redirigé sur la page de connexion, le site gardera en mémoire la page à afficher après la connexion afin de ne pas la perdre)

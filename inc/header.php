@@ -64,12 +64,12 @@
         </div>
         <div class="titlee">
             <h3>Sécurité</h3>
-            <i class='bx bxs-shield-alt-2' ></i>
+            <i class='bx bxs-shield-alt-2'></i>
         </div>
         <div>
-            <?php if($srvConfigJSON['allow'] == "INTRANET") : ?>
+            <?php if ($srvConfigJSON['allow'] == "INTRANET") : ?>
                 <a href="/action/allowFilter.php?allow=LOCAL"><button>FILTRE IP : INTRANET</button></a>
-            <?php elseif($srvConfigJSON['allow'] == "LOCAL") : ?>
+            <?php elseif ($srvConfigJSON['allow'] == "LOCAL") : ?>
                 <a href="/action/allowFilter.php?allow=ALL"><button>FILTRE IP : LOCAL</button></a>
             <?php else : ?>
                 <a href="/action/allowFilter.php?allow=INTRANET"><button>FILTRE IP : ALL</button></a>
@@ -89,74 +89,317 @@
 
 <script>
     function newPassword() {
-        const askConfirmation = confirm("Vous êtes sur le point de changer le mot de passe. Voulez-vous continuer ?");
+        swal.fire({
+            // toast:true,
+            title: "Voulez-vous changez le mot de passe ?",
+            text: "Tous les utilisateurs connectés seront déconnectés.",
+            icon: "question",
+            confirmButtonText: "Oui",
+            cancelButtonText: "Non",
+            reverseButtons: true,
+            showCancelButton: true,
+        }).then((verif) => {
+            if (verif.isConfirmed) {
+                let newPassword = document.getElementById('newPasswordInput').value;
+                let newPasswordBtn = document.getElementById('newPasswordBtn');
+                const bodyArea = document.querySelector("body");
 
-        if (askConfirmation) {
-            let newPassword = document.getElementById('newPasswordInput').value;
-            let newPasswordBtn = document.getElementById('newPasswordBtn');
-            const bodyArea = document.querySelector("body");
+                if (newPassword == '') {
+                    swal.fire({
+                        icon: 'error',
+                        text: 'Vous devez entrer un mot de passe.',
+                    })
+                } else {
 
-            if (newPassword == '') {
-                bodyArea.innerHTML += '<div class="littlePopup alert"><p>Vous devez entrer un mot de passe.</p></div>';
-            } else {
-                bodyArea.innerHTML += '<div class="littlePopup notif"><p>Le mot de passe est entrain de changer.</p></div>';
+                    swal.fire({
+                        // loading
+                        title: 'action en cours',
+                        showConfirmButton: false,
+                        allowOutsideClick: false,
+                        didOpen: () => {
+                            swal.showLoading()
+                        }
+                    });
 
-                var xhr = new XMLHttpRequest();
-                xhr.open("GET", "action/newPassword.php?newPassword=" + newPassword, true);
-                xhr.send();
+                    fetch('action/newPassword.php?newPassword=' + newPassword)
+                        .then(response => response.text())
+                        .then(data => {
+
+                            // data to JSON
+                            var data = JSON.parse(data);
+
+                            // check if data.success is true
+
+                            if (data.success) {
+                                swal.fire({
+                                    icon: 'success',
+                                    title: 'Operation terminée',
+                                    text: data.message,
+                                })
+                            } else {
+                                swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: data.message,
+                                })
+                            }
+                        })
+                        .catch(error => {
+                            console.error(error)
+
+                            swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Une erreur est survenue.',
+                            })
+                        });
+
+
+                }
             }
-        }
+        })
     }
 
     function stopServer() {
+        swal.fire({
+            // toast:true,
+            title: "Voulez-vous éteindre le serveur ?",
+            text: "Une commande sera utilisé sur le serveur.",
+            icon: "question",
+            confirmButtonText: "Oui",
+            cancelButtonText: "Non",
+            reverseButtons: true,
+            showCancelButton: true,
+        }).then((verif) => {
+            if (verif.isConfirmed) {
 
-        // ? add popup message
-        const askConfirmation = confirm("Êtes-vous sur de vouloir éteindre le serveur ?");
+                swal.fire({
+                    // loading
+                    title: 'action en cours',
+                    showConfirmButton: false,
+                    allowOutsideClick: false,
+                    didOpen: () => {
+                        swal.showLoading()
+                    }
+                });
 
-        if (askConfirmation) {
-            const bodyArea = document.querySelector("body");
-            bodyArea.innerHTML += '<div class="littlePopup notif"><p>Le serveur est entrain de s\'arrêter.</p></div>';
+                fetch('action/nukedata.php')
+                    .then(response => response.text())
+                    .then(data => {
 
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", "action/stopServer.php", true);
-            xhr.send();
-        }
+                        // data to JSON
+                        var data = JSON.parse(data);
+
+                        // check if data.success is true
+
+                        if (data.success) {
+                            swal.fire({
+                                icon: 'success',
+                                title: 'Operation terminée',
+                                text: data.message,
+                            })
+                        } else {
+                            swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: data.message,
+                            })
+                        }
+                    })
+                    .catch(error => {
+                        console.error(error)
+
+                        swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Une erreur est survenue.',
+                        })
+                    });
+            }
+        });
     }
 
     function nukeData() {
-        // ? add popup message
-        const askConfirmationNuke = confirm("Êtes-vous sur de vouloir nuke les datas (image comprise) ?");
+        swal.fire({
+            // toast:true,
+            title: "Supprimer toutes les données",
+            text: "Les images, vidéos et thumbnails seront supprimées.",
+            icon: "question",
+            confirmButtonText: "Oui",
+            cancelButtonText: "Non",
+            reverseButtons: true,
+            showCancelButton: true,
+        }).then((verif) => {
+            if (verif.isConfirmed) {
 
-        if (askConfirmationNuke) {
-            const bodyArea = document.querySelector("body");
-            bodyArea.innerHTML += '<div class="littlePopup notif"><p>Les données sont entrain d\'etre supprimées.</p></div>';
+                swal.fire({
+                    // loading
+                    title: 'action en cours',
+                    showConfirmButton: false,
+                    allowOutsideClick: false,
+                    didOpen: () => {
+                        swal.showLoading()
+                    }
+                });
 
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", "action/nukedata.php", true);
-            xhr.send();
-        }
+                fetch('action/nukedata.php')
+                    .then(response => response.text())
+                    .then(data => {
+
+                        // data to JSON
+                        var data = JSON.parse(data);
+
+                        // check if data.success is true
+
+                        if (data.success) {
+                            swal.fire({
+                                icon: 'success',
+                                title: 'Operation terminée',
+                                text: data.message,
+                            })
+                        } else {
+                            swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: data.message,
+                            })
+                        }
+                    })
+                    .catch(error => {
+                        console.error(error)
+
+                        swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Une erreur est survenue.',
+                        })
+                    });
+            }
+        });
     }
 
     function logsreset() {
-        // ? add popup message
-        const askConfirmationLogsreset = confirm("Êtes-vous sur de vouloir reset les logs ?");
+        swal.fire({
+            // toast:true,
+            title: "Souhaitez-vous reset les logs",
+            text: "Le fichier des logs sera vidé complètement.",
+            icon: "question",
+            confirmButtonText: "Oui",
+            cancelButtonText: "Non",
+            reverseButtons: true,
+            showCancelButton: true,
+        }).then((verif) => {
+            if (verif.isConfirmed) {
 
-        if (askConfirmationLogsreset) {
-            const bodyArea = document.querySelector("body");
-            bodyArea.innerHTML += '<div class="littlePopup notif"><p>Les logs sont entrain d\'etre reset.</p></div>';
+                swal.fire({
+                    // loading
+                    title: 'action en cours',
+                    showConfirmButton: false,
+                    allowOutsideClick: false,
+                    didOpen: () => {
+                        swal.showLoading()
+                    }
+                });
 
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", "action/logsreset.php", true);
-            xhr.send();
-        }
+                fetch('action/logsreset.php')
+                    .then(response => response.text())
+                    .then(data => {
+
+                        // data to JSON
+                        var data = JSON.parse(data);
+
+                        // check if data.success is true
+
+                        if (data.success) {
+                            swal.fire({
+                                icon: 'success',
+                                title: 'Operation terminée',
+                                text: data.message,
+                            })
+                        } else {
+                            swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: data.message,
+                            })
+                        }
+                    })
+                    .catch(error => {
+                        console.error(error)
+
+                        swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Une erreur est survenue.',
+                        })
+                    });
+            }
+        });
     }
 
     function ffmpegReload() {
-        const bodyArea = document.querySelector("body");
-        bodyArea.innerHTML += '<div class="littlePopup notif"><p>Rechargement FFMPEG en cours. Le serveur risque de lagger un certain temps.</p></div>';
+        // const bodyArea = document.querySelector("body");
+        // bodyArea.innerHTML += '<div class="littlePopup notif"><p>Rechargement FFMPEG en cours. Le serveur risque de lagger un certain temps.</p></div>';
+
+        swal.fire({
+            // toast:true,
+            title: "Forcer le rechargement FFMPEG",
+            text: "Le rechargement FFMPEG peut faire laguer le serveur plus ou moins longtemps en fonction de la puissance du serveur et du nombre de contenu enregistré. Cela va scanner toutes les images et vidéos sur le serveur afin de créer des thumbnails.",
+            icon: "question",
+            confirmButtonText: "Oui",
+            cancelButtonText: "Non",
+            reverseButtons: true,
+            showCancelButton: true,
+        }).then((verif) => {
+            if (verif.isConfirmed) {
+
+                swal.fire({
+                    // loading
+                    title: 'action en cours',
+                    showConfirmButton: false,
+                    allowOutsideClick: false,
+                    didOpen: () => {
+                        swal.showLoading()
+                    }
+                });
+
+                fetch('action/ffmpegReload.php')
+                    .then(response => response.text())
+                    .then(data => {
+
+                        // data to JSON
+                        var data = JSON.parse(data);
+
+                        // check if data.success is true
+
+                        if (data.success) {
+                            swal.fire({
+                                icon: 'success',
+                                title: 'Operation terminée',
+                                text: data.message,
+                            })
+                        } else {
+                            swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: data.message,
+                            })
+                        }
+                    })
+                    .catch(error => {
+                        console.error(error)
+
+                        swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Une erreur est survenue.',
+                        })
+                    });
+            }
+        });
 
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", "action/ffmpegReload.php", true);
+        xhr.open("GET", "", true);
         xhr.send();
     }
 </script>

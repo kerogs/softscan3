@@ -1,7 +1,9 @@
 {
   "dependencies": {
     "@splidejs/splide": "^4.1.4",
-    "boxicons": "^2.1.4"
+    "boxicons": "^2.1.4",
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.16.1"
   },
   "devDependencies": {
     "typescript": "^5.5.3"

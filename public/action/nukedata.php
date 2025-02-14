@@ -1,4 +1,6 @@
 <?php
+    // json
+    header('Content-Type: application/json');
     require_once '../../config.php';
 
     // ! REMOVE ALL IMAGES
@@ -25,9 +27,17 @@
         return true;
     }
 
-    deleteFolderContents("../public_data/");
+    $r = deleteFolderContents("../public_data/");
     file_put_contents("../public_data/.gitkeep", "");
 
+    if (!$r) {
+        echo json_encode([
+            "success" => false,
+            "message" => "Failed to delete images"
+        ]);
+        exit();
+    }
+    
     // ! DELETE STATS FILE
 
     unlink("../temp/stats.json");
@@ -36,3 +46,9 @@
     // ! DELETE ALL FFMPEG FILES
     deleteFolderContents("../temp/thumbnail/");
     logs('../../server.log', "FFMPEG FILES NUKE (action from user)", 200, "NUKE");
+
+    echo json_encode([
+        "success" => true,
+        "message" => "Data nuked with success !"
+    ]);
+    exit();

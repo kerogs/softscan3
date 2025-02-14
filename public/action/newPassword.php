@@ -1,8 +1,10 @@
 <?php
 
+header('Content-Type: application/json');
+
 // Activer l'affichage des erreurs pour le débogage (uniquement en développement)
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// error_reporting(E_ALL);
 session_start();
 
 
@@ -19,7 +21,10 @@ $dotenv = Dotenv::createImmutable('../../');
 $dotenv->safeLoad();
 
 if (!isset($_SESSION['keyaccess']) || $_SESSION['keyaccess'] != $_ENV['KEY_ACCESS']) {
-    echo 'Vous devez vous connecter pour accéder à cette page.';
+    echo json_encode([
+        "success" => false,
+        "message" => "Unauthorized"
+    ]);
     exit;
 }
 
@@ -34,7 +39,10 @@ if (isset($_GET['newPassword'])) {
 
     // Vérifier si la nouvelle valeur du mot de passe est bien présente
     if (empty($_GET['newPassword'])) {
-        echo 'Aucun mot de passe fourni.';
+        echo json_encode([
+            "success" => false,
+            "message" => "Veuillez fournir une nouvelle valeur pour le mot de passe."
+        ]);
         exit;
     }
 
@@ -46,7 +54,11 @@ if (isset($_GET['newPassword'])) {
 
     // Vérifier si le fichier .env existe avant de tenter de le lire
     if (!file_exists($envFilePath)) {
-        echo 'Le fichier .env est introuvable.';
+        // echo 'Le fichier .env est introuvable.';
+        echo json_encode([
+            "success" => false,
+            "message" => "Le fichier .env est introuvable."
+        ]);
         exit;
     }
 
@@ -55,7 +67,10 @@ if (isset($_GET['newPassword'])) {
 
     // Vérifiez si le fichier a été lu correctement
     if ($envContent === false) {
-        echo 'Erreur lors de la lecture du fichier .env';
+        echo json_encode([
+            "success" => false,
+            "message" => "Impossible de lire le contenu du fichier .env."
+        ]);
         exit;
     }
 
@@ -72,7 +87,7 @@ if (isset($_GET['newPassword'])) {
         $parts = explode('=', $line, 2);
         if (count($parts) < 2) {
             // Ligne mal formatée, afficher un message de débogage et sauter cette ligne
-            echo "Ligne mal formatée ignorée : $line<br>";
+            // echo "Ligne mal formatée ignorée : $line<br>";
             continue;
         }
 
@@ -83,14 +98,22 @@ if (isset($_GET['newPassword'])) {
 
     // Vérifier si KEY_ACCESS existe avant de le modifier
     if (!isset($envArray['KEY_ACCESS'])) {
-        echo 'KEY_ACCESS introuvable dans le fichier .env.';
+        // echo 'KEY_ACCESS introuvable dans le fichier .env.';
+        echo json_encode([
+            "success" => false,
+            "message" => "KEY_ACCESS introuvable dans le fichier .env."
+        ]);
         exit;
     }
 
     // Modifier la valeur de KEY_ACCESS
     $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
     if ($hashedPassword === false) {
-        echo 'Erreur lors du hachage du mot de passe.';
+        // echo 'Erreur lors du hachage du mot de passe.';
+        echo json_encode([
+            "success" => false,
+            "message" => "Erreur lors du hachage du mot de passe."
+        ]);
         exit;
     }
     $envArray['KEY_ACCESS'] = $hashedPassword;
@@ -103,11 +126,25 @@ if (isset($_GET['newPassword'])) {
 
     // Écrire le nouveau contenu dans le fichier .env
     if (file_put_contents($envFilePath, $newEnvContent) === false) {
-        echo 'Erreur lors de l\'écriture dans le fichier .env. Veuillez vérifier les permissions.';
+        // echo 'Erreur lors de l\'écriture dans le fichier .env. Veuillez vérifier les permissions.';
+        echo json_encode([
+            "success" => false,
+            "message" => "Erreur lors de l'écriture dans le fichier .env. Veuillez vérifier les permissions."
+        ]);
         exit;
     }
 
-    echo "KEY_ACCESS a été mis à jour avec succès.";
+    // echo "KEY_ACCESS a été mis à jour avec succès.";
+    echo json_encode([
+        "success" => true,
+        "message" => "Le mot de passe a été mis à jour avec succès."
+    ]);
+    exit;
 } else {
-    echo "Aucune nouvelle valeur fournie.";
+    // echo "Aucune nouvelle valeur fournie.";
+    echo json_encode([
+        "success" => false,
+        "message" => "Aucune nouvelle valeur fournie."
+    ]);
+    exit;
 }

@@ -29,3 +29,7 @@
 <!-- favicon -->
 <link rel="shortcut icon" href="<?= $kpf_config["seo"]["favicon"] ?>" type="image/x-icon">
 <link rel="apple-touch-icon" href="<?= $kpf_config["seo"]["favicon"] ?>">
+
+<!-- call sweetalert2 -->
+<!-- <script src="./node_modules/sweetalert/dist/sweetalert.min.js"></script> -->
+ <script src="./node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
