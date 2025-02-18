@@ -14,4 +14,10 @@ if (logs('../../server.log', "Server going to stop (action from user)", 410, "AL
         "message" => "Logs reset avec succès !"
     ]);
     exit();
+} else{
+    echo json_encode([
+        "success" => false,
+        "message" => "Failed to stop the server"
+    ]);
+    exit();
 }

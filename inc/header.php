@@ -183,7 +183,7 @@
                     }
                 });
 
-                fetch('action/nukedata.php')
+                fetch('action/stopServer.php')
                     .then(response => response.text())
                     .then(data => {
 
