@@ -11,3 +11,4 @@ RewriteRule ^add/([^/]+)/([^/]+)$ add.php?r=$1&s=$2 [L,QSA]
 RewriteRule ^search$ search.php
 RewriteRule ^vertiscroll$ verticalScroll.php 
 RewriteRule ^vertiscroll-js$ verticalScroll-js.php 
+RewriteRule ^stats$ stats.php

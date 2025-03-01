@@ -41,10 +41,10 @@ header > div.title {
   font-weight: 600;
 }
 header > div.title span:first-child {
-  color: hsl(43, 80%, 73%);
+  color: #f1d283;
 }
 header > div.title span:last-child {
-  color: hsl(290, 80%, 53%);
+  color: #c727e7;
 }
 header > div.search {
   flex: 2;
@@ -72,7 +72,7 @@ header > div.search form label select {
   outline: none;
   color: #ccc;
   background-color: hsl(222, 25%, 8%);
-  border-left: 1px solid hsl(290, 80%, 53%);
+  border-left: 1px solid #c727e7;
   cursor: pointer;
 }
 header > div.search form label button {
@@ -80,7 +80,7 @@ header > div.search form label button {
   border: none;
   outline: none;
   color: #fff;
-  background-color: hsl(290, 80%, 53%);
+  background-color: #c727e7;
   cursor: pointer;
 }
 header > div.search form label button i {
@@ -100,7 +100,7 @@ header > div.btnplus button {
   font-size: 15px;
   padding: 13px 10px;
   cursor: pointer;
-  background-color: hsl(290, 80%, 53%);
+  background-color: #c727e7;
   border: none;
   color: #fff;
   display: flex;
@@ -110,16 +110,16 @@ header > div.btnplus button {
   gap: 5px;
 }
 header > div.btnplus button:first-child button {
-  background: linear-gradient(50deg, hsl(290, 80%, 53%) 0%, hsl(290, 100%, 40%) 100%);
+  background: linear-gradient(50deg, #c727e7 0%, hsl(290, 100%, 40%) 100%);
 }
 header > div.btnplus button:first-child button:hover {
-  background: linear-gradient(50deg, hsl(290, 100%, 40%) 0%, hsl(290, 80%, 53%) 100%);
+  background: linear-gradient(50deg, hsl(290, 100%, 40%) 0%, #c727e7 100%);
 }
 header > div.btnplus button:last-child button {
-  background: linear-gradient(50deg, hsl(290, 100%, 40%) 0%, hsl(290, 80%, 53%) 100%);
+  background: linear-gradient(50deg, hsl(290, 100%, 40%) 0%, #c727e7 100%);
 }
 header > div.btnplus button:last-child button:hover {
-  background: linear-gradient(50deg, hsl(290, 80%, 53%) 0%, hsl(290, 100%, 40%) 100%);
+  background: linear-gradient(50deg, #c727e7 0%, hsl(290, 100%, 40%) 100%);
 }
 header > div.btnplus button:hover {
   opacity: 0.7;
@@ -129,7 +129,7 @@ header > div.githubad {
 }
 header > div.githubad .card {
   position: relative;
-  background: linear-gradient(50deg, hsl(290, 80%, 53%) 0%, hsl(290, 100%, 40%) 100%);
+  background: linear-gradient(50deg, #c727e7 0%, hsl(290, 100%, 40%) 100%);
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
@@ -172,7 +172,7 @@ nav ul {
   list-style: none;
   padding-left: 0;
   padding: 10px 20px 0 20px;
-  border-bottom: 1px solid hsl(290, 80%, 53%);
+  border-bottom: 1px solid #c727e7;
 }
 nav ul a {
   list-style: none;
@@ -192,14 +192,14 @@ nav ul a li {
   gap: 6px;
 }
 nav ul a li:hover {
-  border-top: 1px solid hsl(290, 80%, 53%);
-  border-left: 1px solid hsl(290, 80%, 53%);
-  border-right: 1px solid hsl(290, 80%, 53%);
+  border-top: 1px solid #c727e7;
+  border-left: 1px solid #c727e7;
+  border-right: 1px solid #c727e7;
 }
 nav ul a li.active {
-  border-top: 1px solid hsl(290, 80%, 53%);
-  border-left: 1px solid hsl(290, 80%, 53%);
-  border-right: 1px solid hsl(290, 80%, 53%);
+  border-top: 1px solid #c727e7;
+  border-left: 1px solid #c727e7;
+  border-right: 1px solid #c727e7;
   background-color: hsl(222, 25%, 8%);
   position: relative;
 }
@@ -223,7 +223,7 @@ footer {
   text-align: center;
 }
 footer a {
-  color: hsl(290, 80%, 53%);
+  color: #c727e7;
 }
 
 .categoryRecoSplide {
@@ -232,12 +232,12 @@ footer a {
 .categoryRecoSplide .splide__arrow {
   background: none;
   border: none;
-  fill: hsl(290, 80%, 53%);
+  fill: #c727e7;
   cursor: pointer;
   filter: drop-shadow(0 0 10px #000);
 }
 .categoryRecoSplide .splide__progress__bar {
-  background: hsl(290, 80%, 53%);
+  background: #c727e7;
   height: 6px;
   position: absolute;
   bottom: 0;
@@ -320,7 +320,7 @@ footer a {
   width: 200px;
 }
 .categoryRecoSplide .splide__slide .card .type span:hover {
-  background: linear-gradient(50deg, hsl(290, 80%, 53%) 0%, hsl(290, 100%, 40%) 100%);
+  background: linear-gradient(50deg, #c727e7 0%, hsl(290, 100%, 40%) 100%);
 }
 .categoryRecoSplide .splide__slide .card:hover .filter {
   position: absolute;
@@ -328,7 +328,7 @@ footer a {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(0deg, hsl(290, 80%, 53%) 0%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(0deg, #c727e7 0%, rgba(0, 0, 0, 0) 100%);
   opacity: 0.5;
 }
 
@@ -353,7 +353,7 @@ footer a {
   margin-bottom: 10px;
 }
 .titlee a button {
-  background: linear-gradient(50deg, hsl(290, 80%, 53%) 0%, hsl(290, 100%, 40%) 100%);
+  background: linear-gradient(50deg, #c727e7 0%, hsl(290, 100%, 40%) 100%);
   color: #fff;
   border: none;
   padding: 6px 12px;
@@ -362,7 +362,7 @@ footer a {
   border-radius: 6px;
 }
 .titlee a button:hover {
-  background: linear-gradient(50deg, hsl(290, 100%, 40%) 0%, hsl(290, 80%, 53%) 100%);
+  background: linear-gradient(50deg, hsl(290, 100%, 40%) 0%, #c727e7 100%);
 }
 
 h2.title {
@@ -376,7 +376,7 @@ h2.title {
   margin-bottom: 10px;
 }
 h2.title span {
-  color: hsl(290, 80%, 53%);
+  color: #c727e7;
 }
 h2.title span.titlespan {
   color: #fff;
@@ -447,7 +447,7 @@ h3.title {
   padding: 6px 12px;
 }
 .lastcontent .cards .card .type span:hover {
-  background: linear-gradient(50deg, hsl(290, 80%, 53%) 0%, hsl(290, 100%, 40%) 100%);
+  background: linear-gradient(50deg, #c727e7 0%, hsl(290, 100%, 40%) 100%);
 }
 
 .lastadd {
@@ -528,7 +528,7 @@ h3.title {
 .lastCollectionrandom button {
   width: 100%;
   margin: 10px 0 0 0;
-  background-color: hsl(290, 80%, 53%);
+  background-color: #c727e7;
   border: none;
   color: #fff;
   padding: 6px 0;
@@ -575,7 +575,7 @@ h3.title {
 .seeMoreAll {
   width: 100%;
   margin: 10px 0 0 0;
-  background-color: hsl(290, 80%, 53%);
+  background-color: #c727e7;
   border: none;
   color: #fff;
   padding: 6px 0;
@@ -629,10 +629,10 @@ h3.title {
   text-decoration: none;
 }
 .urlPath a:hover {
-  color: hsl(290, 80%, 53%);
+  color: #c727e7;
 }
 .urlPath i {
-  color: hsl(43, 80%, 73%);
+  color: #f1d283;
 }
 
 .viewNow {
@@ -655,6 +655,18 @@ h3.title {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.viewNow.active {
+  height: auto;
+  width: 100%;
+}
+.viewNow.active img {
+  width: 100%;
+  height: 100%;
+  position: unset;
+  top: unset;
+  left: unset;
+  transform: unset;
 }
 
 .ambiantBackground {
@@ -706,7 +718,7 @@ h3.title {
   display: none;
   box-shadow: 0 0 30px 0 rgb(0, 0, 0);
   border-radius: 10px;
-  border: 2px solid hsl(290, 80%, 53%);
+  border: 2px solid #c727e7;
   overflow-x: hidden;
   overflow-y: auto;
   overflow: hidden;
@@ -722,7 +734,7 @@ h3.title {
 }
 .popup .content .titlee i.bx-x {
   cursor: pointer;
-  color: hsl(290, 80%, 53%);
+  color: #c727e7;
 }
 .popup .content .titlee i.bx-x:hover {
   color: #a816c5;
@@ -753,7 +765,7 @@ h3.title {
   font-size: 16px;
   padding: 13px 10px;
   cursor: pointer;
-  background-color: hsl(290, 80%, 53%);
+  background-color: #c727e7;
   border: none;
   color: #fff;
 }
@@ -839,6 +851,12 @@ h3.title {
   background-color: hsla(222, 25%, 16%, 0.5);
   border-radius: 6px;
 }
+.infobox div#fullscreenAction {
+  cursor: pointer;
+}
+.infobox div#fullscreenAction.active {
+  background-color: #c727e7;
+}
 .infobox div.like {
   color: green;
 }
@@ -858,7 +876,7 @@ h3.title {
   padding: 13px 10px;
   cursor: pointer;
   background-color: hsl(222, 25%, 8%);
-  border: 2px solid hsl(290, 80%, 53%);
+  border: 2px solid #c727e7;
   color: #fff;
   margin: 10px 0;
   border-radius: 10px;
@@ -867,7 +885,7 @@ h3.title {
   justify-content: space-between;
 }
 .surprendsmoi button:hover {
-  background: hsl(290, 80%, 53%);
+  background: #c727e7;
 }
 .surprendsmoi button img {
   width: 28px;
@@ -943,7 +961,7 @@ h3.title {
   padding: 13px 10px;
   cursor: pointer;
   background-color: hsl(222, 25%, 8%);
-  border: 2px solid hsl(290, 80%, 53%);
+  border: 2px solid #c727e7;
   color: #fff;
   margin: 10px 0;
   border-radius: 10px;
@@ -952,10 +970,10 @@ h3.title {
   justify-content: space-between;
 }
 .btnlist a button:hover {
-  background: hsl(290, 80%, 53%);
+  background: #c727e7;
 }
 .btnlist a button.active {
-  background-color: hsl(290, 80%, 53%);
+  background-color: #c727e7;
 }
 
 .formAdd {
@@ -985,8 +1003,8 @@ h3.title {
   background-color: hsl(222, 25%, 16%);
 }
 .formAdd form input[type=submit] {
-  background-color: hsl(290, 80%, 53%);
-  border: 2px solid hsl(290, 80%, 53%);
+  background-color: #c727e7;
+  border: 2px solid #c727e7;
   color: #fff;
   cursor: pointer;
 }
@@ -1037,7 +1055,7 @@ h3.title {
   border-bottom: 2px solid #ccc;
   outline: none;
   background-color: transparent;
-  color: hsl(290, 80%, 53%);
+  color: #c727e7;
 }
 .searchRealtime .input-label {
   position: absolute;
@@ -1054,13 +1072,13 @@ h3.title {
   left: 0;
   height: 2px;
   width: 0;
-  background-color: hsl(290, 80%, 53%);
+  background-color: #c727e7;
   transition: all 0.3s ease;
 }
 .searchRealtime .input-field:focus + .input-label {
   top: -20px;
   font-size: 12px;
-  color: hsl(290, 80%, 53%);
+  color: #c727e7;
 }
 .searchRealtime .input-field:focus + .input-label + .input-highlight {
   width: 100%;
@@ -1076,7 +1094,7 @@ h3.title {
   cursor: default;
 }
 .tipsR b > em {
-  color: hsl(43, 80%, 73%);
+  color: #f1d283;
   padding: 0 6px;
 }
 .tipsR .tip {
@@ -1125,7 +1143,7 @@ h3.title {
   display: none;
 }
 .searchsearch__left .catList label.active {
-  background-color: hsl(290, 80%, 53%);
+  background-color: #c727e7;
 }
 .searchsearch__left .catList label:hover {
   background-color: hsl(222, 25%, 16%);
@@ -1138,7 +1156,7 @@ h3.title {
 .searchsearch__right button {
   background: none;
   border: none;
-  background-color: hsl(290, 80%, 53%);
+  background-color: #c727e7;
   width: 100%;
   height: 100%;
   cursor: pointer;
@@ -1169,7 +1187,7 @@ h3.title {
   background-color: hsl(222, 25%, 16%);
 }
 .onlyphotosorgifs > a.active {
-  background-color: hsl(290, 80%, 53%);
+  background-color: #c727e7;
 }
 
 .splitConfigForm {
@@ -1193,7 +1211,7 @@ h3.title {
   background-color: hsl(222, 25%, 16%);
 }
 .splitConfigForm input[type=submit] {
-  background-color: hsl(290, 80%, 53%);
+  background-color: #c727e7;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -1207,7 +1225,7 @@ h3.title {
   text-align: center;
   font-size: 20px;
   padding: 9px 0;
-  background-color: hsl(290, 80%, 53%);
+  background-color: #c727e7;
   border: none;
   color: #fff;
   cursor: pointer;
@@ -1218,14 +1236,14 @@ h3.title {
 }
 
 .nnhover {
-  border: 2px solid hsl(290, 80%, 53%) !important;
+  border: 2px solid #c727e7 !important;
   margin: 0 !important;
 }
 .nnhover span:nth-child(2) {
   display: none;
 }
 .nnhover.active {
-  background-color: hsl(290, 80%, 53%) !important;
+  background-color: #c727e7 !important;
 }
 .nnhover:hover {
   background-color: hsl(222, 25%, 16%) !important;
@@ -1239,12 +1257,12 @@ h3.title {
 
 .alertMessageFFMPEG {
   background-color: rgba(241, 210, 131, 0.2);
-  border: 1px solid hsl(43, 80%, 73%);
+  border: 1px solid #f1d283;
   padding: 10px;
   margin: 10px 0;
 }
 .alertMessageFFMPEG a {
-  color: hsl(290, 80%, 53%);
+  color: #c727e7;
 }
 .alertMessageFFMPEG a:hover {
   text-decoration: none;
@@ -1403,4 +1421,23 @@ h3.title {
   header > div.search {
     flex: unset;
   }
+}
+.statsServer {
+  width: 90vw;
+  margin: 90px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+.statsServer .titlee {
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+.statsServer .split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.statsServer .split > div {
+  flex: 1;
 }/*# sourceMappingURL=style.css.map */

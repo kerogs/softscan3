@@ -5,7 +5,7 @@ require_once('../config.php');
 $directoryToScan = 'public_data';
 $returnNameType = 2;
 $returnDirPath = true;
-$authorise = ['jpg', 'gif', 'png', 'jpeg', 'webp', 'svg', 'mp4', 'webm', 'mov', 'avi'];
+$authorise = ['jpg', 'gif', 'png', 'jpeg', 'webp', 'svg', 'mp4', 'webm', 'mov', 'avi', 'mkv'];
 $ignore = [];
 $recursive = true;
 
@@ -45,7 +45,7 @@ if (!file_exists($filepath)) {
             $gifTotal++;
             $imageTotal++;
         }
-        if (in_array(pathinfo($file, PATHINFO_EXTENSION), ['mp4', 'webm', 'mov', 'avi'])) {
+        if (in_array(pathinfo($file, PATHINFO_EXTENSION), ['mp4', 'webm', 'mov', 'avi', 'mkv'])) {
             $videoTotal++;
         }
     }
@@ -93,7 +93,7 @@ if (file_exists($filepath)) {
                 if (in_array(pathinfo($file, PATHINFO_EXTENSION), ['gif'])) {
                     $gifTotal++;
                 }
-                if (in_array(pathinfo($file, PATHINFO_EXTENSION), ['mp4', 'webm', 'mov', 'avi'])) {
+                if (in_array(pathinfo($file, PATHINFO_EXTENSION), ['mp4', 'webm', 'mov', 'avi', 'mkv'])) {
                     $videoTotal++;
                 }
             }

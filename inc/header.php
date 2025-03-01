@@ -353,54 +353,17 @@
         }).then((verif) => {
             if (verif.isConfirmed) {
 
+                xhr = new XMLHttpRequest();
+                xhr.open("GET", "action/ffmpegReload.php", true);
+                xhr.send();
+
                 swal.fire({
-                    // loading
-                    title: 'action en cours',
-                    showConfirmButton: false,
-                    allowOutsideClick: false,
-                    didOpen: () => {
-                        swal.showLoading()
-                    }
-                });
-
-                fetch('action/ffmpegReload.php')
-                    .then(response => response.text())
-                    .then(data => {
-
-                        // data to JSON
-                        var data = JSON.parse(data);
-
-                        // check if data.success is true
-
-                        if (data.success) {
-                            swal.fire({
-                                icon: 'success',
-                                title: 'Operation terminée',
-                                text: data.message,
-                            })
-                        } else {
-                            swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: data.message,
-                            })
-                        }
-                    })
-                    .catch(error => {
-                        console.error(error)
-
-                        swal.fire({
-                            icon: 'error',
-                            title: 'Oops...',
-                            text: 'Une erreur est survenue.',
-                        })
-                    });
+                    icon: 'success',
+                    title: 'Opération en cours... Le serveur va lagger pendant un certain temps.',
+                    text: data.message,
+                })
             }
         });
-
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", "", true);
-        xhr.send();
     }
 </script>
 

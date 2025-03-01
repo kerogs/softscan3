@@ -6,11 +6,11 @@ $directoryToScan = 'public_data';
 $returnNameType = 2;
 $returnDirPath = true;
 if ($_GET['type'] == "all") {
-    $authorise = ['jpg', 'gif', 'png', 'jpeg', 'webp', 'svg', 'mp4', 'webm', 'mov', 'avi'];
+    $authorise = ['jpg', 'gif', 'png', 'jpeg', 'webp', 'svg', 'mp4', 'webm', 'mov', 'avi', 'mkv'];
 } elseif ($_GET['type'] == "image") {
     $authorise = ['jpg', 'png', 'jpeg', 'webp', 'svg'];
 } elseif ($_GET['type'] == "video") {
-    $authorise = ['mp4', 'webm', 'mov', 'avi'];
+    $authorise = ['mp4', 'webm', 'mov', 'avi', 'mkv'];
 } elseif ($_GET['type'] == "gif") {
     $authorise = ['gif'];
 } elseif ($_GET['type'] == "other") {

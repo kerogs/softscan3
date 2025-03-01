@@ -17,7 +17,7 @@ if (KPF_DEBUG_MODE) {
     error_reporting(E_ALL);
 }
 
-$videoExtensions = ['mp4', 'webm', 'mov', 'avi'];
+$videoExtensions = ['mp4', 'webm', 'mov', 'avi', 'mkv'];
 $imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp', "svg"];
 
 // ? import ENV

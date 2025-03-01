@@ -5,7 +5,7 @@ require_once('../config.php');
 $directoryToScan = 'public_data';
 $returnNameType = 2;
 $returnDirPath = true;
-$authorise = ['jpg', 'gif', 'png', 'jpeg', 'webp', 'svg', 'mp4', 'webm', 'mov', 'avi'];
+$authorise = ['jpg', 'gif', 'png', 'jpeg', 'webp', 'svg', 'mp4', 'webm', 'mov', 'avi', 'mkv'];
 $ignore = [];
 $recursive = true;
 

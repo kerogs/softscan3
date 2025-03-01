@@ -16,4 +16,7 @@ public/temp/stats.json
 public/temp/fileStats.json
 public/temp/version.ksp
 
+backend/map.json
+backend/map_history.json
+
 .env

@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@splidejs/splide": "^4.1.4",
+    "apexcharts": "^4.4.0",
     "boxicons": "^2.1.4",
     "sweetalert": "^2.1.2",
     "sweetalert2": "^11.16.1"

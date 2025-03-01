@@ -11,7 +11,7 @@ if ($_GET['dir'] == true) {
 }
 $returnNameType = 2;
 $returnDirPath = true;
-$authorise = ['jpg', 'gif', 'png', 'jpeg', 'webp', 'svg', 'mp4', 'webm', 'mov', 'avi'];
+$authorise = ['jpg', 'gif', 'png', 'jpeg', 'webp', 'svg', 'mp4', 'webm', 'mov', 'avi', 'mkv'];
 $ignore = [];
 $recursive = true;
 

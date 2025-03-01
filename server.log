@@ -1,0 +1,113 @@
+[200] [67b89d4b40a8f] 2025-02-21 15:35:39.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b89d4b3f595] 2025-02-21 15:35:39.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b89d3eaddbb] 2025-02-21 15:35:26.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b89d3eac455] 2025-02-21 15:35:26.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b89d1550131] 2025-02-21 15:34:45.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b89d154e562] 2025-02-21 15:34:45.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b89d0a672cb] 2025-02-21 15:34:34.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b89d0a6575c] 2025-02-21 15:34:34.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b89d02382b2] 2025-02-21 15:34:26.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b89d0236bcc] 2025-02-21 15:34:26.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b89cf72a854] 2025-02-21 15:34:15.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b89cf728875] 2025-02-21 15:34:15.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b89c688c7ed] 2025-02-21 15:31:52.000000 192.168.1.16 [SUCCESS] File updated (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b89c688a994] 2025-02-21 15:31:52.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b89a88eb0dc] 2025-02-21 15:23:52.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b89a88e97b3] 2025-02-21 15:23:52.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b899ce54e2b] 2025-02-21 15:20:46.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b899ce53421] 2025-02-21 15:20:46.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b89998178a0] 2025-02-21 15:19:52.000000 192.168.1.16 [SUCCESS] File updated (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b8999815d73] 2025-02-21 15:19:52.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b896fe84a18] 2025-02-21 15:08:46.000000 192.168.1.16 [SUCCESS] File updated (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b896fe6fa55] 2025-02-21 15:08:46.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b896f89329d] 2025-02-21 15:08:40.000000 192.168.1.16 [INFO] Nouvelle connexion détect é [HTTP] [http://192.168.1.16/login.php?redirect=/] (http://192.168.1.16/public/login.php) GET {"data":{"redirect":"\/"}}
+[200] [67b7d8150ff49] 2025-02-21 01:34:13.000000 127.0.0.1 [INFO] Nouvelle connexion détect é [HTTP] [http://localhost/login.php?redirect=/] (http://localhost/public/login.php) GET {"data":{"redirect":"\/"}}
+[200] [67b77f9951861] 2025-02-20 19:16:41.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b77f994ffd5] 2025-02-20 19:16:41.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b77f9065e78] 2025-02-20 19:16:32.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b77f9063f67] 2025-02-20 19:16:32.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b77f310967a] 2025-02-20 19:14:57.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b77f3108064] 2025-02-20 19:14:57.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b77f295f743] 2025-02-20 19:14:49.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b77f295df0c] 2025-02-20 19:14:49.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b77f21ed439] 2025-02-20 19:14:41.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b77f21ec008] 2025-02-20 19:14:41.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b77e30dcaab] 2025-02-20 19:10:40.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b77e30db90a] 2025-02-20 19:10:40.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b77e2eeaacb] 2025-02-20 19:10:38.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b77e2ee97b7] 2025-02-20 19:10:38.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b77e2c37b20] 2025-02-20 19:10:36.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b77e2c3681a] 2025-02-20 19:10:36.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b77e0fd64a7] 2025-02-20 19:10:07.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b77e0fd565f] 2025-02-20 19:10:07.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b77de7d57f9] 2025-02-20 19:09:27.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b77de7d41a8] 2025-02-20 19:09:27.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b77dd84d8df] 2025-02-20 19:09:12.000000 192.168.1.16 [SUCCESS] File updated (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b77dd834daf] 2025-02-20 19:09:12.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b77db0a8ef5] 2025-02-20 19:08:32.000000 192.168.1.16 [INFO] Nouvelle connexion détect é [HTTP] [http://192.168.1.16/login.php?redirect=/] (http://192.168.1.16/public/login.php) GET {"data":{"redirect":"\/"}}
+[200] [67b5e360c3801] 2025-02-19 13:57:52.000000 192.168.1.16 [SUCCESS] File updated (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b5e360c1e72] 2025-02-19 13:57:52.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b5e006cc0f1] 2025-02-19 13:43:34.000000 192.168.1.16 [INFO] Données mises à jour pour l'URL : public_data/ssstik.io_@cestmiam_1739927768321.mp4 [HTTP] [http://192.168.1.16/action/likedislike.php?url=public_data%2Fssstik.io_%40cestmiam_1739927768321.mp4&like=1&dislike=0] (http://192.168.1.16/public/action/likedislike.php) GET {"data":{"url":"public_data\/ssstik.io_@cestmiam_1739927768321.mp4","like":"1","dislike":"0"}}
+[200] [67b5e006cbe31] 2025-02-19 13:43:34.000000 192.168.1.16 [INFO] Like ajouté pour l'URL: public_data/ssstik.io_@cestmiam_1739927768321.mp4 [HTTP] [http://192.168.1.16/action/likedislike.php?url=public_data%2Fssstik.io_%40cestmiam_1739927768321.mp4&like=1&dislike=0] (http://192.168.1.16/public/action/likedislike.php) GET {"data":{"url":"public_data\/ssstik.io_@cestmiam_1739927768321.mp4","like":"1","dislike":"0"}}
+[200] [67b5e006cbad1] 2025-02-19 13:43:34.000000 192.168.1.16 [INFO] Like : 1, dislike : 0, url : public_data/ssstik.io_@cestmiam_1739927768321.mp4 [HTTP] [http://192.168.1.16/action/likedislike.php?url=public_data%2Fssstik.io_%40cestmiam_1739927768321.mp4&like=1&dislike=0] (http://192.168.1.16/public/action/likedislike.php) GET {"data":{"url":"public_data\/ssstik.io_@cestmiam_1739927768321.mp4","like":"1","dislike":"0"}}
+[200] [67b5dffc6c0f3] 2025-02-19 13:43:24.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b5dffc6ab87] 2025-02-19 13:43:24.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b5dfe1a41b3] 2025-02-19 13:42:57.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b5dfe1a27c6] 2025-02-19 13:42:57.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b5dfe19f7be] 2025-02-19 13:42:57.000000 192.168.1.16 [INFO] Thumbnail generation completed. Successes: 4, Failures: 0 [HTTP] [http://192.168.1.16/action/ffmpegReload.php] (http://192.168.1.16/public/action/ffmpegReload.php) GET -
+[200] [67b5dfe19f553] 2025-02-19 13:42:57.000000 192.168.1.16 [INFO] Thumbnail created for: E:\site\softscan3/public/public_data\utomp3.com - Vidéo sans titre_360P.mp4 [HTTP] [http://192.168.1.16/action/ffmpegReload.php] (http://192.168.1.16/public/action/ffmpegReload.php) GET -
+[200] [67b5dfe0cb218] 2025-02-19 13:42:56.000000 192.168.1.16 [INFO] Thumbnail created for: E:\site\softscan3/public/public_data\ssstik.io_@linhaitiktok_1738778016897.mp4 [HTTP] [http://192.168.1.16/action/ffmpegReload.php] (http://192.168.1.16/public/action/ffmpegReload.php) GET -
+[200] [67b5dfe002f78] 2025-02-19 13:42:56.000000 192.168.1.16 [INFO] Thumbnail created for: E:\site\softscan3/public/public_data\ssstik.io_@cestmiam_1739927768321.mp4 [HTTP] [http://192.168.1.16/action/ffmpegReload.php] (http://192.168.1.16/public/action/ffmpegReload.php) GET -
+[200] [67b5dfdf2f01b] 2025-02-19 13:42:55.000000 192.168.1.16 [INFO] Thumbnail created for: E:\site\softscan3/public/public_data\ssstik.io_@cestmiam_1739891852686.mp4 [HTTP] [http://192.168.1.16/action/ffmpegReload.php] (http://192.168.1.16/public/action/ffmpegReload.php) GET -
+[200] [67b5dfda02210] 2025-02-19 13:42:50.000000 192.168.1.16 [INFO] Reload ffmpeg (action from user) [HTTP] [http://192.168.1.16/action/ffmpegReload.php] (http://192.168.1.16/public/action/ffmpegReload.php) GET -
+[200] [67b5dfd54229a] 2025-02-19 13:42:45.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b5dfd5408ab] 2025-02-19 13:42:45.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b5df871954b] 2025-02-19 13:41:27.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b5df8718473] 2025-02-19 13:41:27.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b5df6f2076e] 2025-02-19 13:41:03.000000 192.168.1.16 [SUCCESS] File updated (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b5df6f05d9b] 2025-02-19 13:41:03.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b5df6793eba] 2025-02-19 13:40:55.000000 192.168.1.16 [INFO] Nouvelle connexion détect é [HTTP] [http://192.168.1.16/login.php?redirect=/] (http://192.168.1.16/public/login.php) GET {"data":{"redirect":"\/"}}
+[200] [67b4bcedee63b] 2025-02-18 17:01:33.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bceded7f3] 2025-02-18 17:01:33.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bce30812c] 2025-02-18 17:01:23.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bce307268] 2025-02-18 17:01:23.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bce19ed54] 2025-02-18 17:01:21.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bce19ddbb] 2025-02-18 17:01:21.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bcb14fe25] 2025-02-18 17:00:33.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bcb14e924] 2025-02-18 17:00:33.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bca699d91] 2025-02-18 17:00:22.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bca698cee] 2025-02-18 17:00:22.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bbde53f1d] 2025-02-18 16:57:02.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bbde52d2c] 2025-02-18 16:57:02.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bbdba8399] 2025-02-18 16:56:59.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bbdba7528] 2025-02-18 16:56:59.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bbd973eec] 2025-02-18 16:56:57.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bbd972c2a] 2025-02-18 16:56:57.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bbd49665d] 2025-02-18 16:56:52.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bbd4957ff] 2025-02-18 16:56:52.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bbd3f1d01] 2025-02-18 16:56:51.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bbd3f0eb7] 2025-02-18 16:56:51.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bbd38869c] 2025-02-18 16:56:51.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bbd38775c] 2025-02-18 16:56:51.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bbd2e66fc] 2025-02-18 16:56:50.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bbd2e58dc] 2025-02-18 16:56:50.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bbd059022] 2025-02-18 16:56:48.000000 192.168.1.16 [INFO] Thumbnail generation completed. Successes: 3, Failures: 0 [HTTP] [http://192.168.1.16/action/ffmpegReload.php] (http://192.168.1.16/public/action/ffmpegReload.php) GET -
+[200] [67b4bbd058e72] 2025-02-18 16:56:48.000000 192.168.1.16 [INFO] Thumbnail created for: E:\site\softscan3/public/public_data\oui.mkv [HTTP] [http://192.168.1.16/action/ffmpegReload.php] (http://192.168.1.16/public/action/ffmpegReload.php) GET -
+[200] [67b4bbcf7fa36] 2025-02-18 16:56:47.000000 192.168.1.16 [INFO] Thumbnail created for: E:\site\softscan3/public/public_data\g2.mkv [HTTP] [http://192.168.1.16/action/ffmpegReload.php] (http://192.168.1.16/public/action/ffmpegReload.php) GET -
+[200] [67b4bbce72032] 2025-02-18 16:56:46.000000 192.168.1.16 [INFO] Thumbnail created for: E:\site\softscan3/public/public_data\erairows.mkv [HTTP] [http://192.168.1.16/action/ffmpegReload.php] (http://192.168.1.16/public/action/ffmpegReload.php) GET -
+[200] [67b4bbcd2f1d5] 2025-02-18 16:56:45.000000 192.168.1.16 [INFO] Reload ffmpeg (action from user) [HTTP] [http://192.168.1.16/action/ffmpegReload.php] (http://192.168.1.16/public/action/ffmpegReload.php) GET -
+[200] [67b4bbc95b192] 2025-02-18 16:56:41.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bbc959944] 2025-02-18 16:56:41.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bbb71b613] 2025-02-18 16:56:23.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bbb71a633] 2025-02-18 16:56:23.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bbb3e959a] 2025-02-18 16:56:19.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bbb3e864c] 2025-02-18 16:56:19.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bbb33f6d0] 2025-02-18 16:56:19.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bbb33e818] 2025-02-18 16:56:19.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bb9c4f8ef] 2025-02-18 16:55:56.000000 192.168.1.16 [INFO] Thumbnail generation completed. Successes: 3, Failures: 0 [HTTP] [http://192.168.1.16/action/ffmpegReload.php] (http://192.168.1.16/public/action/ffmpegReload.php) GET -
+[200] [67b4bb9c4f737] 2025-02-18 16:55:56.000000 192.168.1.16 [INFO] Thumbnail created for: E:\site\softscan3/public/public_data\[Erai-raws] BotsurakuKizoku - 08 [1080p CR WEB-DL AVC AAC][MultiSub][29AF669F].mkv [HTTP] [http://192.168.1.16/action/ffmpegReload.php] (http://192.168.1.16/public/action/ffmpegReload.php) GET -
+[200] [67b4bb9b745a8] 2025-02-18 16:55:55.000000 192.168.1.16 [INFO] Thumbnail created for: E:\site\softscan3/public/public_data\Medaka.Kuroiwa.is.Impervious.to.My.Charms.S01E07.Lockscreen.with.Him.1080p.CR.WEB-DL.AAC2.0.H.264-VARYG.mkv [HTTP] [http://192.168.1.16/action/ffmpegReload.php] (http://192.168.1.16/public/action/ffmpegReload.php) GET -
+[200] [67b4bb9a9c580] 2025-02-18 16:55:54.000000 192.168.1.16 [INFO] Thumbnail created for: E:\site\softscan3/public/public_data\Grisaia.Phantom.Trigger.S01E03.Mothers.Cradle.III.1080p.CR.WEB-DL.JPN.AAC2.0.H.264.MSubs-ToonsHub.mkv [HTTP] [http://192.168.1.16/action/ffmpegReload.php] (http://192.168.1.16/public/action/ffmpegReload.php) GET -
+[200] [67b4bb9929a6a] 2025-02-18 16:55:53.000000 192.168.1.16 [INFO] Reload ffmpeg (action from user) [HTTP] [http://192.168.1.16/action/ffmpegReload.php] (http://192.168.1.16/public/action/ffmpegReload.php) GET -
+[200] [67b4bb9816452] 2025-02-18 16:55:52.000000 192.168.1.16 [INFO] No need to update Stats (fileStats.json) [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -
+[200] [67b4bb98153e5] 2025-02-18 16:55:52.000000 192.168.1.16 [INFO] FFMPEG auto is disabled. [HTTP] [http://192.168.1.16/] (http://192.168.1.16/public/index.php) GET -

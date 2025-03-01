@@ -9,7 +9,7 @@ $urlLastDirName = basename(pathinfo($urlGet, PATHINFO_DIRNAME));
 $directoryToScan = pathinfo($urlGet, PATHINFO_DIRNAME);
 $returnNameType = 2;
 $returnDirPath = true;
-$authorise = ['jpg', 'gif', 'png', 'jpeg', 'webp', 'svg', 'mp4', 'webm', 'mov', 'avi'];
+$authorise = ['jpg', 'gif', 'png', 'jpeg', 'webp', 'svg', 'mp4', 'webm', 'mov', 'avi', 'mkv'];
 $ignore = [];
 $recursive = true;
 
@@ -143,7 +143,7 @@ $stats = getUrlStats($json_file, $url);
         <div class="ambiantBackground">
             <?php
 
-            if ($urlExtension == 'mp4' || $urlExtension == 'webm' || $urlExtension == 'mov' || $urlExtension == 'avi') {
+            if ($urlExtension == 'mp4' || $urlExtension == 'webm' || $urlExtension == 'mov' || $urlExtension == 'avi' || $urlExtension == 'mkv') {
                 echo '<video src="' . $urlGet . '" controls></video>';
             } else {
                 echo '<img src="' . $urlGet . '" alt="">';
@@ -159,7 +159,7 @@ $stats = getUrlStats($json_file, $url);
                 <div class="viewNow">
                     <?php
 
-                    if ($urlExtension == 'mp4' || $urlExtension == 'webm' || $urlExtension == 'mov' || $urlExtension == 'avi') {
+                    if ($urlExtension == 'mp4' || $urlExtension == 'webm' || $urlExtension == 'mov' || $urlExtension == 'avi' || $urlExtension == 'mkv') {
                         echo '<video src="' . $urlGet . '" controls></video>';
                     } else {
                         echo '<img src="' . $urlGet . '" alt="">';
@@ -210,7 +210,51 @@ $stats = getUrlStats($json_file, $url);
                             <i class='bx bxs-mobile'></i> VertiScroll
                         </div>
                     </a>
+
+                    <div class="backgroundAction" id="fullscreenAction">
+                        <i class='bx bx-fullscreen'></i> Plein écran
+                    </div>
                 </div>
+
+                <hr>
+
+                <div class="infobox" id="deleteImage">
+                    <a href="action/delete.php?url=<?= $urlGet ?>">
+                        <div>
+                            <i class='bx bxs-trash-alt'></i> Supprimer
+                        </div>
+                    </a>
+                </div>
+
+                <script>
+                    document.getElementById('fullscreenAction').addEventListener('click', () => {
+                        // toggle ..active to .viewNow
+                        document.querySelector('.viewNow').classList.toggle('active');
+                        document.querySelector('#fullscreenAction').classList.toggle('active');
+
+                        if (document.querySelector('.viewNow').classList.contains('active')) {
+                            document.getElementById('fullscreenAction').innerHTML = '<i class="bx bx-exit-fullscreen"></i> Réduire';
+                        } else {
+                            document.getElementById('fullscreenAction').innerHTML = '<i class="bx bx-fullscreen"></i> Plein écran';
+                        }
+                    })
+
+                    document.getElementById('deleteImage').addEventListener('click', () => {
+                        // prevent default
+                        event.preventDefault();
+
+                        swal.fire({
+                            icon: 'question',
+                            title: 'Voulez-vous vraiment supprimer cette image ?',
+                            text: "Cette action est irreversible !",
+                            showCancelButton: true,
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = 'action/delete.php?url=<?= $urlGet ?>';
+                            }
+                        })
+                    })
+                </script>
 
 
                 <div class="galerie galsplit">
@@ -259,6 +303,18 @@ $stats = getUrlStats($json_file, $url);
             </div>
         </div>
 
+        <?php if ($_GET['error'] == "cantDelete") : ?>
+            <script>
+                swal.fire({
+                    icon: 'error',
+                    title: "Action echouée !",
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    showCloseButton: true
+                })
+            </script>
+        <?php endif; ?>
 
 
     </main>

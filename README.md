@@ -4,9 +4,14 @@
     <p><em>Version 3 de SoftScan : un scanneur d'images, vidéos et GIFs pour un dossier spécifique. Il permet de gérer facilement une galerie d'images sans configuration nécessaire (ou presque).</em></p>
 </div>
 
+> [!IMPORTANT]
+> C'est bientôt la fin de SoftScan3. SoftScan4 arrive à grand pas. [Lisez ici](./README_SS4.md)
+
 <div align="center">
     <img alt="Bannière" src=".ksinf/banner_low.png">
 </div>
+
+# SoftScan3
 
 > [!IMPORTANT]
 > Ce site a été créé uniquement pour un usage personnel. [En savoir plus](./SECURITY.md) Il n'est ni sécurisé ni optimisé pour un usage publique.
@@ -143,3 +148,8 @@ docker compose up --build
 - Les images liké seront indiqué plus clairement dans les recommendation
 - Ajout d'un onglet statistique
     - Voir le nombre d'image disponible sur le serveur 
+
+<div align="center">
+    <h3>Proposé par</h3>
+    <img alt="Bannière" height="120" src="https://raw.githubusercontent.com/kerogs/kerogs/refs/heads/main/.ksinf/logo.png">
+</div>

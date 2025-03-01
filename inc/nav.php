@@ -32,5 +32,8 @@ $url = basename($_SERVER['PHP_SELF']);
         <a href="/add/create">
             <li <?= $url == 'add.php' ? 'class="active"' : '' ?>><i class='bx bxs-add-to-queue'></i> Add</li>
         </a>
+        <a href="/stats">
+        <li <?= $url == 'stats.php' ? 'class="active"' : '' ?>><i class='bx bx-stats'></i> Stats</li>
+        </a>
     </ul>
 </nav>
