@@ -1,5 +1,7 @@
 ErrorDocument 404 /error/404.php
 
+RewriteEngine On
+
 RewriteRule ^all$ all.php
 RewriteRule ^view$ view.php
 RewriteRule ^collections$ collections.php
@@ -12,3 +14,7 @@ RewriteRule ^search$ search.php
 RewriteRule ^vertiscroll$ verticalScroll.php 
 RewriteRule ^vertiscroll-js$ verticalScroll-js.php 
 RewriteRule ^stats$ stats.php
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9\-_]+)$ $1.php [L]
